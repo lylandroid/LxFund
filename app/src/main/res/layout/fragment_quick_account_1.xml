@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--快速开户-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/line_dialog_color2"
+            android:orientation="vertical">
+
+            <com.kscf.app.android.widget.DefToolBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:background="@color/blue"
+                app:isShowReturnView="true"
+                app:title="@string/txt_quick_account_1"/>
+
+
+            <include layout="@layout/item_fragment_quick_account_step"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_12dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/size_12dp">
+
+                <com.kscf.app.android.widget.ItemLeftTxtRightInputLayout
+                    android:id="@+id/item_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintText="@string/txt_hold_card_person_name"
+                    app:leftText="@string/txt_name"/>
+
+                <include layout="@layout/layout_line_horizontal"/>
+
+                <com.kscf.app.android.widget.ItemLeftTxtRightInputLayout
+                    android:id="@+id/item_bank_card_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintText="@string/txt_please_input_bank_card_number"
+                    app:leftText="@string/txt_bank_card_number"/>
+
+                <include layout="@layout/layout_line_horizontal"/>
+
+                <com.kscf.app.android.widget.ItemLeftTxtRightInputLayout
+                    android:id="@+id/item_bank_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:leftText="@string/txt_bank_name"/>
+
+                <include layout="@layout/layout_line_horizontal"/>
+
+                <com.kscf.app.android.widget.ItemLeftTxtRightInputLayout
+                    android:id="@+id/item_limit_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:leftText="@string/txt_limit_info"/>
+
+            </LinearLayout>
+
+            <com.kscf.app.android.widget.ItemLeftTxtRightInputLayout
+                android:id="@+id/item_id_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:background="@color/white"
+                app:hintText="@string/txt_please_input_id_card_number"
+                app:leftText="@string/txt_id_card_number"/>
+
+            <include layout="@layout/layout_line_horizontal"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/size_12dp">
+
+                <com.kscf.app.android.widget.ItemLeftTxtRightInputLayout
+                    android:id="@+id/item_phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:hintText="@string/txt_bank_reserve_phone_number"
+                    app:leftText="@string/txt_phone_number"/>
+
+                <View
+                    android:layout_width="@dimen/size_1dp"
+                    android:layout_height="@dimen/size_18dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/size_8dp"
+                    android:background="@color/line_dialog_color"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/size_18dp"
+                    android:clickable="true"
+                    android:text="@string/txt_get_verification_code"
+                    android:textColor="@color/txt_btn_verification_code_selector"/>
+
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_line_horizontal"/>
+
+            <com.kscf.app.android.widget.ItemLeftTxtRightInputLayout
+                android:id="@+id/item_verification_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/size_12dp"
+                app:hintText="@string/txt_please_input_verification_code"
+                app:leftText="@string/txt_verification_code"/>
+
+
+            <Button
+                android:id="@id/btn_next_step"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_18dp"
+                android:layout_marginRight="@dimen/size_18dp"
+                android:layout_marginTop="@dimen/size_38dp"
+                android:background="@drawable/item_radius_btn_quick_account_selector"
+                android:gravity="center"
+                android:text="@string/txt_next_step"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_18"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_28dp"
+                android:layout_marginRight="@dimen/size_28dp"
+                android:layout_marginTop="@dimen/size_16dp"
+                android:gravity="center"
+                android:text="点击按钮即表示你以阅读并同样《投资人权益须知》和《销售服务协议》"
+                android:textColor="@color/text_title_color"
+                android:textSize="@dimen/font_12"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

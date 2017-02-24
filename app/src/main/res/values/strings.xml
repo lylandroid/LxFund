@@ -1,0 +1,168 @@
+<resources>
+    <string name="app_name">领先基金网</string>
+    <string name="tip_double_click_exit">再按一次退出</string>
+
+
+    <string name="fundSelected">基金精选</string>
+    <string name="fundGroup">基金组合</string>
+    <string name="myAccount">我的账户</string>
+
+
+    <!--err-->
+    <string name="app_txt_err">哎哟！出错了！</string>
+    <string name="app_txt_err_404">你访问的页面飞了~</string>
+
+
+    <!--Button-->
+    <!--重新加载-->
+    <string name="btn_txt_again_loading">重新加载</string>
+    <string name="btn_txt_to_home_page">回到首页</string>
+    <string name="btn_txt_buy_now">立即购买</string>
+    <string name="btn_txt_confirm">确定</string>
+    <string name="btn_txt_cancel">取消</string>
+
+    <!--txt-->
+    <string name="txt_fast_invest">快速投资</string>
+    <string name="txt_brand">品牌</string>
+    <string name="txt_guarantee">保障</string>
+    <string name="txt_major">专业</string>
+    <string name="txt_service">服务</string>
+    <string name="txt_home_fund_selected_bottom_des">平台账户自资金由民生银行实时监管</string>
+    <string name="txt_phone_number">手机号</string>
+    <string name="txt_phone_number2">手机号</string>
+    <string name="txt_get_verification_code">获取验证码</string>
+    <string name="txt_verification_code">验证码</string>
+    <string name="txt_please_input_6_verification_code">请输入6位验证码</string>
+    <string name="txt_dynamic_password">动态密码</string>
+    <string name="txt_password">密码</string>
+    <string name="txt_login">登录</string>
+    <string name="txt_use_password_login">使用密码登录</string>
+    <string name="txt_login_err">登录遇到问题</string>
+    <string name="txt_quick_account_1">快速开户(1/3)</string>
+    <string name="txt_quick_account_2">快速开户(2/3)</string>
+    <string name="txt_quick_account_3">快速开户(3/3)</string>
+    <string name="txt_name">姓名</string>
+    <string name="txt_real_name">真实姓名</string>
+    <string name="txt_hold_card_person_name">持卡人姓名</string>
+    <string name="txt_bank_card_number">银行卡号</string>
+    <string name="txt_bank_name">银行名称</string>
+    <string name="txt_bank_card">银行卡</string>
+    <string name="txt_please_input_bank_card_number">请输入银行卡号</string>
+    <string name="txt_id_card_number">身份证号</string>
+    <string name="txt_please_input_id_card_number">请输入身份证号</string>
+    <string name="txt_please_input_18_id_card_number">请输入18位身份证号</string>
+    <string name="txt_bank_reserve_phone_number">银行预留手机号</string>
+    <string name="txt_up_topic">上一题</string>
+    <string name="txt_next_step">下一步</string>
+    <string name="txt_setting_transaction_password">设置交易密码</string>
+    <string name="txt_confirm_transaction_password">确认交易密码</string>
+    <string name="txt_update_login_pass">修改登录密码</string>
+    <string name="txt_primitive_login_pass">原登录密码</string>
+    <string name="txt_primitive_transaction_pass">原交易密码</string>
+    <string name="txt_new_transaction_pass">新交易密码</string>
+    <string name="txt_new_login_pass">新登录密码</string>
+    <string name="txt_confirm_new_pass">确认新密码</string>
+    <string name="txt_update_transaction_pass">修改交易密码</string>
+    <string name="txt_reset_transaction_pass">重置交易密码</string>
+    <string name="txt_bind_phone">绑定手机</string>
+    <string name="txt_identity_info">身份信息</string>
+    <string name="txt_contact_address">联系地址</string>
+    <string name="txt_save">保存</string>
+    <string name="txt_total_amount">总金额(元)</string>
+
+
+    <string name="txt_please_input_new_login_pass">请输入新登录密码</string>
+    <string name="txt_please_input_confirm_new_pass">请输入确认密码</string>
+    <string name="txt_please_input_primitive_login_pass">请输入原登录密码</string>
+    <string name="txt_please_input_password">请输入密码</string>
+    <string name="txt_please_input_phone_number">请输入手机号</string>
+    <string name="txt_please_input_sms_code">请输入短信验证码</string>
+    <string name="txt_please_send_sms_code">请先发送短信验证码</string>
+    <string name="txt_phone_number_format_err">手机号码格式不正确</string>
+    <string name="txt_please_input_verification_code">请输入验证码</string>
+    <string name="txt_please_input_transaction_password">请输入交易密码</string>
+    <string name="txt_forget_password">忘记密码?</string>
+    <string name="txt_sms_code_send_success">短信验证码发送成功</string>
+    <string name="txt_sms_code_send_err">短信验证码发送失败</string>
+    <string name="txt_login_register_err">登录或注册失败</string>
+    <string name="txt_login_or_register">登录或注册</string>
+    <string name="txt_ling_xian_ying">领先盈</string>
+    <string name="txt_fund">基金</string>
+    <string name="txt_fund_name">基金名称</string>
+    <string name="txt_risk_evaluation">风险测评</string>
+    <string name="txt_reset_repeat">重新测评</string>
+    <string name="txt_type_radical">激进型</string>
+    <string name="txt_welfare">福利</string>
+    <string name="txt_invite_friends">邀请好友</string>
+    <string name="txt_news">消息</string>
+    <string name="txt_temp_no_news">暂无消息</string>
+    <string name="txtCurrentPageAndTotalPage">%1$d/%2$d</string>
+    <string name="txt_account_settings">账户设置</string>
+    <string name="txt_contact_mode">联系方式</string>
+    <string name="txt_login_pass_rule_prompt">*8位以上,包括数字、大小写字符、特殊字符任意两种</string>
+    <string name="txt_update_transaction_pass_rule_prompt">*密码需为数字和字符组合</string>
+    <string name="txt_province_city_area">省、市、区</string>
+    <string name="txt_street">街道</string>
+    <string name="txt_detailed_address">详细地址</string>
+    <string name="txt_view_details">查看详情</string>
+
+    <string name="txt_position">持仓</string>
+    <string name="txt_on_the_way">在途</string>
+    <string name="txt_my_bank_card">我的银行卡</string>
+    <string name="txt_limit_info">限额信息</string>
+    <string name="txt_customer_service_hotline">客服热线：400-643-3389</string>
+    <string name="txt_near_year_profit">近一年收益</string>
+    <string name="txt_net_worth_growth_rate">净值增长率</string>
+    <string name="txt_net_asset_value">单位净值</string>
+    <!--String.format(getResources().getString(R.string.warning_message
+        ), "xxxxxxxxxx");-->
+    <string name="txt_data_sources">数据来源:%s</string>
+    <string name="txt_update_date">更新日期:%s</string>
+    <string name="txt_risk_grade">风险等级</string>
+    <string name="txt_yield_trend">收益率走势</string>
+
+    <string name="txt_near_7_day">近7天</string>
+    <string name="txt_near_1_month">近一个月</string>
+    <string name="txt_near_3_month">近三个月</string>
+    <string name="txt_near_1_year">近一年</string>
+    <string name="txt_today">今天</string>
+
+    <string name="txt_fund_archives">基金档案</string>
+    <string name="txt_fund_manager">基金经理</string>
+    <string name="txt_fund_company">基金公司</string>
+    <string name="txt_fund_scale">基金规模</string>
+    <string name="txt_establish_time">成立时间</string>
+
+
+    <!--dialog pay password number-->
+    <string name="dialogPayPasswordNumber0">0</string>
+    <string name="dialogPayPasswordNumber1">1</string>
+    <string name="dialogPayPasswordNumber2">2</string>
+    <string name="dialogPayPasswordNumber3">3</string>
+    <string name="dialogPayPasswordNumber4">4</string>
+    <string name="dialogPayPasswordNumber5">5</string>
+    <string name="dialogPayPasswordNumber6">6</string>
+    <string name="dialogPayPasswordNumber7">7</string>
+    <string name="dialogPayPasswordNumber8">8</string>
+    <string name="dialogPayPasswordNumber9">9</string>
+    <string name="dialogPayPasswordNumber10">·</string>
+    <!--dialog pay password des-->
+    <string name="dialogPayPasswordDes2">ABC</string>
+    <string name="dialogPayPasswordDes3">DEF</string>
+    <string name="dialogPayPasswordDes4">GHI</string>
+    <string name="dialogPayPasswordDes5">JKL</string>
+    <string name="dialogPayPasswordDes6">MNO</string>
+    <string name="dialogPayPasswordDes7">PQRS</string>
+    <string name="dialogPayPasswordDes8">TUV</string>
+    <string name="dialogPayPasswordDes9">WXYZ</string>
+
+
+    <string name="amount_0.00">0.00</string>
+
+
+    <string name="txt_test_title">开年首周股债基金齐涨，结构性行情中增配主题基金</string>
+    <string name="txt_test_date">2017-01-09 10:30</string>
+    <string name="txt_test_content">\u3000\u3000开年首周股债基金齐涨，结构性行情中增配主题基金。开年首周股债基金齐涨，结构性行情中增配主题基金。</string>
+
+
+</resources>

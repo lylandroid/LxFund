@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/size_18dp">
+
+
+        <!--android:layout_height="@dimen/size_180dp"-->
+        <!--<com.bigkoo.convenientbanner.ConvenientBanner
+            android:id="@+id/convenientBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:canLoop="true"/>-->
+
+        <ImageView
+            android:id="@+id/iv_banner"
+            android:background="@color/colorAccent"
+            android:minHeight="@dimen/size_100dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="基建发力"
+                android:textSize="@dimen/font_16"/>
+
+            <View
+                android:layout_width="@dimen/size_1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/size_8dp"
+                android:layout_marginRight="@dimen/size_8dp"
+                android:background="@color/text_title_color"
+                android:textSize="@dimen/font_16"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="信诚中证基建"
+                android:textSize="@dimen/font_16"/>
+
+        </LinearLayout>
+
+        <com.kscf.app.android.widget.PercentageTextView
+            android:id="@+id/tv_percentage_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="19.09%"/>
+
+        <include layout="@layout/item_home_fund_selected_linearlayout"/>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            style="@style/item_btn_style"
+            android:layout_marginBottom="@dimen/size_12dp"
+            android:layout_marginLeft="@dimen/size_28dp"
+            android:layout_marginRight="@dimen/size_28dp"
+            android:layout_marginTop="@dimen/size_12dp"
+            android:background="@drawable/item_radius_btn_red_selector"
+            android:text="@string/btn_txt_buy_now"/>
+    </LinearLayout>
+
+</layout>

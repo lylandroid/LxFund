@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activityBackgroundColor"
+        android:orientation="vertical">
+
+        <com.kscf.app.android.widget.DefToolBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:background="@color/blue"
+            app:isShowReturnView="true"
+            app:title="@string/txt_fund"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:paddingTop="@dimen/size_20dp"
+            android:text="@string/txt_total_amount"
+            android:textColor="@color/text_subtitle_color"
+            android:textSize="@dimen/font_16"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:paddingBottom="@dimen/size_32dp"
+            android:paddingTop="@dimen/size_18dp"
+            android:text="@string/amount_0.00"
+            android:textColor="@color/colorButtonSubmitSelect"
+            android:textSize="@dimen/font_28"/>
+
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <android.support.v4.view.ViewPager
+            android:descendantFocusability="blocksDescendants"
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+</layout>

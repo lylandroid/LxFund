@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:paddingTop="18dp"
+        android:text="风险测评"
+        android:textColor="@color/text_title_color"
+        android:textSize="16dp"/>
+    <!--#6a6a6a-->
+    <TextView
+        android:id="@id/tv_msg"
+        android:text="您的风险类型为积极发卡量适当放宽性,可以承受一些波动，技术杰弗里斯解放路圣诞节沙发上地方，经费落实经费是垃圾福建师大垃圾焚烧多了几分。"
+        style="@style/dialog_msg_style"/>
+
+    <include layout="@layout/layout_line_horizontal"/>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@id/btn_cancel"
+            style="@style/btn_submit_style"
+            android:text="@string/btn_txt_cancel"/>
+
+        <include layout="@layout/layout_line_vertical"/>
+
+        <Button
+            android:id="@id/btn_confirm"
+            style="@style/btn_submit_style"
+            android:text="@string/btn_txt_confirm"/>
+    </LinearLayout>
+
+</LinearLayout>

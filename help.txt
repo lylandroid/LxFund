@@ -1,0 +1,9 @@
+﻿密钥: ks.keystore 包含在本项目中
+密码: 112233
+别名：kskey
+2016.02.23  by YTL
+
+
+
+查看 keystore相关信息:
+    keytool -list -v -keystore ks.keystore

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/line_dialog_color2"
+        android:orientation="vertical">
+
+        <com.kscf.app.android.widget.DefToolBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:background="@color/blue"
+            app:isShowReturnView="true"
+            app:title="@string/txt_quick_account_2"/>
+
+
+        <include layout="@layout/item_fragment_quick_account_step"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_18dp"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/size_12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_setting_transaction_password"
+                android:textColor="@color/text_title_color"
+                android:textSize="@dimen/size_14dp"/>
+
+
+            <com.framework.jungly.gridpasswordview.GridPasswordView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:layout_marginTop="@dimen/size_12dp"
+                app:gpvPasswordType="textPassword"
+                app:gpvPressIsShowKeyboard="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_18dp"
+                android:text="@string/txt_confirm_transaction_password"
+                android:textColor="@color/text_title_color"
+                android:textSize="@dimen/size_14dp"/>
+
+            <com.framework.jungly.gridpasswordview.GridPasswordView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:layout_marginTop="@dimen/size_12dp"
+                app:gpvPasswordType="textPassword"
+                app:gpvPressIsShowKeyboard="true"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_12dp"
+                android:text="*密码需要数字和字符组合"
+                android:textColor="@color/colorButtonSubmit"
+                android:textSize="@dimen/font_14"/>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_next_step"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_18dp"
+            android:background="@drawable/item_radius_btn_login_selector"
+            android:text="@string/txt_next_step"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_18"/>
+
+
+    </LinearLayout>
+
+</layout>

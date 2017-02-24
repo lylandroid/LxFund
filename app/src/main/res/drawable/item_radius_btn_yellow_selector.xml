@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--button按钮 圆角选择器-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/size_24dp"/>
+            <solid android:color="@color/colorButtonSubmitSelect"/>
+            <stroke android:width="@dimen/size_1dp" android:color="@color/colorButtonSubmitSelect"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/size_24dp"/>
+            <solid android:color="@color/colorButtonSubmit"/>
+            <stroke android:width="@dimen/size_1dp" android:color="@color/colorButtonSubmit"/>
+        </shape>
+    </item>
+</selector>

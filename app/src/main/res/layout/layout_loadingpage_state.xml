@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@id/loading_page_layout"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <!--/////////////////loading start///////////////////////////////////-->
+    <ProgressBar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@id/control_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <!--/////////////////loading end///////////////////////////////////////-->
+
+
+    <!--//////////////////err start////////////////////////////////////-->
+    <LinearLayout
+        android:id="@id/control_err"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_0dp"
+            android:layout_weight="2"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_error"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/size_68dp"
+            android:layout_marginTop="@dimen/size_42dp"
+            android:text="@string/app_txt_err"
+            android:textSize="@dimen/font_24"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/size_0dp"
+                android:layout_height="@dimen/size_1dp"
+                android:layout_weight="1"/>
+
+            <Button
+                style="@style/item_button_submit_style"
+                android:layout_weight="10"
+                android:text="@string/btn_txt_again_loading"/>
+
+            <View
+                android:layout_width="@dimen/size_0dp"
+                android:layout_height="@dimen/size_1dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_0dp"
+            android:layout_weight="4"/>
+
+    </LinearLayout>
+    <!--///////////////err end///////////////////////////////-->
+
+
+</FrameLayout>

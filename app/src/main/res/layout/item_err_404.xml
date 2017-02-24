@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@id/control_err_404"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_0dp"
+            android:layout_weight="2"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_404"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/size_68dp"
+            android:layout_marginTop="@dimen/size_42dp"
+            android:text="@string/app_txt_err_404"
+            android:textSize="@dimen/font_24"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/size_0dp"
+                android:layout_height="@dimen/size_1dp"
+                android:layout_weight="1"/>
+
+            <Button
+
+                android:id="@id/btn_confirm"
+                style="@style/item_button_submit_style"
+                android:layout_weight="10"
+                android:text="@string/btn_txt_to_home_page"/>
+
+            <View
+                android:layout_width="@dimen/size_0dp"
+                android:layout_height="@dimen/size_1dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_0dp"
+            android:layout_weight="4"/>
+
+    </LinearLayout>
+
+</layout>

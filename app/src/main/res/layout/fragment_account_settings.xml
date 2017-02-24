@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--账户设置页面-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activityBackgroundColor"
+        android:orientation="vertical">
+
+        <com.kscf.app.android.widget.DefToolBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:background="@color/blue"
+            app:isShowReturnView="true"
+            app:title="@string/txt_account_settings"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_38dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/iv_icon_head"
+                    android:layout_width="@dimen/size_48dp"
+                    android:layout_height="@dimen/size_48dp"
+                    android:layout_marginLeft="@dimen/size_28dp"
+                    android:layout_marginRight="@dimen/size_18dp"
+                    android:src="@drawable/account_settings_def_head"/>
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    style="@style/tvSubtitleWrapContentStyle"
+                    android:layout_toRightOf="@id/iv_icon_head"
+                    android:text="*伟"/>
+
+                <TextView
+                    android:id="@+id/tv_subtitle"
+                    style="@style/tvSubtitleWrapContentStyle"
+                    android:layout_below="@id/tv_name"
+                    android:layout_toRightOf="@id/iv_icon_head"
+                    android:text="zhang shan"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1dp"
+                android:layout_marginTop="@dimen/size_28dp"
+                android:background="@color/line_dialog_color"/>
+
+            <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                android:id="@+id/item_bind_phone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:background="@drawable/item_select_gray_selector"
+                app:isShowArrowView="false"
+                app:leftText="@string/txt_bind_phone"
+                app:rightText="15923489602"/>
+
+            <include layout="@layout/layout_line_horizontal"/>
+
+            <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                android:id="@+id/item_identity_info"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:background="@drawable/item_select_gray_selector"
+                app:isShowArrowView="false"
+                app:leftText="@string/txt_identity_info"
+                app:rightText="140543242315923489602"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_18dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                android:id="@+id/item_update_login_pass"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:background="@drawable/item_select_gray_selector"
+                app:leftText="@string/txt_update_login_pass"/>
+
+            <include layout="@layout/layout_line_horizontal"/>
+
+            <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                android:id="@+id/item_update_transaction_pass"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:background="@drawable/item_select_gray_selector"
+                app:leftText="@string/txt_update_transaction_pass"/>
+
+            <include layout="@layout/layout_line_horizontal"/>
+
+            <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                android:id="@+id/item_reset_transaction_pass"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:background="@drawable/item_select_gray_selector"
+                app:leftText="@string/txt_reset_transaction_pass"/>
+
+        </LinearLayout>
+
+        <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+            android:id="@+id/item_contact_address"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_48dp"
+            android:layout_marginTop="@dimen/size_18dp"
+            android:background="@drawable/item_def_white_select_gray_selector"
+            app:leftText="@string/txt_contact_address"/>
+
+
+    </LinearLayout>
+</layout>

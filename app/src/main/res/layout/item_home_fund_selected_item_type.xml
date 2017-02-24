@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:paddingLeft="@dimen/size_3dp"
+        android:paddingRight="@dimen/size_3dp"
+        android:paddingTop="@dimen/size_8dp"
+        android:paddingBottom="@dimen/size_8dp"
+        android:background="@color/white"
+        android:layout_height="@dimen/size_120dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_brand"
+            android:background="@color/colorBackgroundRed"
+            android:layout_margin="@dimen/size_4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@drawable/icon_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_margin="@dimen/size_8dp"
+                android:background="@mipmap/line_dot_white_off"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1dp"/>
+
+            <TextView
+                android:textSize="@dimen/font_16"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="@string/txt_brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/ll_guarantee"
+            android:background="@color/colorBackgroundShallowBlue"
+            android:layout_margin="@dimen/size_4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@drawable/icon_guarantee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_margin="@dimen/size_8dp"
+                android:background="@mipmap/line_dot_white_off"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1dp"/>
+
+            <TextView
+                android:textSize="@dimen/font_16"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="@string/txt_guarantee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@id/ll_major"
+            android:background="@color/colorBackgroundViolet"
+            android:layout_margin="@dimen/size_4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@drawable/icon_major"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_margin="@dimen/size_8dp"
+                android:background="@mipmap/line_dot_white_off"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1dp"/>
+
+            <TextView
+                android:textSize="@dimen/font_16"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="@string/txt_major"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@id/ll_service"
+            android:background="@color/colorBackgroundGreen"
+            android:layout_margin="@dimen/size_4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@drawable/icon_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_margin="@dimen/size_8dp"
+                android:background="@mipmap/line_dot_white_off"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1dp"/>
+
+            <TextView
+                android:textSize="@dimen/font_16"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="@string/txt_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

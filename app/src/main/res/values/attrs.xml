@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LxRecyclerView">
+        <!--gridView几列-->
+        <attr name="spanCount" format="integer"/>
+    </declare-styleable>
+
+    <!--    <declare-styleable name="ItemLeftTxtRightArrowLayout">
+            &lt;!&ndash;gridView几列&ndash;&gt;
+            <attr name="text" format="string"/>
+            <attr name="textSize" format="integer"/>
+        </declare-styleable>-->
+
+    <declare-styleable name="LxAttrs">
+        <attr name="title" format="string"/>
+        <attr name="hintText" format="string"/>
+        <attr name="leftText" format="string"/>
+        <attr name="rightText" format="string"/>
+        <attr name="textSize" format="reference"/>
+        <attr name="rightTextSize" format="integer"/>
+        <attr name="leftTextSize" format="reference"/>
+        <attr name="rightTextColor" format="reference"/>
+        <attr name="leftTextColor" format="reference"/>
+        <attr name="endTextSize" format="reference"/>
+        <attr name="topAndBottomPadding" format="reference"/>
+        <attr name="background" format="reference"/>
+        <attr name="isShowReturnView" format="boolean"/>
+        <attr name="isShowArrowView" format="boolean"/>
+        <attr name="isShowTooBarLeftView" format="boolean"/>
+        <attr name="maxLength" format="integer"/>
+
+    </declare-styleable>
+
+
+    <!--自定义MLImageView的属性 加上了自己的前缀，防止和其他自定义控件冲突-->
+    <declare-styleable name="MLImageView">
+        <attr name="ml_border_color" format="color"/>
+        <attr name="ml_border_width" format="dimension"/>
+        <attr name="ml_press_alpha" format="integer"/>
+        <attr name="ml_press_color" format="color"/>
+        <attr name="ml_radius" format="dimension"/>
+        <attr name="ml_shape_type" format="enum">
+            <enum name="none" value="0"/>
+            <enum name="round" value="1"/>
+            <enum name="rectangle" value="2"/>
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="gridPasswordView">
+
+        <attr name="gpvTextColor" format="color|reference"/>
+        <attr name="gpvTextSize" format="dimension"/>
+
+        <attr name="gpvLineColor" format="color"/>
+        <attr name="gpvGridColor" format="color"/>
+        <attr name="gpvLineWidth" format="dimension"/>
+
+        <attr name="gpvPasswordLength" format="integer"/>
+        <attr name="gpvPasswordTransformation" format="string"/>
+        <!--按下是否弹出软键盘-->
+        <attr name="gpvPressIsShowKeyboard" format="boolean"/>
+
+        <attr name="gpvPasswordType" format="enum">
+            <enum name="numberPassword" value="0"/>
+            <enum name="textPassword" value="1"/>
+            <enum name="textVisiblePassword" value="2"/>
+            <enum name="textWebPassword" value="3"/>
+        </attr>
+
+    </declare-styleable>
+
+</resources>

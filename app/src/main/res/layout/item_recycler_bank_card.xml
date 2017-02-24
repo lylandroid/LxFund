@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size_8dp"
+        android:layout_marginTop="@dimen/size_8dp"
+        android:layout_marginRight="@dimen/size_8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/size_3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_12dp"
+            android:layout_marginTop="@dimen/size_16dp"
+            android:layout_marginBottom="@dimen/size_16dp"
+            android:gravity="center_vertical">
+
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="@dimen/size_58dp"
+                android:layout_height="@dimen/size_58dp"
+                android:layout_marginRight="@dimen/size_8dp"
+                android:background="@drawable/ic_bank_card"/>
+
+
+            <TextView
+                android:maxLines="1"
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_3dp"
+                android:layout_toRightOf="@id/iv_icon"
+                android:text="@string/app_txt_err"
+                android:textColor="@color/text_title_color"
+                android:textSize="@dimen/font_16"/>
+
+            <TextView
+                android:maxLines="1"
+                android:id="@+id/tv_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:layout_toRightOf="@id/iv_icon"
+                android:text="@string/app_txt_err"
+                android:textColor="@color/text_title_color"
+                android:textSize="@dimen/font_16"/>
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</layout>

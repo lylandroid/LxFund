@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Item默认白色 选中灰色选择器-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/itemSelectBackground" android:state_pressed="true"/>
+    <item android:drawable="@color/itemSelectBackground" android:state_selected="true"/>
+    <item android:drawable="@color/white"/>
+</selector>

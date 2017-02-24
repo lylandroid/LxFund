@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/activityBackgroundColor"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/include_top"
+                layout="@layout/item_home_fund_selected_item_top"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_12dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+
+                <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:leftText="@string/txt_fast_invest"
+                    app:leftTextSize="@dimen/font_16"
+                    app:rightText="0.00"/>
+
+                <include layout="@layout/layout_line_horizontal"/>
+
+
+            </LinearLayout>
+
+            <com.kscf.app.android.widget.LxRecyclerView
+                android:id="@+id/linear_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"/>
+
+
+            <include layout="@layout/item_home_fund_selected_item_type"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_120dp"
+                android:layout_gravity="center"
+                android:background="@color/colorBackgroundShallowBlue"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="@dimen/size_1dp"
+                    android:layout_weight="2"/>
+
+                <LinearLayout
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/img_cesy"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="@dimen/size_1dp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/line_dialog_color"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_8dp"
+                    android:adjustViewBounds="true"
+                    android:drawableLeft="@drawable/icon_cesy"
+                    android:drawablePadding="@dimen/size_3dp"
+                    android:gravity="center"
+                    android:text="@string/txt_home_fund_selected_bottom_des"
+                    android:textColor="@color/text_title_color"
+                    android:textSize="@dimen/font_12"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

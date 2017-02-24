@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="homeMyAccountFragment"
+            type="com.kscf.app.android.ui.fragment.HomeMyAccountFragment"/>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/include_toolbar"
+                layout="@layout/item_home_fund_my_account_item_toolbar"
+                app:homeMyAccountFragment="@{homeMyAccountFragment}"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_18dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="@dimen/size_1dp"
+                    android:layout_weight="1"
+                    android:background="@color/line_dialog_color"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_6dp"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="为您推荐新客首先项目"
+                    android:textColor="@color/text_title_color"
+                    android:textSize="@dimen/font_14"/>
+
+
+                <View
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="@dimen/size_1dp"
+                    android:layout_weight="1"
+                    android:background="@color/line_dialog_color"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_18dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/size_3dp"
+                    android:text="基建主题"
+                    android:textColor="@color/text_title_color"/>
+
+                <View
+                    android:layout_width="@dimen/size_1dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/size_3dp"
+                    android:background="@color/line_dialog_color"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_3dp"
+                    android:text="基建主题"
+                    android:textColor="@color/text_title_color"/>
+
+            </LinearLayout>
+
+            <com.kscf.app.android.widget.PercentageTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_18dp"
+                android:text="0.00%"
+                app:textSize="@dimen/font_34"/>
+
+            <include layout="@layout/item_home_fund_selected_linearlayout"/>
+
+            <Button
+                android:id="@+id/btn_confirm"
+                style="@style/item_btn_style"
+                android:layout_marginTop="@dimen/size_18dp"
+                android:layout_marginBottom="@dimen/size_18dp"
+                android:layout_marginLeft="@dimen/size_28dp"
+                android:layout_marginRight="@dimen/size_28dp"
+                android:background="@drawable/item_radius_btn_yellow_selector"
+                android:text="@string/btn_txt_buy_now"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/activityBackgroundColor"
+                android:orientation="vertical">
+
+                <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                    android:id="@+id/item_lx_ying"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_12dp"
+                    android:background="@drawable/item_def_white_select_gray_selector"
+                    android:paddingBottom="@dimen/size_8dp"
+                    android:paddingTop="@dimen/size_8dp"
+                    app:leftText="@string/txt_ling_xian_ying"
+                    app:rightText="0.00"/>
+
+
+                <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                    android:id="@+id/item_fund"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_12dp"
+                    android:background="@drawable/item_def_white_select_gray_selector"
+                    app:leftText="@string/txt_fund"
+                    app:rightText="0.00"/>
+
+                <include layout="@layout/layout_line_horizontal"/>
+
+                <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                    android:id="@+id/item_bank_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/item_def_white_select_gray_selector"
+                    app:leftText="@string/txt_bank_card"
+                    app:rightText="工商银行0000"/>
+
+                <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                    android:id="@+id/item_risk_evaluation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_12dp"
+                    android:background="@drawable/item_def_white_select_gray_selector"
+                    app:leftText="@string/txt_risk_evaluation"
+                    app:rightText="@string/txt_type_radical"/>
+
+                <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                    android:id="@+id/item_welfare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_12dp"
+                    android:background="@drawable/item_def_white_select_gray_selector"
+                    app:leftText="@string/txt_welfare"/>
+
+                <include layout="@layout/layout_line_horizontal"/>
+
+                <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                    android:id="@+id/item_invite_friends"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/item_def_white_select_gray_selector"
+                    app:leftText="@string/txt_invite_friends"/>
+
+                <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                    android:id="@+id/item_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/size_12dp"
+                    android:layout_marginTop="@dimen/size_12dp"
+                    android:background="@drawable/item_def_white_select_gray_selector"
+                    app:leftText="@string/txt_news"
+                    app:rightText="0"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--联系方式页面-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activityBackgroundColor"
+        android:orientation="vertical">
+
+        <com.kscf.app.android.widget.DefToolBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:background="@color/blue"
+            app:isShowReturnView="true"
+            app:title="@string/txt_contact_mode"/>
+
+        <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+            android:id="@+id/item_province_city_area"
+            android:layout_width="match_parent"
+            app:leftTextColor="@color/text_subtitle_color"
+            android:layout_height="@dimen/size_48dp"
+            android:background="@drawable/item_def_white_select_gray_selector"
+            app:leftText="@string/txt_province_city_area"/>
+
+        <include layout="@layout/layout_line_horizontal"/>
+
+        <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+            app:leftTextColor="@color/text_subtitle_color"
+            android:id="@+id/item_street"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_48dp"
+            android:background="@drawable/item_def_white_select_gray_selector"
+            app:leftText="@string/txt_street"/>
+
+        <include layout="@layout/layout_line_horizontal"/>
+
+        <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+            app:leftTextColor="@color/text_subtitle_color"
+            android:id="@+id/item_detailed_address"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_48dp"
+            android:background="@drawable/item_def_white_select_gray_selector"
+            app:leftText="@string/txt_detailed_address"/>
+
+        <include layout="@layout/layout_line_horizontal"/>
+
+
+        <Button
+            android:id="@+id/btn_confirm"
+            style="@style/item_btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_radius_btn_yellow_selector"
+            android:text="@string/txt_save"/>
+
+    </LinearLayout>
+</layout>

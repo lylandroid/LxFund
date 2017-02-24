@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RadioGroup
+        android:paddingRight="@dimen/size_6dp"
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/rb_near_7_day"
+            style="@style/item_fragment_details_date_style"
+            android:text="@string/txt_near_7_day"/>
+
+        <RadioButton
+            android:id="@+id/rb_near_3_month"
+            style="@style/item_fragment_details_date_style"
+            android:text="@string/txt_near_3_month"/>
+
+        <RadioButton
+            android:id="@+id/rb_near_1_month"
+            style="@style/item_fragment_details_date_style"
+            android:text="@string/txt_near_1_month"/>
+
+        <RadioButton
+            android:id="@+id/rb_near_1_year"
+            style="@style/item_fragment_details_date_style"
+            android:text="@string/txt_near_1_year"/>
+
+        <RadioButton
+            android:id="@+id/rb_today"
+            style="@style/item_fragment_details_date_style"
+            android:text="@string/txt_today"/>
+    </RadioGroup>
+
+</layout>

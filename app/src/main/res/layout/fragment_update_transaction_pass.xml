@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--修改交易密码-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activityBackgroundColor"
+        android:orientation="vertical">
+
+        <com.kscf.app.android.widget.DefToolBar
+            app:isShowReturnView="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:background="@color/blue"
+            app:title="@string/txt_update_transaction_pass"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/size_18dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_primitive_transaction_pass"
+                android:textColor="@color/text_title_color"
+                android:textSize="@dimen/font_16"/>
+
+            <com.framework.jungly.gridpasswordview.GridPasswordView
+                android:id="@+id/grid_primitive_password_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:layout_marginTop="@dimen/size_8dp"
+                app:gpvPasswordType="textPassword"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_16dp"
+                android:text="@string/txt_new_transaction_pass"
+                android:textColor="@color/text_title_color"
+                android:textSize="@dimen/font_16"/>
+
+            <com.framework.jungly.gridpasswordview.GridPasswordView
+                android:id="@+id/grid_new_password_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:layout_marginTop="@dimen/size_8dp"
+                app:gpvPasswordType="textPassword"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_16dp"
+                android:text="@string/txt_confirm_new_pass"
+                android:textColor="@color/text_title_color"
+                android:textSize="@dimen/font_16"/>
+
+            <com.framework.jungly.gridpasswordview.GridPasswordView
+                android:id="@+id/grid_confirm_new_password_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:layout_marginTop="@dimen/size_8dp"
+                app:gpvPasswordType="textPassword"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_12dp"
+                android:text="@string/txt_update_transaction_pass_rule_prompt"
+                android:textColor="@color/colorButtonSubmitSelect"/>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_marginTop="@dimen/size_18dp"
+            android:id="@+id/btn_confirm"
+            style="@style/item_btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_radius_btn_yellow_selector"
+            android:text="@string/txt_save"/>
+
+
+    </LinearLayout>
+</layout>

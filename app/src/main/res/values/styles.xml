@@ -1,0 +1,176 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--沉浸状态栏-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+
+        <!--ActionBarDrawerToggle设置颜色-->
+        <!-- <item name="colorControlNormal">@android:color/white</item>-->
+
+        <!--Activity动画-->
+        <item name="android:windowAnimationStyle">@style/ActivityInOutFadeAnim</item>
+    </style>
+
+
+    <style name="WelcomeTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+
+    <style name="MainTheme" parent="AppTheme">
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <!--activity进入和退出动画-->
+    <style name="ActivityInOutFadeAnim" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <!--button 提交按钮样式-->
+    <style name="item_button_submit_style">
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_width">@dimen/size_0dp</item>
+        <item name="android:layout_height">@dimen/size_48dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/item_radius_btn_submit_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/txt_btn_selector</item>
+    </style>
+
+    <style name="btn_submit_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textColor">@color/txt_btn_selector</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="dialog_msg_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+        <item name="android:padding">18dp</item>
+        <item name="android:textColor">@color/text_subtitle_color</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="dialogPayPasswordKeyBoardNumberStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_title_color</item>
+        <item name="android:textSize">@dimen/font_28</item>
+    </style>
+
+    <style name="dialogPayPasswordKeyboardDesStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_title_color</item>
+        <item name="android:textSize">@dimen/font_10</item>
+    </style>
+
+    <style name="dialogPayPasswordKeyboardGridStyle">
+        <item name="android:background">@drawable/item_select_gray_selector</item>
+        <item name="android:layout_width">@dimen/size_0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+
+    <!--/////////////GridPasswordView start//////////////////////////////////////////-->
+    <style name="GridPasswordView"/>
+
+    <style name="GridPasswordView.TextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="GridPasswordView.EditText" parent="GridPasswordView.TextView">
+        <item name="android:cursorVisible">false</item>
+    </style>
+
+    <style name="GridPasswordView.Divider">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:layout_marginBottom">1dp</item>
+    </style>
+
+    <style name="editTextDefStyle">
+        <item name="android:layout_width">@dimen/size_0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/ic_bg_edit</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:padding">@dimen/size_8dp</item>
+        <item name="android:textColorHint">@color/et_hint_selector</item>
+        <item name="android:textSize">@dimen/font_14</item>
+    </style>
+
+    <style name="item_btn_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/size_18dp</item>
+        <item name="android:layout_marginRight">@dimen/size_18dp</item>
+        <item name="android:layout_marginTop">@dimen/size_28dp</item>
+        <item name="android:textSize">@dimen/font_14</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="tvSubtitleWrapContentStyle">
+        <item name="android:textSize">@dimen/size_18dp</item>
+        <item name="android:textColor">@color/text_title_color</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="item_fragment_details_date_style">
+        <item name="android:clickable">true</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/size_3dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/item_radius_line_yellow_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/size_3dp</item>
+        <item name="android:textColor">@color/txt_white_selector</item>
+        <item name="android:textSize">@dimen/font_13</item>
+    </style>
+
+    <style name="RatingBar_Small">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/ratingbar_small</item>
+        <item name="android:indeterminateDrawable">@drawable/ratingbar_small</item>
+        <item name="android:minHeight">14dip</item>
+        <item name="android:maxHeight">14dip</item>
+        <item name="android:thumb">@null</item>
+        <item name="android:isIndicator">true</item>
+    </style>
+
+    <!--/////////////GridPasswordView end//////////////////////////////////////////-->
+
+
+</resources>

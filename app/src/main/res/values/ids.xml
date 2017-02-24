@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <item name="layout_top" type="id"/>
+    <item name="layout_center" type="id"/>
+    <item name="layout_bottom" type="id"/>
+    <item name="layout_head" type="id"/>
+
+
+    <item name="loading_page_layout" type="id"/>
+    <item name="control_err" type="id"/>
+    <item name="control_err_404" type="id"/>
+    <item name="control_loading" type="id"/>
+    <item name="control_success" type="id"/>
+
+    <item name="fl_content" type="id"/>
+    <item name="layout_controller" type="id"/>
+    <item name="recycler_view" type="id"/>
+    <item name="view_pager" type="id"/>
+    <item name="root_toolbar" type="id"/>
+    <item name="root_layout" type="id"/>
+    <item name="item_root_layout" type="id"/>
+    <item name="toolbar" type="id"/>
+    <item name="tab_layout" type="id"/>
+    <item name="linear_recycler_view" type="id"/>
+    <item name="line_chart" type="id"/>
+    <item name="radio_group" type="id"/>
+    <!--<item name="grid_recycler_view" type="id"/>-->
+    <!--   <item name="view_pager" type="id"/>-->
+    <!--<item name="tabHost" type="id"/>-->
+
+
+    <!--TextView id-->
+    <item name="tv_name" type="id"/>
+    <item name="tv_title" type="id"/>
+    <item name="tv_date" type="id"/>
+    <item name="tv_subtitle" type="id"/>
+    <item name="tv_msg" type="id"/>
+    <item name="tv_forget_password" type="id"/>
+    <item name="tv_left" type="id"/>
+    <item name="tv_number" type="id"/>
+    <item name="tv_des" type="id"/>
+    <item name="line" type="id"/>
+
+
+    <!--ImageView icon-->
+    <item name="iv_icon" type="id"/>
+    <item name="iv_right_arrow" type="id"/>
+
+
+    <!--button icon-->
+    <item name="btn_confirm" type="id"/>
+    <item name="btn_reloading" type="id"/>
+    <item name="btn_next_step" type="id"/>
+    <item name="btn_cancel" type="id"/>
+
+    <!--ViewGroup id-->
+    <item name="ll_brand" type="id"/><!--品牌-->
+    <item name="ll_guarantee" type="id"/><!--保障-->
+    <item name="ll_major" type="id"/><!--专业-->
+    <item name="ll_service" type="id"/><!--服务-->
+    <item name="grid_password_view" type="id"/>
+
+    <!--item-->
+
+    <item name="item" type="id"/>
+    <item name="item0" type="id"/>
+    <item name="item1" type="id"/>
+    <item name="item2" type="id"/>
+    <item name="item3" type="id"/>
+    <item name="item4" type="id"/>
+    <item name="item5" type="id"/>
+    <item name="item6" type="id"/>
+    <item name="item7" type="id"/>
+    <item name="item8" type="id"/>
+    <item name="item9" type="id"/>
+    <item name="item10" type="id"/>
+    <item name="item11" type="id"/>
+    <item name="item12" type="id"/>
+
+
+    <item name="ll_item" type="id"/>
+
+
+
+
+    <!--include-->
+    <item name="include_top" type="id"/>
+    <item name="include_item" type="id"/>
+    <item name="include_page" type="id"/>
+    <item name="include_toolbar" type="id"/>
+
+
+</resources>

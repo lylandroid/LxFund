@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activityBackgroundColor"
+        android:orientation="vertical">
+
+        <com.kscf.app.android.widget.DefToolBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:background="@color/blue"
+            app:isShowReturnView="true"
+            app:title="@string/txt_quick_account_3"/>
+
+
+        <include layout="@layout/item_fragment_quick_account_step"/>
+
+        <android.support.v4.view.ViewPager
+            android:padding="@dimen/size_16dp"
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+
+        <include layout="@layout/item_up_topic"/>
+
+
+
+    </LinearLayout>
+
+
+</layout>
