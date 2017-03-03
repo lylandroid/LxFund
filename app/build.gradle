@@ -29,10 +29,10 @@ android {
 
     signingConfigs {
         release {
-            keyAlias KEY_ALIAS
+            /*keyAlias KEY_ALIAS
             keyPassword KEY_PASSWORD
             storeFile file('E:/workingSpace/project01/LeadFundNet/ks.keystore')
-            storePassword KEYSTORE_PASSWORD
+            storePassword KEYSTORE_PASSWORD*/
         }
     }
 
@@ -51,7 +51,7 @@ android {
             //buildConfigField "boolean", "LOG_DEBUG", "false"
             useProguard true
             //配置签名文件
-            /*signingConfig signingConfigs.release*/
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
 

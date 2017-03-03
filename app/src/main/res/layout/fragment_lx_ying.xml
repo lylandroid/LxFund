@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--领先盈-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activityBackgroundColor"
+        android:orientation="vertical">
+
+        <com.kscf.app.android.widget.DefToolBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:background="@color/blue"
+            app:isShowReturnView="true"
+            app:title="@string/txt_ling_xian_ying"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue"
+            android:orientation="vertical">
+
+
+            <TextView
+                style="@style/tv_subtitle_style"
+                android:paddingLeft="@dimen/size_0dp"
+                android:paddingTop="@dimen/size_20dp"
+                android:text="@string/txt_current_assets"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_14"/>
+
+
+            <TextView
+                style="@style/tv_subtitle_style"
+                android:paddingBottom="@dimen/size_8dp"
+                android:paddingLeft="@dimen/size_0dp"
+                android:paddingTop="@dimen/size_0dp"
+                android:text="@string/amount_0.00"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_28"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="@dimen/size_18dp"
+                android:gravity="center">
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="@dimen/size_1dp"
+                    android:layout_height="@dimen/size_38dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/size_6dp"
+                    android:layout_marginRight="@dimen/size_6dp"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:id="@+id/tv_yesterday_profit_value"
+                    style="@style/tv_subtitle_style"
+                    android:layout_width="wrap_content"
+                    android:layout_toLeftOf="@id/line"
+                    android:padding="@dimen/size_3dp"
+                    android:text="@string/amount_0.00"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14"/>
+
+                <TextView
+                    android:id="@+id/tv_yesterday_profit"
+                    style="@style/tv_subtitle_style"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/tv_yesterday_profit_value"
+                    android:layout_toLeftOf="@id/line"
+                    android:padding="@dimen/size_3dp"
+                    android:text="@string/txt_yesterday_profit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14"/>
+
+                <TextView
+                    android:id="@+id/tv_cumulative_profit"
+                    style="@style/tv_subtitle_style"
+                    android:layout_width="wrap_content"
+                    android:layout_toRightOf="@id/line"
+                    android:padding="@dimen/size_3dp"
+                    android:text="0.00"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14"/>
+
+                <TextView
+                    style="@style/tv_subtitle_style"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/tv_cumulative_profit"
+                    android:layout_toRightOf="@id/line"
+                    android:padding="@dimen/size_3dp"
+                    android:text="@string/txt_cumulative_profit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_0dp"
+            android:layout_weight="1"
+            android:descendantFocusability="blocksDescendants"/>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            style="@style/btn_submit_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@drawable/item_def_yellow_select_shallow_selector"
+            android:text="@string/txt_recharge"
+            android:textColor="@color/white"/>
+
+
+    </LinearLayout>
+</layout>

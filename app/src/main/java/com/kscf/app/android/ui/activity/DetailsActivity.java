@@ -10,10 +10,14 @@ import com.kscf.app.android.app.App;
 import com.kscf.app.android.app.LxConstants;
 import com.kscf.app.android.base.BaseActivity;
 import com.kscf.app.android.base.BaseFragment;
+import com.kscf.app.android.ui.fragment.DetailsHomeFundGroupFragment;
 import com.kscf.app.android.ui.fragment.DetailsHomeFundSelectedFragment;
 import com.kscf.app.android.ui.fragment.FundFragment;
+import com.kscf.app.android.ui.fragment.LxYingFragment;
 import com.kscf.app.android.ui.fragment.MessageFragment;
 import com.kscf.app.android.ui.fragment.MyBankCardFragment;
+import com.kscf.app.android.ui.fragment.RedPackageFragment;
+import com.kscf.app.android.ui.fragment.RegisterAgreementFragment;
 import com.kscf.app.android.widget.LoadingPage;
 
 /**
@@ -21,7 +25,6 @@ import com.kscf.app.android.widget.LoadingPage;
  */
 
 public class DetailsActivity extends BaseActivity {
-
 
 
     @Override
@@ -47,13 +50,13 @@ public class DetailsActivity extends BaseActivity {
 
     @Override
     public void initEventAndData() {
-            int fragmentHashCodeValue = getIntentFragmentHashCodeValue();
-            BaseFragment showFragment = newFragment(fragmentHashCodeValue);
-            showHideFragment(showFragment, null);
+        int fragmentHashCodeValue = getIntentFragmentHashCodeValue();
+        BaseFragment showFragment = newFragment(fragmentHashCodeValue);
+        showHideFragment(showFragment, null);
 
     }
 
-    public int getIntentFragmentHashCodeValue(){
+    public int getIntentFragmentHashCodeValue() {
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         int fragmentHashCodeValue = 0;
@@ -71,8 +74,16 @@ public class DetailsActivity extends BaseActivity {
             fragment = MyBankCardFragment.newInstance();
         } else if (fragmentId == FundFragment.class.hashCode()) {
             fragment = FundFragment.newInstance();
-        }else if(fragmentId == DetailsHomeFundSelectedFragment.class.hashCode()){
+        } else if (fragmentId == DetailsHomeFundSelectedFragment.class.hashCode()) {
             fragment = DetailsHomeFundSelectedFragment.newInstance();
+        } else if (fragmentId == DetailsHomeFundGroupFragment.class.hashCode()) {
+            fragment = DetailsHomeFundGroupFragment.newInstance();
+        } else if (fragmentId == RegisterAgreementFragment.class.hashCode()) {
+            fragment = RegisterAgreementFragment.newInstance();
+        } else if (fragmentId == LxYingFragment.class.hashCode()) {
+            fragment = LxYingFragment.newInstance();
+        } else if (fragmentId == RedPackageFragment.class.hashCode()) {
+            fragment = RedPackageFragment.newInstance();
         }
         return fragment;
     }

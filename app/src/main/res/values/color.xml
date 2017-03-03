@@ -32,6 +32,7 @@
 
 
     <color name="colorBackgroundRed">#FFFD5B64</color>
+    <color name="colorDeepRed">#FFF82A30</color>
     <color name="colorBackgroundRed2">#DDFD5B64</color>
     <color name="colorBackgroundShallowBlue">#FF5DBCEE</color>
     <color name="colorBackgroundBlue2">#FF5B76F8</color>

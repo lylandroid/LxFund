@@ -83,13 +83,16 @@
     <item name="ll_item" type="id"/>
 
 
-
-
     <!--include-->
     <item name="include_top" type="id"/>
     <item name="include_item" type="id"/>
     <item name="include_page" type="id"/>
     <item name="include_toolbar" type="id"/>
+
+
+    <!---->
+    <item name="visible" type="id"/>
+    <item name="masked" type="id"/>
 
 
 </resources>

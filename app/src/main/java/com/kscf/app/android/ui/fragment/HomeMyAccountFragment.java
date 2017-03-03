@@ -46,10 +46,15 @@ public class HomeMyAccountFragment extends BaseFragment<HomeFragmentFundMyAccoun
     @Override
     public void initListener() {
         mDataBinding.includeToolbar.ivIconHead.setOnClickListener(this);
+
         mDataBinding.itemNews.setOnClickListener(this);
         mDataBinding.itemBankCard.setOnClickListener(this);
+        mDataBinding.itemLxYing.setOnClickListener(this);
         mDataBinding.itemFund.setOnClickListener(this);
+        mDataBinding.itemWelfare.setOnClickListener(this);
+
         mDataBinding.btnConfirm.setOnClickListener(this);
+
     }
 
     @Override
@@ -74,6 +79,12 @@ public class HomeMyAccountFragment extends BaseFragment<HomeFragmentFundMyAccoun
                 break;
             case R.id.item_fund:
                 DetailsActivity.addFragmentToDetailsActivity(mActivity, FundFragment.class.hashCode(),true);
+                break;
+            case R.id.item_lx_ying:
+                DetailsActivity.addFragmentToDetailsActivity(mActivity, LxYingFragment.class.hashCode(),true);
+                break;
+            case R.id.item_welfare:
+                DetailsActivity.addFragmentToDetailsActivity(mActivity, RedPackageFragment.class.hashCode(),true);
                 break;
 
         }

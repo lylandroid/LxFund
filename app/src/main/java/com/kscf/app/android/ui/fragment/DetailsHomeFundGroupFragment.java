@@ -13,6 +13,8 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.kscf.app.android.R;
 import com.kscf.app.android.base.BaseFragment;
+import com.kscf.app.android.base.adapter.DataBindingRecyclerAdapter;
+import com.kscf.app.android.databinding.FragmentDetailsHomeFundGroupBinding;
 import com.kscf.app.android.databinding.FragmentDetailsHomeFundSelectedBinding;
 import com.kscf.app.android.presenter.DetailsHomeFundSelectedFragmentPresenter;
 import com.kscf.app.android.presenter.contract.DetailsHomeFundSelectedFragmentContract;
@@ -27,17 +29,17 @@ import java.util.List;
  * Created by luoyl on 2017/1/12.
  */
 
-public class DetailsHomeFundSelectedFragment extends BaseFragment<FragmentDetailsHomeFundSelectedBinding, DetailsHomeFundSelectedFragmentPresenter>
+public class DetailsHomeFundGroupFragment extends BaseFragment<FragmentDetailsHomeFundGroupBinding, DetailsHomeFundSelectedFragmentPresenter>
         implements DetailsHomeFundSelectedFragmentContract.View, View.OnClickListener, RadioGroup.OnCheckedChangeListener {
 
     @Override
     public int getLayoutResId() {
-        return R.layout.fragment_details_home_fund_selected;
+        return R.layout.fragment_details_home_fund_group;
     }
 
 
-    public static DetailsHomeFundSelectedFragment newInstance() {
-        return new DetailsHomeFundSelectedFragment();
+    public static DetailsHomeFundGroupFragment newInstance() {
+        return new DetailsHomeFundGroupFragment();
     }
 
     @Override
@@ -58,9 +60,56 @@ public class DetailsHomeFundSelectedFragment extends BaseFragment<FragmentDetail
 
     @Override
     public void initEventAndData() {
+
         lineChartSetting();
 
         LineChart lineChart = mDataBinding.lineChart;
+
+        List<Entry> valsComp1 = getLine1();
+        List<Entry> valsComp2 = getLine2();
+
+
+        // use the interface ILineDataSet
+        //--1---------------------------------------------------
+        // and so on ...
+        LineDataSet setComp1 = new LineDataSet(valsComp1, "组合收益率");
+        //是否显示圆点
+        setComp1.setDrawCircles(false);
+        //圆角
+        setComp1.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        setComp1.setAxisDependency(YAxis.AxisDependency.LEFT);
+        //--------------------------------------------------------
+        LineDataSet setComp2 = new LineDataSet(valsComp2, "中债指数收益率");
+        //是否显示圆点
+        setComp2.setDrawCircles(false);
+        //圆角
+        setComp2.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        setComp2.setAxisDependency(YAxis.AxisDependency.LEFT);
+        setComp2.setColor(getResources().getColor(R.color.colorButtonSubmitSelect));
+        //----------------------------------------------------------
+
+
+        LineData data = new LineData(setComp1, setComp2);
+        lineChart.setGridBackgroundColor(getResources().getColor(R.color.line_dialog_color));
+        lineChart.setData(data);
+        lineChart.invalidate(); // refresh
+
+        //--------------------------------------------------------
+
+        List<String> recyclerDatas = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            recyclerDatas.add("item " + i);
+
+        }
+
+        mDataBinding.recyclerView.setAdapter(new DataBindingRecyclerAdapter(mDataBinding.recyclerView
+                , R.layout.item_recycler_fragment_details_home_fund_group
+                , recyclerDatas));
+
+
+    }
+
+    private List<Entry> getLine1() {
 
         List<Entry> valsComp1 = new ArrayList<Entry>();
         Entry c1e1 = new Entry(1484496000000f, 0f); // 0 == quarter 1
@@ -79,26 +128,28 @@ public class DetailsHomeFundSelectedFragment extends BaseFragment<FragmentDetail
         valsComp1.add(c1e7);
         Entry c1e8 = new Entry(1486310400000f, 1.59f); // 1 == quarter 2 ...
         valsComp1.add(c1e8);
+        return valsComp1;
+    }
 
-        // and so on ...
-
-        LineDataSet setComp1 = new LineDataSet(valsComp1, "累计收益");
-        //是否显示圆点
-        setComp1.setDrawCircles(false);
-        //圆角
-        setComp1.setMode(LineDataSet.Mode.CUBIC_BEZIER);
-        setComp1.setAxisDependency(YAxis.AxisDependency.LEFT);
-
-        // use the interface ILineDataSet
-        List<ILineDataSet> dataSets = new ArrayList<ILineDataSet>();
-        dataSets.add(setComp1);
-
-        LineData data = new LineData(dataSets);
-        lineChart.setGridBackgroundColor(getResources().getColor(R.color.line_dialog_color));
-        lineChart.setData(data);
-        lineChart.invalidate(); // refresh
-
-
+    private List<Entry> getLine2() {
+        List<Entry> valsComp1 = new ArrayList<Entry>();
+        Entry c1e1 = new Entry(1484496000000f, 1f); // 0 == quarter 1
+        valsComp1.add(c1e1);
+        Entry c1e2 = new Entry(1484582400000f, 0.5f); // 1 == quarter 2 ...
+        valsComp1.add(c1e2);
+        Entry c1e3 = new Entry(1484668800000f, 3.79f); // 1 == quarter 2 ...
+        valsComp1.add(c1e3);
+        Entry c1e4 = new Entry(1484755200000f, 1.19f); // 1 == quarter 2 ...
+        valsComp1.add(c1e4);
+        Entry c1e5 = new Entry(1484841600000f, 2.69f); // 1 == quarter 2 ...
+        valsComp1.add(c1e5);
+        Entry c1e6 = new Entry(1485100800000f, 2.19f); // 1 == quarter 2 ...
+        valsComp1.add(c1e6);
+        Entry c1e7 = new Entry(1486051200000f, 1.79f); // 1 == quarter 2 ...
+        valsComp1.add(c1e7);
+        Entry c1e8 = new Entry(1486310400000f, 0.59f); // 1 == quarter 2 ...
+        valsComp1.add(c1e8);
+        return valsComp1;
     }
 
     @Override

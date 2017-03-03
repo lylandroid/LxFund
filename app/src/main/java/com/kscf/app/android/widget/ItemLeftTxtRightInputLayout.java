@@ -2,6 +2,8 @@ package com.kscf.app.android.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -24,6 +26,7 @@ public class ItemLeftTxtRightInputLayout extends FrameLayout {
     private TextView mLeftTextView;
 
     private EditText mInputEditText;
+    private TextInputLayout mTextInputLayout;
 
 
     private String mLeftText;
@@ -65,6 +68,7 @@ public class ItemLeftTxtRightInputLayout extends FrameLayout {
             mRootView = factory.inflate(R.layout.item_left_txt_and_right_input, this, false);
             mLeftTextView = (TextView) mRootView.findViewById(R.id.tv_item_left_txt_and_right_input);
             mInputEditText = (EditText) mRootView.findViewById(R.id.et_item_left_txt_and_right_input);
+            mTextInputLayout = (TextInputLayout) mRootView.findViewById(R.id.text_input_layout);
             if (mInputType != -1) {
                 mInputEditText.setInputType(mInputType);
             }
@@ -115,5 +119,13 @@ public class ItemLeftTxtRightInputLayout extends FrameLayout {
 
     public EditText getEditText() {
         return mInputEditText;
+    }
+
+    public TextInputLayout getTextInputLayout() {
+        return mTextInputLayout;
+    }
+
+    public void setTextInputLayoutError(int errTextResId) {
+        getTextInputLayout().setError(getResources().getString(errTextResId));
     }
 }

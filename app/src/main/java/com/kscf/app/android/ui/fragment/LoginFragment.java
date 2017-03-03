@@ -18,6 +18,7 @@ import com.kscf.app.android.model.bean.OpenAccountStepBean;
 import com.kscf.app.android.model.http.RetrofitHelper;
 import com.kscf.app.android.presenter.LoginFragmentPresenter;
 import com.kscf.app.android.presenter.contract.LoginFragmentContract;
+import com.kscf.app.android.ui.activity.DetailsActivity;
 import com.kscf.app.android.ui.activity.LoginActivity;
 import com.kscf.app.android.ui.activity.QuickAccountActivity;
 import com.kscf.app.android.util.CheckUtils;
@@ -61,6 +62,8 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
     @Override
     public void initView() {
         mLoadingPage.showPage(LoadingPage.STATE_SUCCEED);
+        /*mDataBinding.itemPhone.getTextInputLayout().setCounterEnabled(true);
+        mDataBinding.itemPhone.getTextInputLayout().setCounterMaxLength(11);*/
 
     }
 
@@ -69,9 +72,8 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
         mDataBinding.btnLogin.setOnClickListener(this);
         mDataBinding.tvGetCode.setOnClickListener(this);
         mDataBinding.tvLoginMode.setOnClickListener(this);
-
-        //mDataBinding.test.setOnClickListener(this);
-        //mDataBinding.toMain.setOnClickListener(this);
+        mDataBinding.tvSpannableReadProtocol.setOnClickListener(this);
+        mDataBinding.ivCheckAgreement.setOnClickListener(this);
 
     }
 
@@ -96,12 +98,13 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
             case R.id.tv_get_code:
                 sendSmsCode();
                 break;
-            /*case R.id.test:
-                toAccountSettings();
+            case R.id.iv_check_agreement:
+                boolean checkBoxIsSelected = mDataBinding.ivCheckAgreement.isSelected();
+                mDataBinding.ivCheckAgreement.setSelected(!checkBoxIsSelected);
                 break;
-            case R.id.to_main:
-                App.getInstance().startTargetActivity(mActivity, new Intent(mActivity, MainActivity.class), false);
-                break;*/
+            case R.id.tv_spannable_read_protocol:
+                ((LoginActivity) mActivity).showHideFragment(RegisterAgreementFragment.newInstance(), LoginFragment.class);
+                break;
         }
     }
 
@@ -163,7 +166,13 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
         String phone = mDataBinding.itemPhone.getInputEditText();
         //验证码
         String code = mDataBinding.itemCode.getInputEditText();
+
+
         if (checkPhoneNumber(phone) && isSendSmsCode() && checkSmsCode(code)) {
+            if (!mDataBinding.ivCheckAgreement.isSelected()) {
+                mDataBinding.tilSpannableReadProtocol.setError("请阅读并勾选用户协议");
+                return;
+            }
             Map<String, Object> httpParam = RetrofitHelper.getHttpParam();
             httpParam.put(LxConstants.mobile, phone);
             httpParam.put(LxConstants.authcode, code);
@@ -178,7 +187,7 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
             L.i("onLoginSuccess 登录成功");
             ToastUtils.show(baseBean.message);
             LxSPUtils.putToken(baseBean.body.token);
-            checkIsOpenAccount();
+            openAccountStepPage();
             mActivity.onBackPressed();
         } else {
             ToastUtils.show(baseBean.message);
@@ -213,9 +222,9 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
     }
 
     /**
-     * 检查是否开户（登录成功后，调用开户步骤接口,查看当前在步骤几）
+     * 打开开户步骤页面（登录成功后，调用开户步骤接口,查看当前在步骤几）
      */
-    public void checkIsOpenAccount() {
+    public void openAccountStepPage() {
         Intent intent = new Intent(mActivity, QuickAccountActivity.class);
         intent.putExtra(LxConstants.fragmentHashCodeKey, QuickAccountFragment01.class.hashCode());
         App.getInstance().startTargetActivity(mActivity, intent, true);
@@ -241,10 +250,12 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
         //手机号码是否输入
         if (TextUtils.isEmpty(phone)) {
             ToastUtils.show(R.string.txt_please_input_phone_number);
+            //mDataBinding.itemPhone.setTextInputLayoutError(R.string.txt_please_input_phone_number);
             result = false;
         } else if (!CheckUtils.checkPhoneNumber(phone)) {
             //验证手机号码格式是否正确
             ToastUtils.show(R.string.txt_phone_number_format_err);
+            //mDataBinding.itemPhone.setTextInputLayoutError(R.string.txt_phone_number_format_err);
             result = false;
         }
         return result;
@@ -253,11 +264,13 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
     public boolean checkSmsCode(String code) {
         boolean result = true;
         if (!mIsSendSmsCode) {
+            //mDataBinding.itemCode.setTextInputLayoutError(R.string.txt_please_send_sms_code);
             ToastUtils.show(R.string.txt_please_send_sms_code);
             result = false;
         } else if (TextUtils.isEmpty(code)) {
             //请输入短信验证码
             ToastUtils.show(R.string.txt_please_input_sms_code);
+            //mDataBinding.itemCode.setTextInputLayoutError(R.string.txt_please_input_sms_code);
             result = false;
         }
         return result;

@@ -8,52 +8,53 @@
         android:background="@color/activityBackgroundColor">
 
 
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="horizontal"
             android:layout_height="@dimen/size_52dp"
-            android:layout_gravity="bottom">
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
             <RelativeLayout
-                android:background="@color/white"
                 android:layout_width="@dimen/size_0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_height="match_parent">
+                android:background="@color/white">
+
                 <include layout="@layout/layout_line_horizontal"/>
 
                 <com.kscf.app.android.widget.PercentageTextView
-                    android:paddingTop="@dimen/size_8dp"
-                    android:paddingLeft="@dimen/size_8dp"
                     android:id="@+id/ptv_money"
-                    app:textSize="@dimen/font_18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/size_8dp"
+                    android:paddingTop="@dimen/size_8dp"
                     android:text="0.60%"
                     app:endTextSize="@dimen/font_12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    app:textSize="@dimen/font_18"/>
 
                 <LinearLayout
-                    android:paddingTop="@dimen/size_2dp"
-                    android:paddingLeft="@dimen/size_8dp"
                     android:layout_width="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
                     android:layout_below="@id/ptv_money"
-                    android:layout_height="wrap_content">
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/size_8dp"
+                    android:paddingTop="@dimen/size_2dp">
 
                     <TextView
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="申购费"
                         android:textColor="@color/text_subtitle_color"
-                        android:textSize="@dimen/font_10"
-                        android:layout_height="wrap_content"/>
+                        android:textSize="@dimen/font_10"/>
 
                     <com.framework.view.DeleteLineTextView
                         android:textColor="@color/text_subtitle_color"
                         android:id="@+id/tv_money"
-                        android:paddingLeft="@dimen/size_2dp"
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/size_2dp"
                         android:text="1.50%"
-                        android:textSize="@dimen/font_10"
-                        android:layout_height="wrap_content"/>
+                        android:textSize="@dimen/font_10"/>
 
 
                 </LinearLayout>
@@ -64,11 +65,11 @@
             <Button
                 android:id="@+id/btn_confirm"
                 android:layout_width="@dimen/size_0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:textColor="@color/white"
-                android:text="@string/btn_txt_buy_now"
                 android:background="@drawable/item_def_yellow_select_shallow_selector"
-                android:layout_height="match_parent"/>
+                android:text="@string/btn_txt_buy_now"
+                android:textColor="@color/white"/>
 
 
         </LinearLayout>
@@ -76,7 +77,8 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="@dimen/size_52dp">
+            android:layout_marginBottom="@dimen/size_52dp"
+            android:scrollbars="none">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -92,7 +94,7 @@
                         android:id="@id/iv_icon_head"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/jxbanner1"/>
+                        android:background="@drawable/zhbanner3"/>
 
                     <com.kscf.app.android.widget.DefToolBar
                         android:id="@+id/toolbar"
@@ -113,19 +115,19 @@
 
 
                     <LinearLayout
-                        android:paddingLeft="@dimen/size_8dp"
-                        android:paddingRight="@dimen/size_8dp"
-                        android:paddingBottom="@dimen/size_8dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/white"
                         android:orientation="vertical"
+                        android:paddingBottom="@dimen/size_8dp"
+                        android:paddingLeft="@dimen/size_8dp"
+                        android:paddingRight="@dimen/size_8dp"
                         android:paddingTop="@dimen/size_8dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/txt_near_year_profit"
+                            android:text="@string/txt_since_establishment_profit"
                             android:textColor="@color/text_title_color"
                             android:textSize="@dimen/font_12"/>
 
@@ -141,7 +143,7 @@
                                 android:layout_weight="1">
 
                                 <com.kscf.app.android.widget.PercentageTextView
-                                    android:id="@+id/ptv_near_year_profit"
+                                    android:id="@+id/ptv_since_establishment_profit"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/size_12dp"
@@ -168,12 +170,12 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="@string/txt_net_worth_growth_rate"
+                                        android:text="@string/txt_day_rise_drop"
                                         android:textColor="@color/text_subtitle_color"
                                         android:textSize="@dimen/font_12"/>
 
                                     <com.kscf.app.android.widget.PercentageTextView
-                                        android:id="@+id/ptv_net_worth_growth_rate"
+                                        android:id="@+id/ptv_day_rise_drop"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="@dimen/size_6dp"
@@ -191,7 +193,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="@string/txt_net_asset_value"
+                                        android:text="@string/txt_group_asset_value"
                                         android:textColor="@color/text_subtitle_color"
                                         android:textSize="@dimen/font_12"/>
 
@@ -244,20 +246,20 @@
                             android:paddingTop="@dimen/size_8dp">
 
                             <ImageView
-                                android:background="@drawable/icon_buy_success"
                                 android:layout_width="@dimen/size_12dp"
+                                android:layout_height="@dimen/size_12dp"
                                 android:layout_marginRight="@dimen/size_2dp"
-                                android:layout_height="@dimen/size_12dp"/>
+                                android:background="@drawable/icon_buy_success"/>
 
                             <TextView
                                 android:id="@+id/tv_fund_type"
-                                android:gravity="center_vertical"
                                 android:layout_width="@dimen/size_0dp"
                                 android:layout_height="@dimen/size_32dp"
                                 android:layout_weight="1"
+                                android:gravity="center_vertical"
                                 android:paddingBottom="@dimen/size_6dp"
                                 android:paddingTop="@dimen/size_6dp"
-                                android:text="基建发力 指数型"
+                                android:text="@string/txt_excellent_shares_mix_fund"
                                 android:textColor="@color/text_subtitle_color"
                                 android:textSize="@dimen/font_12"/>
 
@@ -281,14 +283,14 @@
                                 <!--style="?android:attr/ratingBarStyleSmall"-->
                                 <!--style="@style/RatingBar_Small"-->
                                 <RatingBar
-                                    android:padding="@dimen/size_0dp"
                                     android:id="@+id/rating_bar"
                                     style="@style/RatingBar_Small"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
                                     android:numStars="5"
-                                    android:rating="3"
-                                    android:layout_marginLeft="5dp" >
+                                    android:padding="@dimen/size_0dp"
+                                    android:rating="3">
                                 </RatingBar>
 
                             </LinearLayout>
@@ -319,61 +321,82 @@
 
                     </LinearLayout>
 
-                    <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-                        app:topAndBottomPadding="@dimen/size_12dp"
-                        android:background="@color/white"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/size_8dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:isShowArrowView="false"
-                        app:leftText="@string/txt_fund_archives"/>
-
-                    <include layout="@layout/layout_line_horizontal"/>
-
-                    <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-                        app:topAndBottomPadding="@dimen/size_12dp"
-                        android:layout_width="match_parent"
-                        android:id="@+id/item_fund_manager"
-                        android:layout_height="wrap_content"
                         android:background="@color/white"
-                        app:isShowArrowView="false"
-                        app:leftText="@string/txt_fund_manager"/>
+                        android:orientation="vertical">
 
-                    <include layout="@layout/layout_line_horizontal"/>
+                        <TextView
+                            style="@style/tv_title_style"
+                            android:text="@string/txt_invest_strategy"
+                            android:textStyle="bold"/>
 
-                    <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-                        app:topAndBottomPadding="@dimen/size_12dp"
+                        <include layout="@layout/layout_line_horizontal"/>
+
+                        <TextView
+                            android:id="@+id/tv_invest_strategy"
+                            style="@style/tv_title_style"
+                            android:padding="@dimen/size_8dp"
+                            android:text="@string/txt_test_content"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:background="@color/white"
-                        android:id="@+id/item_fund_company"
                         android:layout_height="wrap_content"
-                        app:isShowArrowView="false"
-                        app:leftText="@string/txt_fund_company"/>
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:background="@color/white"
+                        android:descendantFocusability="blocksDescendants"
+                        android:orientation="vertical">
 
-                    <include layout="@layout/layout_line_horizontal"/>
+                        <TextView
+                            style="@style/tv_title_style"
+                            android:text="@string/txt_asset_allocation"
+                            android:textStyle="bold"/>
+
+                        <!--<include layout="@layout/layout_line_horizontal"/>-->
+
+                        <com.kscf.app.android.widget.LxRecyclerView
+                            android:id="@+id/recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"/>
+
+                        <include layout="@layout/layout_line_horizontal"/>
 
 
-                    <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-                        app:topAndBottomPadding="@dimen/size_12dp"
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:background="@color/white"
-                        android:id="@+id/item_fund_scale"
                         android:layout_height="wrap_content"
-                        app:isShowArrowView="false"
-                        app:leftText="@string/txt_fund_scale"/>
-
-                    <include layout="@layout/layout_line_horizontal"/>
-
-                    <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-                        app:topAndBottomPadding="@dimen/size_12dp"
-                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/size_8dp"
                         android:background="@color/white"
-                        android:id="@+id/item_establish_time"
-                        android:layout_height="wrap_content"
-                        app:rightText="@string/txt_test_date"
-                        app:rightTextColor="@color/text_title_color"
-                        app:isShowArrowView="false"
-                        app:leftText="@string/txt_establish_time"/>
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/tv_title_style"
+                            android:text="@string/txt_cost_explain"
+                            android:textStyle="bold"/>
+
+                        <include layout="@layout/layout_line_horizontal"/>
+
+
+                        <TextView
+                            android:id="@+id/tv_cost_explain"
+                            style="@style/tv_title_style"
+                            android:layout_marginBottom="@dimen/size_8dp"
+                            android:layout_marginTop="@dimen/size_8dp"
+                            android:padding="@dimen/size_8dp"
+                            android:text="@string/txt_test_content"/>
+
+
+                    </LinearLayout>
+
+
                 </LinearLayout><!--end内容-->
             </RelativeLayout>
         </ScrollView>

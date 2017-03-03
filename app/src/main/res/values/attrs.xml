@@ -17,7 +17,7 @@
         <attr name="leftText" format="string"/>
         <attr name="rightText" format="string"/>
         <attr name="textSize" format="reference"/>
-        <attr name="rightTextSize" format="integer"/>
+        <attr name="rightTextSize" format="reference"/>
         <attr name="leftTextSize" format="reference"/>
         <attr name="rightTextColor" format="reference"/>
         <attr name="leftTextColor" format="reference"/>
@@ -28,6 +28,7 @@
         <attr name="isShowArrowView" format="boolean"/>
         <attr name="isShowTooBarLeftView" format="boolean"/>
         <attr name="maxLength" format="integer"/>
+        <attr name="rightIndex" format="integer"/>
 
     </declare-styleable>
 

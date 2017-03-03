@@ -7,14 +7,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:paddingBottom="@dimen/size_18dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/size_18dp">
 
-        <com.bigkoo.convenientbanner.ConvenientBanner
+        <!--<com.bigkoo.convenientbanner.ConvenientBanner
             android:id="@+id/convenientBanner"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_180dp"
-            app:canLoop="true"/>
+            app:canLoop="true"/>-->
+        <ImageView
+            android:id="@+id/iv_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/index_banner"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,9 +61,9 @@
         <Button
             android:id="@+id/btn_confirm"
             style="@style/item_btn_style"
+            android:layout_marginBottom="@dimen/size_12dp"
             android:layout_marginLeft="@dimen/size_28dp"
             android:layout_marginRight="@dimen/size_28dp"
-            android:layout_marginBottom="@dimen/size_12dp"
             android:layout_marginTop="@dimen/size_12dp"
             android:background="@drawable/item_radius_btn_red_selector"
             android:text="@string/btn_txt_buy_now"/>

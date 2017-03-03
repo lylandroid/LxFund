@@ -46,9 +46,9 @@ public class HomeFundSelectedFragment extends BaseFragment<HomeFragmentFundSelec
     @Override
     public void initView() {
         mLoadingPage.showPage(LoadingPage.STATE_SUCCEED);
-        GlideUtils.load(this
+        /*GlideUtils.load(this
                 , mDataBinding.includeTop.ivBanner
-                , null, R.drawable.index_banner);
+                , null, R.drawable.index_banner);*/
 
     }
 

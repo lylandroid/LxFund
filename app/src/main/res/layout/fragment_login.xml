@@ -7,12 +7,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.kscf.app.android.widget.DefToolBar
+        <!--<com.kscf.app.android.widget.DefToolBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:background="@color/blue"
             app:isShowReturnView="true"
-            app:title="@string/txt_login_register_err"/>
+            app:title="@string/txt_login_register_err"/>-->
 
         <View
             android:layout_width="@dimen/size_1dp"
@@ -100,13 +100,51 @@
                 android:id="@+id/item_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:inputType="number"
-                app:maxLength="6"
                 app:hintText="@string/txt_please_input_verification_code"
-                app:leftText="@string/txt_verification_code"/>
+                app:inputType="number"
+                app:leftText="@string/txt_verification_code"
+                app:maxLength="6"/>
 
             <include layout="@layout/layout_line_horizontal"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_spannable_read_protocol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/size_12dp"
+                app:errorTextAppearance="@style/text_input_layout_err_style"
+                app:hintAnimationEnabled="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_marginTop="@dimen/size_2dp"
+                        android:id="@+id/iv_check_agreement"
+                        android:layout_width="@dimen/size_16dp"
+                        android:layout_height="@dimen/size_16dp"
+                        android:layout_marginRight="@dimen/size_10dp"
+                        android:background="@drawable/item_checkbox_square"/>
+
+                    <com.framework.view.SpannableColorSizeTextView
+                        android:id="@+id/tv_spannable_read_protocol"
+                        style="@style/tv_subtitle_style"
+                        android:gravity="left"
+                        android:lineSpacingExtra="@dimen/size_6dp"
+                        android:padding="@dimen/size_0dp"
+                        android:text="@string/txt_read_protocol_and_agree"
+                        android:textSize="@dimen/font_14"
+                        app:rightIndex="7"
+                        app:rightTextColor="@color/blue"/>
+                </LinearLayout>
+
+            </android.support.design.widget.TextInputLayout>
         </LinearLayout>
+
 
         <View
             android:layout_width="@dimen/size_1dp"
@@ -118,7 +156,7 @@
             style="@style/item_btn_style"
             android:layout_marginTop="@dimen/size_0dp"
             android:background="@drawable/item_radius_btn_login_selector"
-            android:text="@string/txt_login"/>
+            android:text="@string/txt_next_step"/>
 
         <TextView
             android:id="@+id/tv_login_mode"
@@ -132,32 +170,31 @@
             android:textColor="@color/colorButtonSubmitSelect"
             android:textSize="@dimen/font_12"/>
 
-        <TextView
+        <!--<TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/txt_customer_service_hotline"
             android:textColor="@color/text_title_color"
             android:layout_marginTop="@dimen/size_12dp"
-            android:textSize="@dimen/size_12dp"/>
+            android:textSize="@dimen/size_12dp"/>-->
 
         <View
             android:layout_width="@dimen/size_1dp"
             android:layout_height="0dp"
             android:layout_weight="6"/>
 
-     <!--   <Button
-            android:id="@+id/test"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/txt_account_settings"/>
+        <!--   <Button
+               android:id="@+id/test"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="@string/txt_account_settings"/>
 
-        <Button
-            android:id="@+id/to_main"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="to main"/>-->
-
+           <Button
+               android:id="@+id/to_main"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="to main"/>-->
 
 
     </LinearLayout>

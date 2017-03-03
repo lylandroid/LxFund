@@ -20,8 +20,8 @@
 
         <ImageView
             android:id="@+id/iv_banner"
-            android:background="@color/colorAccent"
-            android:minHeight="@dimen/size_100dp"
+            android:background="@drawable/index_banner"
+            android:minHeight="@dimen/size_120dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

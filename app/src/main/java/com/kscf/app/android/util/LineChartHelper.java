@@ -53,12 +53,15 @@ public class LineChartHelper {
             leftAxis.setTextSize(8f);
             leftAxis.setTextColor(Color.DKGRAY);
             leftAxis.setValueFormatter(new PercentFormatter());
+            leftAxis.setDrawGridLines(false);
 
             XAxis xAxis = mChart.getXAxis();
             xAxis.setTypeface(mTf);
             xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
             xAxis.setTextSize(8f);
             xAxis.setTextColor(Color.DKGRAY);
+            xAxis.setDrawGridLines(false);
+            xAxis.setDrawAxisLine(true);
 
             xAxis.setValueFormatter(new IAxisValueFormatter() {
 

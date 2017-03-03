@@ -6,17 +6,20 @@ import com.kscf.app.android.di.mode.FragmentModule;
 import com.kscf.app.android.di.scope.FragmentScope;
 import com.kscf.app.android.ui.fragment.AccountSettingsFragment;
 import com.kscf.app.android.ui.fragment.ContactAddressFragment;
+import com.kscf.app.android.ui.fragment.DetailsHomeFundGroupFragment;
 import com.kscf.app.android.ui.fragment.DetailsHomeFundSelectedFragment;
 import com.kscf.app.android.ui.fragment.FundFragment;
 import com.kscf.app.android.ui.fragment.HomeFundGroupFragment;
 import com.kscf.app.android.ui.fragment.HomeFundSelectedFragment;
 import com.kscf.app.android.ui.fragment.HomeMyAccountFragment;
 import com.kscf.app.android.ui.fragment.LoginFragment;
+import com.kscf.app.android.ui.fragment.LxYingFragment;
 import com.kscf.app.android.ui.fragment.MessageFragment;
 import com.kscf.app.android.ui.fragment.MyBankCardFragment;
 import com.kscf.app.android.ui.fragment.QuickAccountFragment01;
 import com.kscf.app.android.ui.fragment.QuickAccountFragment02;
 import com.kscf.app.android.ui.fragment.QuickAccountFragment03;
+import com.kscf.app.android.ui.fragment.RedPackageFragment;
 import com.kscf.app.android.ui.fragment.ResetTransactionPassFragment;
 import com.kscf.app.android.ui.fragment.RiskEvaluationFragment;
 import com.kscf.app.android.ui.fragment.UpdateLoginPassFragment;
@@ -66,8 +69,14 @@ public interface FragmentComponent {
     void inject(QuickAccountFragment02 fragment);
 
     void inject(QuickAccountFragment03 fragment);
-    //基金详情Fragment
+    //基金精选详情Fragment
     void inject(DetailsHomeFundSelectedFragment fragment);
+    //基金精选详情Fragment
+    void inject(DetailsHomeFundGroupFragment fragment);
+    //领先盈Fragment
+    void inject(LxYingFragment fragment);
+    //红包Fragment
+    void inject(RedPackageFragment fragment);
 
 
 

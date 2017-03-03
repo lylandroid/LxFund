@@ -1,5 +1,6 @@
 package com.kscf.app.android.ui.fragment;
 
+import android.databinding.ViewDataBinding;
 import android.view.View;
 
 import com.android.databinding.library.baseAdapters.BR;
@@ -14,6 +15,7 @@ import com.kscf.app.android.model.bean.HomeFundSelectedRecyclerBean;
 import com.kscf.app.android.model.bean.rxbus.LoginSuccessBusBean;
 import com.kscf.app.android.presenter.HomeFundGroupPresenter;
 import com.kscf.app.android.presenter.contract.HomeFundGroupContract;
+import com.kscf.app.android.ui.activity.DetailsActivity;
 import com.kscf.app.android.ui.activity.MainActivity;
 import com.kscf.app.android.ui.holder.BannerImageHolderView;
 import com.kscf.app.android.util.LxSPUtils;
@@ -27,7 +29,7 @@ import java.util.List;
  * 主页基金组合Fragment
  */
 
-public class HomeFundGroupFragment extends BaseFragment<HomeFragmentFundGroupBinding,HomeFundGroupPresenter> implements HomeFundGroupContract.View{
+public class HomeFundGroupFragment extends BaseFragment<HomeFragmentFundGroupBinding, HomeFundGroupPresenter> implements HomeFundGroupContract.View {
     @Override
     public int getLayoutResId() {
         return R.layout.home_fragment_fund_group;
@@ -62,33 +64,37 @@ public class HomeFundGroupFragment extends BaseFragment<HomeFragmentFundGroupBin
         new DataBindingRecyclerAdapter(mDataBinding.linearRecyclerView
                 , BR.itemData
                 , R.layout.item_recycler_home_fund_selected
-                , lists);
-        mDataBinding.includeTop.btnConfirm.setOnClickListener(new View.OnClickListener() {
+                , lists, true) {
+            @Override
+            public void onItemClick(int position, View v, ViewDataBinding dataBinding) {
+                DetailsActivity.addFragmentToDetailsActivity(mActivity, DetailsHomeFundGroupFragment.class.hashCode(), true);
+            }
+        };
+        /*mDataBinding.includeTop.btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 LxSPUtils.clearAll(mActivity);
             }
-        });
+        });*/
 
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        mDataBinding.includeTop.convenientBanner.startTurning(3000);
+       /* mDataBinding.includeTop.convenientBanner.startTurning(3000);*/
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        mDataBinding.includeTop.convenientBanner.stopTurning();
+        /*mDataBinding.includeTop.convenientBanner.stopTurning();*/
     }
-
 
 
     @Override
     public void showBanner(List<HomeFundSelectedBannerBean> bannerBeans) {
-        mDataBinding.includeTop.convenientBanner.setPages(
+        /*mDataBinding.includeTop.convenientBanner.setPages(
                 new CBViewHolderCreator<BannerImageHolderView>() {
                     @Override
                     public BannerImageHolderView createHolder() {
@@ -98,6 +104,6 @@ public class HomeFundGroupFragment extends BaseFragment<HomeFragmentFundGroupBin
                 //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
                 .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
                 //设置指示器的方向
-                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.CENTER_HORIZONTAL);
+                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.CENTER_HORIZONTAL);*/
     }
 }

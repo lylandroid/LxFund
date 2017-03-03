@@ -32,6 +32,7 @@
     <dimen name="size_24dp">24dp</dimen>
     <dimen name="size_28dp">28dp</dimen>
     <dimen name="size_32dp">32dp</dimen>
+    <dimen name="size_36dp">36dp</dimen>
     <dimen name="size_38dp">38dp</dimen>
     <dimen name="size_42dp">42dp</dimen>
     <dimen name="size_48dp">48dp</dimen>
@@ -51,8 +52,10 @@
     <dimen name="content_padding">2dp</dimen>
 
     <!--font sp-->
+    <dimen name="font_6">6sp</dimen>
+    <dimen name="font_8">8sp</dimen>
     <dimen name="font_10">10sp</dimen>
-    <dimen name="font_112">112sp</dimen>
+    <dimen name="font_11">11sp</dimen>
     <dimen name="font_12">12sp</dimen>
     <dimen name="font_13">13sp</dimen>
     <dimen name="font_14">14sp</dimen>
@@ -66,6 +69,5 @@
     <dimen name="font_4">4sp</dimen>
     <dimen name="font_45">45sp</dimen>
     <dimen name="font_56">56sp</dimen>
-    <dimen name="font_6">6sp</dimen>
-    <dimen name="font_8">8sp</dimen>
+
 </resources>
