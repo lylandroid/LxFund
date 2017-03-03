@@ -11,14 +11,14 @@
         <com.kscf.app.android.widget.DefToolBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:background="@color/blue"
+            app:background="@color/colorBackgroundBlue2"
             app:isShowReturnView="true"
             app:title="@string/txt_ling_xian_ying"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/blue"
+            android:background="@color/colorBackgroundBlue2"
             android:orientation="vertical">
 
 
