@@ -13,13 +13,13 @@ doc
     
 show
 ======
-![image](jitpack.png/image/add_contunt_address.png)
-![image](jitpack.png/image/detail_fragment.png)
-![image](jitpack.png/image/dialog_zhifu.png)
-![image](jitpack.png/image/home_group.png)
-![image](jitpack.png/image/home_my.png)
-![image](jitpack.png/image/home_select_fund.png)
-![image](jitpack.png/image/list_more.png)
-![image](jitpack.png/image/save_lianxi_address.png)
-![image](jitpack.png/image/udpate_pass.png)
-![image](jitpack.png/update_pass2.png)
+![image](doc/image/add_contunt_address.png)
+![image](doc/image/detail_fragment.png)
+![image](doc/image/dialog_zhifu.png)
+![image](doc/image/home_group.png)
+![image](doc/image/home_my.png)
+![image](doc/image/home_select_fund.png)
+![image](doc/image/list_more.png)
+![image](doc/image/save_lianxi_address.png)
+![image](doc/image/udpate_pass.png)
+![image](doc/image/update_pass2.png)
