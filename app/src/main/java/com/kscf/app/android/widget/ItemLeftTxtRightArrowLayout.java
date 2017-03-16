@@ -70,14 +70,14 @@ public class ItemLeftTxtRightArrowLayout extends RelativeLayout {
     private void initChildView() {
         //leftTextView
         TextView leftTextView = new TextView(getContext());
-        LayoutParams leftTextLayoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        LayoutParams leftTextLayoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         leftTextLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
         leftTextLayoutParams.leftMargin = mDistance12dp;
         leftTextLayoutParams.topMargin = mTopAndBottomPaddingSize;
         leftTextLayoutParams.bottomMargin = mTopAndBottomPaddingSize;
         leftTextView.setLayoutParams(leftTextLayoutParams);
         if (mLeftTextColorResId == 0) {
-            leftTextView.setTextColor(getResources().getColor(R.color.text_title_color));
+            leftTextView.setTextColor(getResources().getColor(R.color.txt_title_color));
         } else {
             leftTextView.setTextColor(getResources().getColor(mLeftTextColorResId));
         }
@@ -96,7 +96,7 @@ public class ItemLeftTxtRightArrowLayout extends RelativeLayout {
             Button buttonArrow = new Button(getContext());
             buttonArrow.setId(R.id.iv_right_arrow);
             buttonArrow.setBackgroundResource(R.drawable.icon_right_arrow);
-            LayoutParams arrowLayoutParams = new LayoutParams(mDistance8dp, SizeUtils.dp2px(getContext(), 12));
+            LayoutParams arrowLayoutParams = new LayoutParams(mDistance8dp, mDistance12dp);
             arrowLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
             arrowLayoutParams.setMargins(mDistance8dp, mDistance16dp, mDistance12dp, mDistance16dp);
             arrowLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
@@ -107,7 +107,7 @@ public class ItemLeftTxtRightArrowLayout extends RelativeLayout {
 
         //rightTextView
         mRightTextView = new TextView(getContext());
-        LayoutParams rightTextLayoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        LayoutParams rightTextLayoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         //int rightTextMargins = SizeUtils.dp2px(getContext(), 3);
         if (mIsShowArrowView) {
             rightTextLayoutParams.addRule(RelativeLayout.LEFT_OF, R.id.iv_right_arrow);
@@ -120,7 +120,7 @@ public class ItemLeftTxtRightArrowLayout extends RelativeLayout {
 
 
         if (mRightTextColorResId == 0) {
-            mRightTextView.setTextColor(getResources().getColor(R.color.text_item_right_color));
+            mRightTextView.setTextColor(getResources().getColor(R.color.txt_item_right_color));
         } else {
             mRightTextView.setTextColor(getResources().getColor(mRightTextColorResId));
         }

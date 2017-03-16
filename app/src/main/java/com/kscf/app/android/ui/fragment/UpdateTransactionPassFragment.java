@@ -64,4 +64,8 @@ public class UpdateTransactionPassFragment extends BaseFragment<FragmentUpdateTr
     }
 
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
 }

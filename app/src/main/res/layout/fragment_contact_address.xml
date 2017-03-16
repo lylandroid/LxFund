@@ -14,37 +14,78 @@
             android:layout_height="wrap_content"
             app:background="@color/blue"
             app:isShowReturnView="true"
-            app:title="@string/txt_contact_mode"/>
+            app:title="@string/txt_contact_address"/>
 
         <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
             android:id="@+id/item_province_city_area"
             android:layout_width="match_parent"
-            app:leftTextColor="@color/text_subtitle_color"
             android:layout_height="@dimen/size_48dp"
             android:background="@drawable/item_def_white_select_gray_selector"
-            app:leftText="@string/txt_province_city_area"/>
+            app:leftText="@string/txt_province_city_area"
+            app:leftTextColor="@color/txt_subtitle_color"/>
 
         <include layout="@layout/layout_line_horizontal"/>
 
+
         <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-            app:leftTextColor="@color/text_subtitle_color"
             android:id="@+id/item_street"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_48dp"
             android:background="@drawable/item_def_white_select_gray_selector"
-            app:leftText="@string/txt_street"/>
+            app:leftText="@string/txt_street"
+            app:leftTextColor="@color/txt_subtitle_color"/>
 
-        <include layout="@layout/layout_line_horizontal"/>
 
-        <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-            app:leftTextColor="@color/text_subtitle_color"
-            android:id="@+id/item_detailed_address"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_48dp"
-            android:background="@drawable/item_def_white_select_gray_selector"
-            app:leftText="@string/txt_detailed_address"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
 
-        <include layout="@layout/layout_line_horizontal"/>
+            <TextView
+                style="@style/tv_title_style"
+                android:text="@string/txt_detailed_address"/>
+
+            <EditText
+                android:id="@+id/et_details_address"
+                style="@style/editTextDefStyle"
+                android:layout_marginBottom="@dimen/size_8dp"
+                android:layout_marginLeft="@dimen/size_8dp"
+                android:layout_marginRight="@dimen/size_8dp"
+                android:background="@drawable/item_radius_border_gray_shape_selector"
+                android:gravity="left"
+                android:hint="@string/txt_please_input_detailed_address"
+                android:lines="6"
+                android:maxLength="1000"
+                android:maxLines="10"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/size_3dp"
+            android:paddingTop="@dimen/size_3dp">
+
+
+            <TextView
+                style="@style/tv_title_style"
+                android:layout_centerVertical="true"
+                android:text="@string/txt_setting_def"/>
+
+
+            <com.framework.view.SwitchButton
+                android:id="@+id/switch_button"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_32dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/size_8dp"/>
+
+        </RelativeLayout>
 
 
         <Button

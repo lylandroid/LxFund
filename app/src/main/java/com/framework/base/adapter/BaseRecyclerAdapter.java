@@ -3,7 +3,7 @@ package com.framework.base.adapter;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-import com.kscf.app.android.base.BaseRecyclerViewHolder;
+import com.framework.holder.BaseRecyclerViewHolder;
 import com.framework.util.L;
 
 import java.lang.reflect.Constructor;

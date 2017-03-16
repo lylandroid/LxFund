@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/txt_setting_transaction_password"
-                android:textColor="@color/text_title_color"
+                android:textColor="@color/txt_title_color"
                 android:textSize="@dimen/size_14dp"/>
 
 
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_18dp"
                 android:text="@string/txt_confirm_transaction_password"
-                android:textColor="@color/text_title_color"
+                android:textColor="@color/txt_title_color"
                 android:textSize="@dimen/size_14dp"/>
 
             <com.framework.jungly.gridpasswordview.GridPasswordView

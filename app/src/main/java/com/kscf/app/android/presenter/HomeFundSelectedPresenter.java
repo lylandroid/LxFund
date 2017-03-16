@@ -1,18 +1,13 @@
 package com.kscf.app.android.presenter;
 
 import com.kscf.app.android.R;
-import com.kscf.app.android.app.Apis;
 import com.kscf.app.android.base.RxPresenter;
 import com.kscf.app.android.model.bean.HomeFundSelectedBannerBean;
-import com.kscf.app.android.model.http.HttpSubscriber;
 import com.kscf.app.android.model.http.RetrofitHelper;
 import com.kscf.app.android.presenter.contract.HomeFundSelectedContract;
-import com.framework.util.L;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -52,10 +47,10 @@ public class HomeFundSelectedPresenter extends RxPresenter<HomeFundSelectedContr
 //        Map<String,Object> paramMap = new HashMap<>();
 //        paramMap.put("type", "1");
 //        addSubscriber(mRetrofitHelper.getAsync(Apis.api_fund_selected_banner, null, paramMap, httpSubscriber));
-        /*List<HomeFundSelectedBannerBean> bannerBeans = new ArrayList<>(1);
+        List<HomeFundSelectedBannerBean> bannerBeans = new ArrayList<>(1);
         HomeFundSelectedBannerBean bannerBean = new HomeFundSelectedBannerBean();
         bannerBean.imgResId = R.drawable.index_banner;
         bannerBeans.add(bannerBean);
-        mView.showBanner(bannerBeans);*/
+        mView.showBanner(bannerBeans);
     }
 }

@@ -43,8 +43,8 @@
                 android:ellipsize="end"
                 android:lineSpacingExtra="@dimen/size_6dp"
                 android:text="@{itemData.des}"
-                android:textColor="@color/text_title_color"
-                android:textSize="@dimen/font_16"/>
+                android:textColor="@color/txt_title_color"
+                android:textSize="@dimen/font_13"/>
 
         </RelativeLayout>
 

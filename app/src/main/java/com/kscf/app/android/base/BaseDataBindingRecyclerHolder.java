@@ -27,7 +27,7 @@ public abstract class BaseDataBindingRecyclerHolder<DataBinding extends ViewData
         this(LayoutInflater.from(parentView.getContext()).inflate(itemResId, parentView, false), isItemOnClick);
     }
 
-    public final void onBindData(int position, int dataBindingBRVariableId, T t) {
+    public void onBindData(int position, int dataBindingBRVariableId, T t) {
         mDataBinding.setVariable(dataBindingBRVariableId, t);
         mDataBinding.executePendingBindings();
     }

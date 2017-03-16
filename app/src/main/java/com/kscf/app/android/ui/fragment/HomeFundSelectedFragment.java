@@ -1,25 +1,20 @@
 package com.kscf.app.android.ui.fragment;
 
 import android.databinding.ViewDataBinding;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.android.databinding.library.baseAdapters.BR;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
-import com.framework.base.listener.RecyclerViewItemOnClickListener;
 import com.kscf.app.android.R;
 import com.kscf.app.android.base.BaseFragment;
 import com.kscf.app.android.base.adapter.DataBindingRecyclerAdapter;
 import com.kscf.app.android.databinding.HomeFragmentFundSelectedBinding;
 import com.kscf.app.android.model.bean.HomeFundSelectedBannerBean;
 import com.kscf.app.android.model.bean.HomeFundSelectedRecyclerBean;
-import com.kscf.app.android.model.bean.rxbus.LoginSuccessBusBean;
-import com.kscf.app.android.other.GlideUtils;
 import com.kscf.app.android.presenter.HomeFundSelectedPresenter;
 import com.kscf.app.android.presenter.contract.HomeFundSelectedContract;
 import com.kscf.app.android.ui.activity.DetailsActivity;
-import com.kscf.app.android.ui.activity.MainActivity;
 import com.kscf.app.android.ui.holder.BannerImageHolderView;
 import com.kscf.app.android.widget.LoadingPage;
 
@@ -46,10 +41,7 @@ public class HomeFundSelectedFragment extends BaseFragment<HomeFragmentFundSelec
     @Override
     public void initView() {
         mLoadingPage.showPage(LoadingPage.STATE_SUCCEED);
-        /*GlideUtils.load(this
-                , mDataBinding.includeTop.ivBanner
-                , null, R.drawable.index_banner);*/
-
+        //mDataBinding.includeTop.ivBanner.loadImage(null, R.drawable.index_banner);
     }
 
     @Override
@@ -82,19 +74,19 @@ public class HomeFundSelectedFragment extends BaseFragment<HomeFragmentFundSelec
     @Override
     public void onResume() {
         super.onResume();
-        //mDataBinding.includeTop.convenientBanner.startTurning(3000);
+        mDataBinding.includeTop.convenientBanner.startTurning(3000);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        //mDataBinding.includeTop.convenientBanner.stopTurning();
+        mDataBinding.includeTop.convenientBanner.stopTurning();
     }
 
     @Override
     public void showBanner(List<HomeFundSelectedBannerBean> bannerBeans) {
-        /*mDataBinding.includeTop.convenientBanner.setPages(
-                new CBViewHolderCreator<BannerImageHolderView>() {
+        mDataBinding.includeTop.convenientBanner.setPages(
+                new CBViewHolderCreator() {
                     @Override
                     public BannerImageHolderView createHolder() {
                         return new BannerImageHolderView();
@@ -103,7 +95,7 @@ public class HomeFundSelectedFragment extends BaseFragment<HomeFragmentFundSelec
                 //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
                 .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
                 //设置指示器的方向
-                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.CENTER_HORIZONTAL);*/
+                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.CENTER_HORIZONTAL);
     }
 
 

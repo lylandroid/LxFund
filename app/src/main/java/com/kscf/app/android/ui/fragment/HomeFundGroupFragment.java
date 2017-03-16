@@ -4,21 +4,15 @@ import android.databinding.ViewDataBinding;
 import android.view.View;
 
 import com.android.databinding.library.baseAdapters.BR;
-import com.bigkoo.convenientbanner.ConvenientBanner;
-import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.kscf.app.android.R;
 import com.kscf.app.android.base.BaseFragment;
 import com.kscf.app.android.base.adapter.DataBindingRecyclerAdapter;
 import com.kscf.app.android.databinding.HomeFragmentFundGroupBinding;
 import com.kscf.app.android.model.bean.HomeFundSelectedBannerBean;
 import com.kscf.app.android.model.bean.HomeFundSelectedRecyclerBean;
-import com.kscf.app.android.model.bean.rxbus.LoginSuccessBusBean;
 import com.kscf.app.android.presenter.HomeFundGroupPresenter;
 import com.kscf.app.android.presenter.contract.HomeFundGroupContract;
 import com.kscf.app.android.ui.activity.DetailsActivity;
-import com.kscf.app.android.ui.activity.MainActivity;
-import com.kscf.app.android.ui.holder.BannerImageHolderView;
-import com.kscf.app.android.util.LxSPUtils;
 import com.kscf.app.android.widget.LoadingPage;
 
 import java.util.ArrayList;

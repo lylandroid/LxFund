@@ -51,7 +51,7 @@ public class SpannableColorSizeTextView extends TextView {
 
         final TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.LxAttrs, defStyleAttr, 0);
-        int defColor = getResources().getColor(R.color.text_subtitle_color);
+        int defColor = getResources().getColor(R.color.txt_subtitle_color);
 
         mRightIndex = a.getInt(R.styleable.LxAttrs_rightIndex, 0);
 

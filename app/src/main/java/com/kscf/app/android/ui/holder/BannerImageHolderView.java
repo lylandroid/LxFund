@@ -5,9 +5,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bigkoo.convenientbanner.holder.Holder;
-import com.bumptech.glide.Glide;
 import com.kscf.app.android.model.bean.HomeFundSelectedBannerBean;
-import com.kscf.app.android.other.GlideUtils;
+import com.kscf.app.android.util.framing.LoadImageUtils;
 
 public class BannerImageHolderView implements Holder<HomeFundSelectedBannerBean> {
     private ImageView imageView;
@@ -15,13 +14,13 @@ public class BannerImageHolderView implements Holder<HomeFundSelectedBannerBean>
     @Override
     public View createView(Context context) {
         imageView = new ImageView(context);
-        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+        /*imageView.setScaleType(ImageView.ScaleType.FIT_XY);*/
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         return imageView;
     }
 
     @Override
     public void UpdateUI(Context context, int position, HomeFundSelectedBannerBean bannerBean) {
-        //Glide.with(context).load(bannerBean.imgUrl).into(imageView);
-        GlideUtils.load(context, imageView, bannerBean.imgUrl, bannerBean.imgResId);
+        LoadImageUtils.load(context, imageView, bannerBean.imgUrl, bannerBean.imgResId);
     }
 }

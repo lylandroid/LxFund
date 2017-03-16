@@ -10,14 +10,24 @@ import com.kscf.app.android.app.App;
 import com.kscf.app.android.app.LxConstants;
 import com.kscf.app.android.base.BaseActivity;
 import com.kscf.app.android.base.BaseFragment;
+import com.kscf.app.android.ui.fragment.AccountSettingsFragment;
+import com.kscf.app.android.ui.fragment.ContactAddressFragment;
 import com.kscf.app.android.ui.fragment.DetailsHomeFundGroupFragment;
 import com.kscf.app.android.ui.fragment.DetailsHomeFundSelectedFragment;
 import com.kscf.app.android.ui.fragment.FundFragment;
 import com.kscf.app.android.ui.fragment.LxYingFragment;
 import com.kscf.app.android.ui.fragment.MessageFragment;
+import com.kscf.app.android.ui.fragment.MoreInformationFragment;
 import com.kscf.app.android.ui.fragment.MyBankCardFragment;
+import com.kscf.app.android.ui.fragment.MyContactAddressFragment;
+import com.kscf.app.android.ui.fragment.MyContactPhoneFragment;
 import com.kscf.app.android.ui.fragment.RedPackageFragment;
 import com.kscf.app.android.ui.fragment.RegisterAgreementFragment;
+import com.kscf.app.android.ui.fragment.ResetTransactionPassFragment;
+import com.kscf.app.android.ui.fragment.RiskEvaluationFragment;
+import com.kscf.app.android.ui.fragment.SettingsTransactionPassFragment;
+import com.kscf.app.android.ui.fragment.UpdateLoginPassFragment;
+import com.kscf.app.android.ui.fragment.UpdateTransactionPassFragment;
 import com.kscf.app.android.widget.LoadingPage;
 
 /**
@@ -50,10 +60,20 @@ public class DetailsActivity extends BaseActivity {
 
     @Override
     public void initEventAndData() {
+        toJump();
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        toJump();
+    }
+
+    public void toJump() {
         int fragmentHashCodeValue = getIntentFragmentHashCodeValue();
         BaseFragment showFragment = newFragment(fragmentHashCodeValue);
         showHideFragment(showFragment, null);
-
     }
 
     public int getIntentFragmentHashCodeValue() {
@@ -84,6 +104,26 @@ public class DetailsActivity extends BaseActivity {
             fragment = LxYingFragment.newInstance();
         } else if (fragmentId == RedPackageFragment.class.hashCode()) {
             fragment = RedPackageFragment.newInstance();
+        } else if (fragmentId == AccountSettingsFragment.class.hashCode()) {
+            fragment = AccountSettingsFragment.newInstance();
+        } else if (fragmentId == MoreInformationFragment.class.hashCode()) {
+            fragment = MoreInformationFragment.newInstance();
+        } else if (fragmentId == MyContactPhoneFragment.class.hashCode()) {
+            fragment = MyContactPhoneFragment.newInstance();
+        } else if (fragmentId == MyContactAddressFragment.class.hashCode()) {
+            fragment = MyContactAddressFragment.newInstance();
+        } else if (fragmentId == ContactAddressFragment.class.hashCode()) {
+            fragment = ContactAddressFragment.newInstance();
+        } else if (fragmentId == SettingsTransactionPassFragment.class.hashCode()) {
+            fragment = SettingsTransactionPassFragment.newInstance();
+        } else if (fragmentId == UpdateLoginPassFragment.class.hashCode()) {
+            fragment = UpdateLoginPassFragment.newInstance();
+        }else if (fragmentId == UpdateTransactionPassFragment.class.hashCode()) {
+            fragment = UpdateTransactionPassFragment.newInstance();
+        } else if (fragmentId == ResetTransactionPassFragment.class.hashCode()) {
+            fragment = ResetTransactionPassFragment.newInstance();
+        }else if (fragmentId == RiskEvaluationFragment.class.hashCode()) {
+            fragment = RiskEvaluationFragment.newInstance();
         }
         return fragment;
     }

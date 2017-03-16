@@ -1,10 +1,8 @@
 package com.kscf.app.android.other;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 /**

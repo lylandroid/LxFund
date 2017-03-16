@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activityBackgroundColor"
+        android:orientation="vertical">
+
+        <com.kscf.app.android.widget.DefToolBar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:background="@color/blue"
+            app:isShowReturnView="true"
+            app:title="@string/txt_my_contact_phone"/>
+
+
+        <com.kscf.app.android.widget.LxRecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_0dp"
+            android:layout_weight="1"/>
+
+        <Button
+            style="@style/item_btn_style"
+            android:layout_margin="@dimen/size_0dp"
+            android:background="@drawable/item_def_yellow_select_shallow_selector"
+            android:text="@string/txt_add_contact_mode"/>
+
+
+    </LinearLayout>
+</layout>

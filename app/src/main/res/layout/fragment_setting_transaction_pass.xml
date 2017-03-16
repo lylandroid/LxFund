@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--修改交易密码-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activityBackgroundColor"
+        android:orientation="vertical">
+
+        <com.kscf.app.android.widget.DefToolBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:background="@color/blue"
+            app:isShowReturnView="true"
+            app:title="@string/txt_setting_transaction_password"/>
+
+        <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+            android:id="@+id/item_modify_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_def_white_select_gray_selector"
+            app:isShowArrowView="true"
+            app:leftText="@string/txt_i_think_modify_transaction_pass"/>
+
+        <include layout="@layout/layout_line_horizontal"/>
+
+        <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+            android:id="@+id/item_forget_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_def_white_select_gray_selector"
+            app:isShowArrowView="true"
+            app:leftText="@string/txt_i_forget_transaction_pass"/>
+    </LinearLayout>
+</layout>

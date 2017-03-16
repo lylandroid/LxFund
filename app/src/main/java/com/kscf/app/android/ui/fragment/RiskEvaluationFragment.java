@@ -4,6 +4,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.framework.util.L;
 import com.kscf.app.android.BR;
 import com.kscf.app.android.R;
 import com.kscf.app.android.base.BaseFragment;
@@ -96,6 +97,8 @@ public class RiskEvaluationFragment extends BaseFragment<FragmentRiskEvaluationB
 
     class RiskEvaluationAdapter extends ViewPagerAdapter<View, RiskEvaluationBean.PageItem> {
 
+        private ItemViewpagerRiskEvaluationBinding mBind;
+
         public RiskEvaluationAdapter(List<RiskEvaluationBean.PageItem> beans) {
             super(null, beans);
         }
@@ -103,21 +106,22 @@ public class RiskEvaluationFragment extends BaseFragment<FragmentRiskEvaluationB
         @Override
         public View getView(int position, ViewPager pager) {
             View view = mInflater.inflate(R.layout.item_viewpager_risk_evaluation, pager, false);
+            mBind = ItemViewpagerRiskEvaluationBinding.bind(view);
             return view;
         }
 
         @Override
         public void bindData(int position, View view, RiskEvaluationBean.PageItem bean) {
-            ItemViewpagerRiskEvaluationBinding bind = ItemViewpagerRiskEvaluationBinding.bind(view);
-            bind.tvTitle.setText(bean.title);
-            bind.recyclerView.setAdapter(new RecyclerDataBindingRecyclerAdapter(bind.recyclerView
+            mBind.tvTitle.setText(bean.title);
+            mBind.recyclerView.setAdapter(new RecyclerDataBindingRecyclerAdapter(mBind.recyclerView
                     , BR.itemData
                     , R.layout.item_checkbox_right_txt_group
                     , bean.recyclerItems, true));
             //设置当前页码
-            bind.includeItem.tvIndexCount.setText(String.format(getResources().getString(R.string.txtCurrentPageAndTotalPage), position + 1, getCount()));
+            mBind.includeItem.tvIndexCount.setText(String.format(getResources().getString(R.string.txtCurrentPageAndTotalPage), position + 1, getCount()));
             //给上一页按钮点击事件
-            bind.includeItem.tvUpTopic.setOnClickListener(RiskEvaluationFragment.this);
+            mBind.includeItem.tvUpTopic.setOnClickListener(RiskEvaluationFragment.this);
+
         }
 
         /**

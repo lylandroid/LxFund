@@ -16,7 +16,7 @@
             android:padding="@dimen/size_6dp"
             android:text="@string/txt_up_topic"
             android:textColor="@color/txt_btn_verification_code_selector"
-            android:textSize="@dimen/font_16"/>
+            android:textSize="@dimen/font_14"/>
 
 
         <TextView
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="1/15"
-            android:textColor="@color/text_title_color"
-            android:textSize="@dimen/font_16"/>
+            android:textColor="@color/txt_title_color"
+            android:textSize="@dimen/font_14"/>
     </RelativeLayout>
 </layout>

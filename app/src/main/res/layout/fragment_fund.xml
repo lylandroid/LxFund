@@ -22,7 +22,7 @@
             android:gravity="center"
             android:paddingTop="@dimen/size_20dp"
             android:text="@string/txt_total_amount"
-            android:textColor="@color/text_subtitle_color"
+            android:textColor="@color/txt_subtitle_color"
             android:textSize="@dimen/font_16"/>
 
 

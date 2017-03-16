@@ -55,6 +55,8 @@ public class HomeMyAccountFragment extends BaseFragment<HomeFragmentFundMyAccoun
 
         mDataBinding.btnConfirm.setOnClickListener(this);
 
+        mDataBinding.itemRiskEvaluation.setOnClickListener(this);
+
     }
 
     @Override
@@ -66,28 +68,36 @@ public class HomeMyAccountFragment extends BaseFragment<HomeFragmentFundMyAccoun
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_icon_head:
-                toLoginActivity();
+                //toLoginActivity();
+                toSettingPage();
                 break;
             case R.id.btn_confirm:
                 mPayPasswordDialog.show(getFragmentManager());
                 break;
             case R.id.item_news:
-                DetailsActivity.addFragmentToDetailsActivity(mActivity, MessageFragment.class.hashCode(),true);
+                DetailsActivity.addFragmentToDetailsActivity(mActivity, MessageFragment.class.hashCode(), true);
                 break;
             case R.id.item_bank_card:
-                DetailsActivity.addFragmentToDetailsActivity(mActivity, MyBankCardFragment.class.hashCode(),true);
+                DetailsActivity.addFragmentToDetailsActivity(mActivity, MyBankCardFragment.class.hashCode(), true);
                 break;
             case R.id.item_fund:
-                DetailsActivity.addFragmentToDetailsActivity(mActivity, FundFragment.class.hashCode(),true);
+                DetailsActivity.addFragmentToDetailsActivity(mActivity, FundFragment.class.hashCode(), true);
                 break;
             case R.id.item_lx_ying:
-                DetailsActivity.addFragmentToDetailsActivity(mActivity, LxYingFragment.class.hashCode(),true);
+                DetailsActivity.addFragmentToDetailsActivity(mActivity, LxYingFragment.class.hashCode(), true);
                 break;
             case R.id.item_welfare:
-                DetailsActivity.addFragmentToDetailsActivity(mActivity, RedPackageFragment.class.hashCode(),true);
+                DetailsActivity.addFragmentToDetailsActivity(mActivity, RedPackageFragment.class.hashCode(), true);
+                break;
+            case R.id.item_risk_evaluation:
+                DetailsActivity.addFragmentToDetailsActivity(mActivity, RiskEvaluationFragment.class.hashCode(), true);
                 break;
 
         }
+    }
+
+    private void toSettingPage() {
+        DetailsActivity.addFragmentToDetailsActivity(mActivity, AccountSettingsFragment.class.hashCode(), true);
     }
 
     public void toLoginActivity() {

@@ -30,7 +30,7 @@
                 android:layout_marginTop="@dimen/size_28dp"
                 android:maxLines="1"
                 android:text="您是一位保守型投资者"
-                android:textColor="@color/text_title_color"
+                android:textColor="@color/txt_title_color"
                 android:textSize="@dimen/font_14"/>
 
             <TextView
@@ -40,7 +40,7 @@
                 android:layout_marginTop="@dimen/size_18dp"
                 android:maxLines="1"
                 android:text="保守型"
-                android:textColor="@color/text_title_color"
+                android:textColor="@color/txt_title_color"
                 android:textSize="@dimen/font_28"/>
 
             <TextView
@@ -51,7 +51,7 @@
                 android:layout_marginTop="@dimen/size_18dp"
                 android:maxLines="1"
                 android:text="可投资中低、低风险的基金"
-                android:textColor="@color/text_title_color"
+                android:textColor="@color/txt_title_color"
                 android:textSize="@dimen/font_14"/>
         </LinearLayout>
 

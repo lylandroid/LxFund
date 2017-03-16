@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 /**
  * Created by luoyl on 2017/1/24.
- * 联系方式Fragment
+ * 添加联系地址Fragment
  */
 
 public class ContactAddressFragment extends BaseFragment<FragmentContactAddressBinding, ContactAddressFragmentPresenter> implements ContactAddressFragmentContract.View, View.OnClickListener, AddressPicker.OnAddressPickListener {

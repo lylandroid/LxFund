@@ -28,6 +28,10 @@ public class ItemLeftTxtRightInputLayout extends FrameLayout {
     private EditText mInputEditText;
     private TextInputLayout mTextInputLayout;
 
+    private int mEditTextColorResId;
+    private boolean mEditTextEnabled;
+    private String mEditTextTxt;
+
 
     private String mLeftText;
     private String mHintText;
@@ -49,6 +53,9 @@ public class ItemLeftTxtRightInputLayout extends FrameLayout {
         mLeftText = a.getString(R.styleable.LxAttrs_leftText);
         mHintText = a.getString(R.styleable.LxAttrs_hintText);
         maxLength = a.getInt(R.styleable.LxAttrs_maxLength, 0);
+        mEditTextColorResId = a.getInt(R.styleable.LxAttrs_editText_Color, 0);
+        mEditTextEnabled = a.getBoolean(R.styleable.LxAttrs_editTextEnabled, true);
+        mEditTextTxt = a.getString(R.styleable.LxAttrs_editTextTxt);
         //mInputType = a.getInt(R.styleable.LxAttrs_inputType, -1);
         a.recycle();
         a = null;
@@ -82,6 +89,13 @@ public class ItemLeftTxtRightInputLayout extends FrameLayout {
                 //mInputEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
                 setEditTextMaxLength(maxLength);
             }
+            if (mEditTextColorResId != 0) {
+                mInputEditText.setTextColor(getResources().getColor(mEditTextColorResId));
+            }
+            if (!TextUtils.isEmpty(mEditTextTxt)) {
+                mInputEditText.setText(mEditTextTxt);
+            }
+            mInputEditText.setEnabled(mEditTextEnabled);
             addView(mRootView);
         }
 

@@ -44,11 +44,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="申购费"
-                        android:textColor="@color/text_subtitle_color"
+                        android:textColor="@color/txt_subtitle_color"
                         android:textSize="@dimen/font_10"/>
 
                     <com.framework.view.DeleteLineTextView
-                        android:textColor="@color/text_subtitle_color"
+                        android:textColor="@color/txt_subtitle_color"
                         android:id="@+id/tv_money"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -128,7 +128,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/txt_since_establishment_profit"
-                            android:textColor="@color/text_title_color"
+                            android:textColor="@color/txt_title_color"
                             android:textSize="@dimen/font_12"/>
 
 
@@ -171,7 +171,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="@string/txt_day_rise_drop"
-                                        android:textColor="@color/text_subtitle_color"
+                                        android:textColor="@color/txt_subtitle_color"
                                         android:textSize="@dimen/font_12"/>
 
                                     <com.kscf.app.android.widget.PercentageTextView
@@ -194,7 +194,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="@string/txt_group_asset_value"
-                                        android:textColor="@color/text_subtitle_color"
+                                        android:textColor="@color/txt_subtitle_color"
                                         android:textSize="@dimen/font_12"/>
 
                                     <TextView
@@ -203,7 +203,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="@dimen/size_6dp"
                                         android:text="1.2720"
-                                        android:textColor="@color/text_title_color"
+                                        android:textColor="@color/txt_title_color"
                                         android:textSize="@dimen/font_16"/>
                                 </LinearLayout>
                             </LinearLayout>
@@ -260,7 +260,7 @@
                                 android:paddingBottom="@dimen/size_6dp"
                                 android:paddingTop="@dimen/size_6dp"
                                 android:text="@string/txt_excellent_shares_mix_fund"
-                                android:textColor="@color/text_subtitle_color"
+                                android:textColor="@color/txt_subtitle_color"
                                 android:textSize="@dimen/font_12"/>
 
                             <include layout="@layout/layout_line_vertical"/>
@@ -277,7 +277,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/txt_risk_grade"
-                                    android:textColor="@color/text_subtitle_color"
+                                    android:textColor="@color/txt_subtitle_color"
                                     android:textSize="@dimen/font_12"/>
 
                                 <!--style="?android:attr/ratingBarStyleSmall"-->
@@ -303,7 +303,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/size_12dp"
                             android:text="@string/txt_yield_trend"
-                            android:textColor="@color/text_title_color"
+                            android:textColor="@color/txt_title_color"
                             android:textSize="@dimen/font_14"/>
 
 

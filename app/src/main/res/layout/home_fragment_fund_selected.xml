@@ -96,7 +96,7 @@
                     android:drawablePadding="@dimen/size_3dp"
                     android:gravity="center"
                     android:text="@string/txt_home_fund_selected_bottom_des"
-                    android:textColor="@color/text_title_color"
+                    android:textColor="@color/txt_title_color"
                     android:textSize="@dimen/font_12"/>
 
             </RelativeLayout>

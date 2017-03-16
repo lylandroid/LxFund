@@ -26,8 +26,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/txt_primitive_transaction_pass"
-                android:textColor="@color/text_title_color"
-                android:textSize="@dimen/font_16"/>
+                android:textColor="@color/txt_title_color"
+                android:textSize="@dimen/font_14"/>
 
             <com.framework.jungly.gridpasswordview.GridPasswordView
                 android:id="@+id/grid_primitive_password_view"
@@ -42,8 +42,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_16dp"
                 android:text="@string/txt_new_transaction_pass"
-                android:textColor="@color/text_title_color"
-                android:textSize="@dimen/font_16"/>
+                android:textColor="@color/txt_title_color"
+                android:textSize="@dimen/font_14"/>
 
             <com.framework.jungly.gridpasswordview.GridPasswordView
                 android:id="@+id/grid_new_password_view"
@@ -57,8 +57,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_16dp"
                 android:text="@string/txt_confirm_new_pass"
-                android:textColor="@color/text_title_color"
-                android:textSize="@dimen/font_16"/>
+                android:textColor="@color/txt_title_color"
+                android:textSize="@dimen/font_14"/>
 
             <com.framework.jungly.gridpasswordview.GridPasswordView
                 android:id="@+id/grid_confirm_new_password_view"

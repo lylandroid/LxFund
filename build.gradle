@@ -41,9 +41,10 @@ ext {
 
     // App dependencies
     //supportLibraryVersion = "24.2.1"
-    supportLibraryVersion = "25.1.0"
+    supportLibraryVersion = "25.2.0"
+    supportConstraintLayoutVersion = "1.0.1"
     junitVersion = '4.12'
-    daggerVersion = '2.8'
+    daggerVersion = '2.9'
     retrofit2Version = '2.2.0'
     //Gson
     converterGsonVersion = '2.1.0'

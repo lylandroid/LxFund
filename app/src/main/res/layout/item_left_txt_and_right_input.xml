@@ -21,7 +21,7 @@
                 android:clickable="false"
                 android:enabled="false"
                 android:gravity="center"
-                android:textColor="@color/text_title_color"
+                android:textColor="@color/txt_title_color"
                 android:textSize="@dimen/font_14"/>
         </android.support.design.widget.TextInputLayout>
 

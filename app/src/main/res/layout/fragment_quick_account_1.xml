@@ -143,7 +143,7 @@
                 android:layout_marginTop="@dimen/size_16dp"
                 android:gravity="center"
                 android:text="点击按钮即表示你以阅读并同样《投资人权益须知》和《销售服务协议》"
-                android:textColor="@color/text_title_color"
+                android:textColor="@color/txt_title_color"
                 android:textSize="@dimen/font_12"/>
 
         </LinearLayout>

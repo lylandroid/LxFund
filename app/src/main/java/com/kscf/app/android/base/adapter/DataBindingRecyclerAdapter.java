@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 通过反射创建viewHolder
  * Created by lyl on 2016/10/3.
  */
 
@@ -93,6 +92,14 @@ public class DataBindingRecyclerAdapter<DataBinding extends ViewDataBinding, T> 
     public void addDatas(List datas) {
         mDatas.addAll(datas);
         notifyDataSetChanged();
+    }
+
+    public void removeData(int index) {
+        mDatas.remove(index);
+    }
+
+    public void removeData(T data) {
+        mDatas.remove(data);
     }
 
 

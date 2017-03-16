@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:text="近六个月年化收益率"
-                android:textColor="@color/text_title_color"
+                android:textColor="@color/txt_title_color"
                 android:textSize="@dimen/font_14"/>
 
         </LinearLayout>
@@ -65,7 +65,7 @@
                 android:lineSpacingExtra="@dimen/size_8dp"
                 android:maxLines="1"
                 android:text="量化选股 稳定赚收益"
-                android:textColor="@color/text_subtitle_color"
+                android:textColor="@color/txt_subtitle_color"
                 android:textSize="@dimen/font_16"/>
 
             <TextView
@@ -78,7 +78,7 @@
                 android:lineSpacingExtra="@dimen/size_8dp"
                 android:maxLines="1"
                 android:text="近六个月年化收益率"
-                android:textColor="@color/text_subtitle_color"
+                android:textColor="@color/txt_subtitle_color"
                 android:textSize="@dimen/font_14"/>
 
             <LinearLayout

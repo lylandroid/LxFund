@@ -50,7 +50,7 @@ public class LxYingFragment extends BaseFragment<FragmentLxYingBinding, LxYingFr
 
         TabLayout tabLayout = mDataBinding.tabLayout;
         tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.colorButtonSubmitSelect));
-        tabLayout.setTabTextColors(getResources().getColor(R.color.text_subtitle_color),
+        tabLayout.setTabTextColors(getResources().getColor(R.color.txt_subtitle_color),
                 getResources().getColor(R.color.colorButtonSubmitSelect));
         //tabLayout.addTab(tabLayout.newTab().setText(R.string.txt_position));
         //tabLayout.addTab(tabLayout.newTab().setText(R.string.txt_on_the_way));

@@ -23,10 +23,11 @@
 
     <!--<color name="text_dialog_color">#FF959596</color>
     <color name="text_dialog_title_color">#FF4D4E4E</color>-->
-    <color name="text_bold_title_color">#FF313131</color>
-    <color name="text_title_color">#CC3A3A3A</color>
-    <color name="text_subtitle_color">#FF8E8E8E</color>
-    <color name="text_item_right_color">#FFD5D5D5</color>
+    <color name="txt_bold_title_color">#FF313131</color>
+    <color name="txt_title_color">#CC3A3A3A</color>
+    <color name="txt_subtitle_color">#FF8E8E8E</color>
+    <color name="txt_item_right_color">#FFD5D5D5</color>
+    <color name="txt_loading_color">#60000000</color>
 
 
 

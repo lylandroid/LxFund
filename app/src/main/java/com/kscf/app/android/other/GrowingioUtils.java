@@ -6,6 +6,8 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
 
+import com.framework.util.L;
+import com.framework.util.ToastUtils;
 import com.growingio.android.sdk.collection.Configuration;
 import com.growingio.android.sdk.collection.GrowingIO;
 
@@ -18,10 +20,14 @@ public class GrowingioUtils {
     private static String sChannel = "Android";
 
     public static void init(Application application) {
+        String channel = getChannel(application);
         GrowingIO.startWithConfiguration(application, new Configuration()
                 .useID()
                 .trackAllFragments()
-                .setChannel(getChannel(application)));
+                .setChannel(channel));
+        if (L.isDebug) {
+            ToastUtils.show("channel: " + channel);
+        }
     }
 
     public static String getChannel(Context context) {

@@ -13,7 +13,7 @@
             android:layout_centerVertical="true"
             android:clickable="true"
             android:text="@string/txt_fund_name"
-            android:textColor="@color/text_title_color"
+            android:textColor="@color/txt_title_color"
             android:textSize="@dimen/font_16"/>
 
 
@@ -25,7 +25,7 @@
             android:layout_marginLeft="@dimen/size_3dp"
             android:layout_marginRight="@dimen/size_3dp"
             android:layout_toRightOf="@id/tv_fund_name"
-            android:background="@color/text_subtitle_color"/>
+            android:background="@color/txt_subtitle_color"/>
 
         <TextView
             android:id="@+id/tv_fund_code"
@@ -36,7 +36,7 @@
             android:clickable="true"
             android:padding="@dimen/size_6dp"
             android:text="@string/amount_0.00"
-            android:textColor="@color/text_title_color"
+            android:textColor="@color/txt_title_color"
             android:textSize="@dimen/font_16"/>
 
 
@@ -48,7 +48,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/size_8dp"
             android:text="@string/amount_0.00"
-            android:textColor="@color/text_subtitle_color"
+            android:textColor="@color/txt_subtitle_color"
             android:textSize="@dimen/font_16"/>
 
         <View

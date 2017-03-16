@@ -1,17 +1,12 @@
 package com.kscf.app.android.ui.fragment;
 
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.framework.base.adapter.DataBindingViewPagerAdapter;
-import com.framework.base.adapter.ViewPagerAdapter;
 import com.framework.util.L;
-import com.framework.view.RecyclerViewDivider;
-import com.kscf.app.android.BR;
 import com.kscf.app.android.R;
 import com.kscf.app.android.app.App;
 import com.kscf.app.android.base.BaseFragment;
@@ -55,7 +50,7 @@ public class FundFragment extends BaseFragment<FragmentFundBinding, FundFragment
 
         TabLayout tabLayout = mDataBinding.tabLayout;
         tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.colorButtonSubmitSelect));
-        tabLayout.setTabTextColors(getResources().getColor(R.color.text_subtitle_color),
+        tabLayout.setTabTextColors(getResources().getColor(R.color.txt_subtitle_color),
                 getResources().getColor(R.color.colorButtonSubmitSelect));
         //tabLayout.addTab(tabLayout.newTab().setText(R.string.txt_position));
         //tabLayout.addTab(tabLayout.newTab().setText(R.string.txt_on_the_way));

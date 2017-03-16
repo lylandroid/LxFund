@@ -9,6 +9,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.framework.util.SizeUtils;
+import com.framework.util.ToastUtils;
+import com.hwangjr.rxbus.annotation.Subscribe;
+import com.hwangjr.rxbus.annotation.Tag;
 import com.kscf.app.android.R;
 import com.kscf.app.android.app.App;
 import com.kscf.app.android.base.BaseActivity;
@@ -28,11 +31,14 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
 
     private BottomDialog mBottomDialog;
     private long mBackPressedTime;
+    private int mTabId = -1;
+    private boolean mIsJump;
 
-    private int mTabId;
-    /*是否需要跳转*/
-    private boolean isNeedJump;
-    private ToMyAccountPageRun mToMyAccountPageRun;
+    //点击我的账户页面到登陆页面，如果在登录页面登录成功跳转到【我的账户页面】的tag
+    public static final String sRxBusLoginToHomeMyAccountTag = "RxBusLoginToHomeMyAccountTag";
+
+    private RunToFragmentImp mRunToFragmentImp;
+
 
     @Override
     public int getLayoutResId() {
@@ -45,8 +51,12 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
     }
 
     @Override
+    protected boolean isRegisterRxBus() {
+        return true;
+    }
+
+    @Override
     public void initView() {
-        mToMyAccountPageRun = new ToMyAccountPageRun();
         mLoadingPage.showPage(LoadingPage.STATE_SUCCEED);
         initTabs();
         //initViewPager();
@@ -82,10 +92,20 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
 
     @Override
     public void showContent(MainBean mainBean) {
-
         mDataBinding.setMainBean(mainBean);
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mIsJump) {
+            if (mRunToFragmentImp == null) {
+                mRunToFragmentImp = new RunToFragmentImp();
+            }
+            App.getInstance().post(mRunToFragmentImp);
+        }
+    }
 
     private void initTabs() {
         mDataBinding.tabHost.setup(this, getSupportFragmentManager(), R.id.fl_content);
@@ -102,14 +122,15 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
         }
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        //未登录到登陆跳转到【我的账户】页面
-        if (isNeedJump && 2 == mTabId && App.getInstance().isLogin()) {
-            App.getInstance().postDelayed(mToMyAccountPageRun, 50);
+    @Subscribe(tags = {@Tag(sRxBusLoginToHomeMyAccountTag)})
+    public void rxBusEvent(String tag) {
+        //ToastUtils.show("rxBusEvent tabId:" + mTabId + "  tag:" + tag);
+        if ("0".equals(tag) || "2".equals(tag)) {//登录成功后跳转
+            mTabId = Integer.valueOf(tag);
+            mIsJump = true;
         }
     }
+
 
     @Override
     public void onClick(View v) {
@@ -117,26 +138,25 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
             case R.id.tv_home_my_account://点击我的账户
                 //点击我的账户记录tabId
                 mTabId = 2;
-                isNeedJump = true;
                 toMyAccountPage();
                 break;
         }
     }
 
+    public class RunToFragmentImp implements Runnable {
+        @Override
+        public void run() {
+            toMyAccountPage();
+        }
+    }
+
     private void toMyAccountPage() {
-        if (App.getInstance().isLogin()) {//登录直接跳转到目标页面
+        if (App.getInstance().isLogin() || mTabId == 0) {//登录直接跳转到目标页面
             selectTabPage(mTabId);
         } else {//没有登录记录下目标页面的下标，跳转到登录页面
             Intent intent = new Intent(this, LoginActivity.class);
             App.getInstance().startTargetActivity(this, intent, false);
-        }
-    }
-
-
-    public class ToMyAccountPageRun implements Runnable {
-        @Override
-        public void run() {
-            selectTabPage(mTabId);
+            //如果没有登录，跳转到登录页面退出时，如果登录使用RxBus跳转到[我的账户页面]
         }
     }
 
@@ -145,7 +165,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
         mDataBinding.tabHost.setCurrentTab(tabId);
         //设置Tab为选中状态
         mDataBinding.tabHost.getTabWidget().getChildTabViewAt(tabId).setSelected(true);
-        isNeedJump = false;
+        mTabId = -1;
+        mIsJump = false;
     }
 
     @Override
@@ -167,7 +188,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
 
     @Override
     public void free() {
-        mToMyAccountPageRun = null;
         mDataBinding.tabHost.setup(App.getInstance(), null);
         mDataBinding.tabHost.clearAllTabs();
         mDataBinding.flContent.removeAllViews();

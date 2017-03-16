@@ -62,7 +62,7 @@ public abstract class BaseActivity<DataBinding extends ViewDataBinding, P extend
         initListener();
         initEventAndData();
         if (isRegisterRxBus()) {
-            LxRxBus.getInstance().get().register(this);
+            registerRxBus();
             //EventBus.getDefault().register(this);
         }
     }
@@ -103,12 +103,20 @@ public abstract class BaseActivity<DataBinding extends ViewDataBinding, P extend
         return false;
     }
 
+    protected void registerRxBus() {
+        LxRxBus.getInstance().get().register(this);
+    }
+
+    protected void unregisterRxBus() {
+        LxRxBus.getInstance().get().unregister(this);
+    }
+
     @Override
     public void free() {
         isDestroy = true;
         if (isRegisterRxBus()) {
             //EventBus.getDefault().unregister(this);
-            LxRxBus.getInstance().get().unregister(this);
+            unregisterRxBus();
         }
         if (mDataBinding != null) {
             mDataBinding.unbind();

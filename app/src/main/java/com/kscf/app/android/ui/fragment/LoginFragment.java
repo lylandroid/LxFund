@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.framework.util.L;
 import com.framework.util.ToastUtils;
+import com.hwangjr.rxbus.annotation.Produce;
 import com.kscf.app.android.R;
 import com.kscf.app.android.app.App;
 import com.kscf.app.android.app.LxConstants;
@@ -20,9 +21,11 @@ import com.kscf.app.android.presenter.LoginFragmentPresenter;
 import com.kscf.app.android.presenter.contract.LoginFragmentContract;
 import com.kscf.app.android.ui.activity.DetailsActivity;
 import com.kscf.app.android.ui.activity.LoginActivity;
+import com.kscf.app.android.ui.activity.MainActivity;
 import com.kscf.app.android.ui.activity.QuickAccountActivity;
 import com.kscf.app.android.util.CheckUtils;
 import com.kscf.app.android.util.LxSPUtils;
+import com.kscf.app.android.util.framing.LxRxBus;
 import com.kscf.app.android.widget.LoadingPage;
 
 import java.util.Map;
@@ -93,7 +96,6 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
                 } else {
                     codeLogin();
                 }
-                //testToRiskEvaluation();
                 break;
             case R.id.tv_get_code:
                 sendSmsCode();
@@ -188,6 +190,7 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
             ToastUtils.show(baseBean.message);
             LxSPUtils.putToken(baseBean.body.token);
             openAccountStepPage();
+            LxRxBus.getInstance().get().post(MainActivity.sRxBusLoginToHomeMyAccountTag, String.valueOf(2));
             mActivity.onBackPressed();
         } else {
             ToastUtils.show(baseBean.message);
@@ -206,6 +209,10 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
         }
     }
 
+
+    /**
+     * 打开开户步骤页面第几步
+     */
     @Override
     public void onOpenAccountStepSuccess(BaseBean<OpenAccountStepBean> baseBean) {
         switch (baseBean.body.status) {

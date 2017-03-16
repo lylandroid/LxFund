@@ -7,7 +7,10 @@ import com.kscf.app.android.base.BaseFragment;
 import com.kscf.app.android.databinding.FragmentAccountSettingsBinding;
 import com.kscf.app.android.presenter.AccountSettingsFragmentPresenter;
 import com.kscf.app.android.presenter.contract.AccountSettingsFragmentContract;
-import com.kscf.app.android.ui.activity.LoginActivity;
+import com.kscf.app.android.ui.activity.DetailsActivity;
+import com.kscf.app.android.ui.activity.MainActivity;
+import com.kscf.app.android.util.LxSPUtils;
+import com.kscf.app.android.util.framing.LxRxBus;
 import com.kscf.app.android.widget.LoadingPage;
 
 /**
@@ -40,11 +43,12 @@ public class AccountSettingsFragment extends BaseFragment<FragmentAccountSetting
 
     @Override
     public void initListener() {
-        mDataBinding.itemUpdateLoginPass.setOnClickListener(this);
-        mDataBinding.itemUpdateTransactionPass.setOnClickListener(this);
-        mDataBinding.itemResetTransactionPass.setOnClickListener(this);
+        mDataBinding.rlItemHead.setOnClickListener(this);
+        mDataBinding.btnConfirm.setOnClickListener(this);
+        mDataBinding.itemContactPhone.setOnClickListener(this);
         mDataBinding.itemContactAddress.setOnClickListener(this);
-
+        mDataBinding.itemLoginPassSetting.setOnClickListener(this);
+        mDataBinding.itemTransactionPassSetting.setOnClickListener(this);
 
     }
 
@@ -56,19 +60,32 @@ public class AccountSettingsFragment extends BaseFragment<FragmentAccountSetting
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.item_update_login_pass:
-                ((LoginActivity) mActivity).showHideFragment(UpdateLoginPassFragment.newInstance(), null);
+            case R.id.rl_item_head:
+                DetailsActivity.addFragmentToDetailsActivity(mActivity, MoreInformationFragment.class.hashCode(), true);
                 break;
-            case R.id.item_update_transaction_pass:
-                ((LoginActivity) mActivity).showHideFragment(UpdateTransactionPassFragment.newInstance(), null);
-                break;
-            case R.id.item_reset_transaction_pass:
-                ((LoginActivity) mActivity).showHideFragment(ResetTransactionPassFragment.newInstance(), null);
+            case R.id.item_contact_phone:
+                DetailsActivity.addFragmentToDetailsActivity(mActivity, MyContactPhoneFragment.class.hashCode(), true);
                 break;
             case R.id.item_contact_address:
-                ((LoginActivity) mActivity).showHideFragment(ContactAddressFragment.newInstance(), null);
+                DetailsActivity.addFragmentToDetailsActivity(mActivity, MyContactAddressFragment.class.hashCode(), true);
                 break;
+            case R.id.item_login_pass_setting:
+                DetailsActivity.addFragmentToDetailsActivity(mActivity, UpdateLoginPassFragment.class.hashCode(), true);
+                break;
+            case R.id.item_transaction_pass_setting:
+                DetailsActivity.addFragmentToDetailsActivity(mActivity, SettingsTransactionPassFragment.class.hashCode(), true);
+                break;
+            case R.id.btn_confirm:
+                exitLogin();
+                break;
+
         }
+    }
+
+    public void exitLogin() {
+        LxSPUtils.putToken("");
+        LxRxBus.getInstance().get().post(MainActivity.sRxBusLoginToHomeMyAccountTag, String.valueOf(0));
+        mActivity.onBackPressedSupport();
     }
 
 

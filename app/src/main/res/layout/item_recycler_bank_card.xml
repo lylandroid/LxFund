@@ -36,7 +36,7 @@
                 android:layout_marginTop="@dimen/size_3dp"
                 android:layout_toRightOf="@id/iv_icon"
                 android:text="@string/app_txt_err"
-                android:textColor="@color/text_title_color"
+                android:textColor="@color/txt_title_color"
                 android:textSize="@dimen/font_16"/>
 
             <TextView
@@ -48,7 +48,7 @@
                 android:layout_marginTop="@dimen/size_8dp"
                 android:layout_toRightOf="@id/iv_icon"
                 android:text="@string/app_txt_err"
-                android:textColor="@color/text_title_color"
+                android:textColor="@color/txt_title_color"
                 android:textSize="@dimen/font_16"/>
 
         </RelativeLayout>

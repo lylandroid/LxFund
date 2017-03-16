@@ -39,7 +39,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/size_8dp"
                 android:layout_marginRight="@dimen/size_8dp"
-                android:background="@color/text_title_color"
+                android:background="@color/txt_title_color"
                 android:textSize="@dimen/font_16"/>
 
             <TextView

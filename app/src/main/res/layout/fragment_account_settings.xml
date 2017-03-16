@@ -23,10 +23,14 @@
             android:orientation="vertical">
 
             <RelativeLayout
+                android:id="@+id/rl_item_head"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/size_38dp"
-                android:gravity="center_vertical">
+                android:background="@drawable/item_select_gray_selector"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/size_28dp"
+                android:paddingTop="@dimen/size_28dp">
 
                 <ImageView
                     android:id="@+id/iv_icon_head"
@@ -39,42 +43,68 @@
                 <TextView
                     android:id="@+id/tv_name"
                     style="@style/tvSubtitleWrapContentStyle"
+                    android:layout_centerVertical="true"
                     android:layout_toRightOf="@id/iv_icon_head"
                     android:text="*伟"/>
 
-                <TextView
+                <!--<TextView
                     android:id="@+id/tv_subtitle"
                     style="@style/tvSubtitleWrapContentStyle"
                     android:layout_below="@id/tv_name"
                     android:layout_toRightOf="@id/iv_icon_head"
-                    android:text="zhang shan"/>
+                    android:text="zhang shan"/>-->
+
+                <TextView
+                    android:layout_width="@dimen/size_8dp"
+                    android:layout_height="@dimen/size_12dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/size_8dp"
+                    android:background="@drawable/icon_right_arrow"/>
+
+
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/size_1dp"
-                android:layout_marginTop="@dimen/size_28dp"
-                android:background="@color/line_dialog_color"/>
+            <include layout="@layout/layout_line_horizontal"/>
+
 
             <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-                android:id="@+id/item_bind_phone"
+                android:id="@+id/item_contact_phone"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/size_48dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/item_select_gray_selector"
-                app:isShowArrowView="false"
-                app:leftText="@string/txt_bind_phone"
-                app:rightText="15923489602"/>
+                app:isShowArrowView="true"
+                app:leftText="@string/txt_my_contact_phone"/>
 
             <include layout="@layout/layout_line_horizontal"/>
 
             <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-                android:id="@+id/item_identity_info"
+                android:id="@+id/item_contact_address"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/size_48dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/item_select_gray_selector"
-                app:isShowArrowView="false"
-                app:leftText="@string/txt_identity_info"
-                app:rightText="140543242315923489602"/>
+                app:isShowArrowView="true"
+                app:leftText="@string/txt_my_contact_address"/>
+
+            <!--  <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                  android:id="@+id/item_bind_phone"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/size_48dp"
+                  android:background="@drawable/item_select_gray_selector"
+                  app:isShowArrowView="false"
+                  app:leftText="@string/txt_bind_phone"
+                  app:rightText="15923489602"/>
+
+              <include layout="@layout/layout_line_horizontal"/>
+
+              <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                  android:id="@+id/item_identity_info"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/size_48dp"
+                  android:background="@drawable/item_select_gray_selector"
+                  app:isShowArrowView="false"
+                  app:leftText="@string/txt_identity_info"
+                  app:rightText="140543242315923489602"/>-->
         </LinearLayout>
 
         <LinearLayout
@@ -85,13 +115,23 @@
             android:orientation="vertical">
 
             <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-                android:id="@+id/item_update_login_pass"
+                android:id="@+id/item_login_pass_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_select_gray_selector"
+                app:isShowArrowView="true"
+                app:leftText="@string/txt_login_pass_setting"/>
+
+            <include layout="@layout/layout_line_horizontal"/>
+
+            <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                android:id="@+id/item_transaction_pass_setting"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_48dp"
                 android:background="@drawable/item_select_gray_selector"
-                app:leftText="@string/txt_update_login_pass"/>
+                app:leftText="@string/txt_transaction_pass_setting"/>
 
-            <include layout="@layout/layout_line_horizontal"/>
+            <!--<include layout="@layout/layout_line_horizontal"/>
 
             <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
                 android:id="@+id/item_update_transaction_pass"
@@ -107,17 +147,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_48dp"
                 android:background="@drawable/item_select_gray_selector"
-                app:leftText="@string/txt_reset_transaction_pass"/>
+                app:leftText="@string/txt_reset_transaction_pass"/>-->
 
         </LinearLayout>
 
-        <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+        <!--<com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
             android:id="@+id/item_contact_address"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_48dp"
             android:layout_marginTop="@dimen/size_18dp"
             android:background="@drawable/item_def_white_select_gray_selector"
-            app:leftText="@string/txt_contact_address"/>
+            app:leftText="@string/txt_contact_address"/>-->
+
+        <Button
+            android:id="@+id/btn_confirm"
+            style="@style/item_btn_style"
+            android:background="@drawable/item_radius_btn_yellow_selector"
+            android:text="@string/txt_exit_login"/>
 
 
     </LinearLayout>

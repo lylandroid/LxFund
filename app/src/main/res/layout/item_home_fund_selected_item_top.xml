@@ -12,18 +12,16 @@
 
 
         <!--android:layout_height="@dimen/size_180dp"-->
-        <!--<com.bigkoo.convenientbanner.ConvenientBanner
+        <com.bigkoo.convenientbanner.ConvenientBanner
             android:id="@+id/convenientBanner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:canLoop="true"/>-->
+            android:layout_height="@dimen/size_200dp"
+            app:canLoop="true"/>
 
-        <ImageView
-            android:id="@+id/iv_banner"
-            android:background="@drawable/index_banner"
-            android:minHeight="@dimen/size_120dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        <!-- <com.kscf.app.android.widget.LoadImageView
+             android:id="@+id/iv_banner"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"/>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,7 +41,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/size_8dp"
                 android:layout_marginRight="@dimen/size_8dp"
-                android:background="@color/text_title_color"
+                android:background="@color/txt_title_color"
                 android:textSize="@dimen/font_16"/>
 
             <TextView

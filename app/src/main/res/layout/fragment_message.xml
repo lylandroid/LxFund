@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/txt_temp_no_news"
-                android:textColor="@color/text_subtitle_color"
+                android:textColor="@color/txt_subtitle_color"
                 android:textSize="@dimen/font_18"
                 android:visibility="gone"/>
 
