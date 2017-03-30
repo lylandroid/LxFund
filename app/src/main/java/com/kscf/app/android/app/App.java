@@ -1,17 +1,16 @@
 package com.kscf.app.android.app;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Handler;
 import android.text.TextUtils;
 
+import com.framework.app.CommApp;
+import com.framework.http.RetrofitHelper;
 import com.framework.util.L;
 import com.kscf.app.android.di.component.AppComponent;
 import com.kscf.app.android.di.component.DaggerAppComponent;
 import com.kscf.app.android.di.mode.AppModule;
-import com.kscf.app.android.model.http.RetrofitHelper;
-import com.kscf.app.android.other.GrowingioUtils;
+import com.kscf.app.android.other.UmengUtils;
 import com.kscf.app.android.ui.activity.LoginActivity;
 import com.kscf.app.android.util.LxSPUtils;
 import com.squareup.leakcanary.LeakCanary;
@@ -21,26 +20,18 @@ import com.squareup.leakcanary.RefWatcher;
  * Created by luoyl on 2016/12/22.
  */
 
-public class App extends Application {
-
-    private static App sInstance;
+public class App extends CommApp {
 
     private AppComponent mAppComponent;
-
-    /**
-     * 全局handler用户更新UI
-     */
-    private Handler mHandler;
 
 
     @Override
     public void onCreate() {
         super.onCreate();
-        sInstance = this;
-        mHandler = new Handler();
+        L.isDebug = false;
         RetrofitHelper.setBaseUrl(Apis.getBaseUrl());
 
-        GrowingioUtils.init(this);
+        UmengUtils.init(this);
 
         if (L.isDebug) {
             initLeakCanary();
@@ -50,7 +41,7 @@ public class App extends Application {
 
 
     public static App getInstance() {
-        return sInstance;
+        return (App) getApp();
     }
 
     public AppComponent getAppComponent() {
@@ -60,48 +51,6 @@ public class App extends Application {
                     .build();
         }
         return mAppComponent;
-    }
-
-    public Handler getHandler() {
-        return mHandler;
-    }
-
-    /**
-     * post发送Handler消息，主要用于跟新UI
-     *
-     * @param run
-     */
-    public void post(Runnable run) {
-        postDelayed(run, 0);
-    }
-
-
-    /**
-     * 使用Hnadler发送延迟消息
-     *
-     * @param run
-     * @param delayMillis
-     */
-    public void postDelayed(Runnable run, long delayMillis) {
-        mHandler.postDelayed(run, delayMillis);
-    }
-
-    /**
-     * 移除Handler消息，避免内存泄漏
-     *
-     * @param run
-     */
-    public void removeCallbacks(Runnable run) {
-        if (run != null) {
-            mHandler.removeCallbacks(run);
-        }
-    }
-
-    /**
-     * 在应用退出时，移除所有Handler消息
-     */
-    public void removeAllCallbacksAndMessages() {
-        mHandler.removeCallbacksAndMessages(null);
     }
 
     public void exit() {

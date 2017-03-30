@@ -4,11 +4,8 @@ import android.view.View;
 
 import com.kscf.app.android.R;
 import com.kscf.app.android.base.BaseFragment;
-import com.kscf.app.android.databinding.FragmentQuickAccount1Binding;
 import com.kscf.app.android.databinding.FragmentQuickAccount2Binding;
-import com.kscf.app.android.presenter.QuickAccountFragmentPresenter01;
 import com.kscf.app.android.presenter.QuickAccountFragmentPresenter02;
-import com.kscf.app.android.presenter.contract.QuickAccountContract01;
 import com.kscf.app.android.presenter.contract.QuickAccountContract02;
 import com.kscf.app.android.widget.LoadingPage;
 
@@ -40,6 +37,7 @@ public class QuickAccountFragment02 extends BaseFragment<FragmentQuickAccount2Bi
     @Override
     public void initView() {
         mLoadingPage.showPage(LoadingPage.STATE_SUCCEED);
+        mDataBinding.includeItem.ll1.setSelected(true);
     }
 
     @Override

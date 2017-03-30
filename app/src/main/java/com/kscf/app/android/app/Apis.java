@@ -11,7 +11,10 @@ public class Apis {
     private static final String baseUrl = "http://192.168.52.108:8206/";
 
 
-    private static final String BASE_URL = "http://192.168.52.108:8204/";
+    private static final String IP = "192.168.52.225";
+    private static final String BASE_URL = "http://" + IP + ":10000/";
+    public static final String BASE_API = "app/call";
+    //http://192.168.52.168:10000/app/call?code=auth-sendLoginSmsVerifyCode&ver=1.0
 
 
     public static final String testApi = "api-out-fund/out/combo/recom";
@@ -31,7 +34,7 @@ public class Apis {
     public static final String api_fund_selected_banner = "banner/query";
 
 
-    public static String getBaseUrl() {
-        return/* BASE_URL*/ baseUrl;
+    public final static String getBaseUrl() {
+        return BASE_URL /*baseUrl*/;
     }
 }

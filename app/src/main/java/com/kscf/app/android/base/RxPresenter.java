@@ -1,8 +1,6 @@
 package com.kscf.app.android.base;
 
 import com.kscf.app.android.base.view.BaseView;
-import com.kscf.app.android.model.http.HttpSubscriber;
-import com.kscf.app.android.model.http.RetrofitHelper;
 
 import rx.Subscription;
 import rx.subscriptions.CompositeSubscription;
@@ -18,13 +16,18 @@ public abstract class RxPresenter<V extends BaseView> implements BasePresenter<V
 
     protected CompositeSubscription mCompositeSubscription;
 
-    protected HttpSubscriber mSubscriber;
+    /*protected HttpSubscriber mSubscriber;
 
-    protected RetrofitHelper mRetrofitHelper;
+    protected RetrofitHelper mRetrofitHelper;*/
 
     protected boolean mIsDestroy;
 
 
+    /**
+     * 添加是为了退出时取消网络请求
+     *
+     * @param subscription
+     */
     protected void addSubscriber(Subscription subscription) {
         if (mCompositeSubscription == null) {
             mCompositeSubscription = new CompositeSubscription();
@@ -47,8 +50,6 @@ public abstract class RxPresenter<V extends BaseView> implements BasePresenter<V
             mCompositeSubscription.clear();
         }
         mCompositeSubscription = null;
-        //mRetrofitHelper = null;
-        mSubscriber = null;
     }
 
     public void onHttpErr(int reqCode, int respCode, String errMsg, Throwable e) {

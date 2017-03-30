@@ -1,37 +1,18 @@
 package com.kscf.app.android.ui.fragment;
 
-import android.content.Intent;
-import android.text.InputType;
-import android.text.TextUtils;
-import android.view.View;
-
-import com.framework.util.L;
-import com.framework.util.ToastUtils;
+import com.framework.view.webview.CustomWebView;
 import com.kscf.app.android.R;
-import com.kscf.app.android.app.App;
-import com.kscf.app.android.app.LxConstants;
 import com.kscf.app.android.base.BaseFragment;
-import com.kscf.app.android.databinding.FragmentLoginBinding;
-import com.kscf.app.android.model.bean.BaseBean;
-import com.kscf.app.android.model.bean.LoginOrRegisterBean;
-import com.kscf.app.android.model.bean.OpenAccountStepBean;
-import com.kscf.app.android.model.http.RetrofitHelper;
-import com.kscf.app.android.presenter.LoginFragmentPresenter;
-import com.kscf.app.android.presenter.contract.LoginFragmentContract;
-import com.kscf.app.android.ui.activity.LoginActivity;
-import com.kscf.app.android.ui.activity.QuickAccountActivity;
-import com.kscf.app.android.util.CheckUtils;
-import com.kscf.app.android.util.LxSPUtils;
+import com.kscf.app.android.databinding.FragmentRegisterAgreementBinding;
+import com.kscf.app.android.presenter.NullPresenter;
 import com.kscf.app.android.widget.LoadingPage;
-
-import java.util.Map;
 
 /**
  * 注册协议Fragment
  * Created by luoyl on 2017/3/1.
  */
 
-public class RegisterAgreementFragment extends BaseFragment {
+public class RegisterAgreementFragment extends BaseFragment<FragmentRegisterAgreementBinding, NullPresenter> {
 
 
     @Override
@@ -46,12 +27,16 @@ public class RegisterAgreementFragment extends BaseFragment {
 
     @Override
     public void initInject() {
-        //getFragmentComponent().inject(this);
+        getFragmentComponent().inject(this);
     }
 
     @Override
     public void initView() {
         mLoadingPage.showPage(LoadingPage.STATE_SUCCEED);
+        mDataBinding.webview.handlerBack(mDataBinding.toolbar);
+//        CustomWebView customWebView = new CustomWebView(mActivity, mDataBinding.webViewControl);
+//        customWebView.loadUrl("https://www.baidu.com/");
+        mDataBinding.webview.loadUrl("https://www.baidu.com/");
 
     }
 
@@ -65,5 +50,9 @@ public class RegisterAgreementFragment extends BaseFragment {
     public void initEventAndData() {
     }
 
-
+    @Override
+    public void free() {
+        mDataBinding.webViewControl.removeView(mDataBinding.webview);
+        super.free();
+    }
 }

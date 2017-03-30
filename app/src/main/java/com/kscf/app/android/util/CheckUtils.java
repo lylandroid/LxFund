@@ -15,7 +15,9 @@ public class CheckUtils {
      * @return boolean
      */
     public static boolean checkPhoneNumber(String phoneNumber) {
-        Pattern pattern = Pattern.compile("^1[0-9]{10}$");
+        //String telRegex = "^1[0-9]{10}$";
+        String telRegex = "[1][358]\\d{9}";
+        Pattern pattern = Pattern.compile(telRegex);
         Matcher matcher = pattern.matcher(phoneNumber);
         return matcher.matches();
     }
@@ -42,7 +44,8 @@ public class CheckUtils {
     public static boolean checkEmail(String email) {
         if (null == email || "".equals(email)) return false;
         //Pattern p = Pattern.compile("\\w+@(\\w+.)+[a-z]{2,3}"); //简单匹配
-        Pattern p = Pattern.compile("\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");//复杂匹配
+        String regex = "\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+        Pattern p = Pattern.compile(regex);//复杂匹配
         Matcher m = p.matcher(email);
         return m.matches();
     }

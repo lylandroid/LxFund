@@ -1,14 +1,11 @@
 package com.kscf.app.android.presenter;
 
-import com.kscf.app.android.app.Apis;
+import com.framework.http.HttpSubscriber;
+import com.framework.http.RetrofitHelper;
+import com.framework.util.L;
 import com.kscf.app.android.base.RxPresenter;
 import com.kscf.app.android.model.bean.HomeFundSelectedBannerBean;
-import com.kscf.app.android.model.http.HttpMethod;
-import com.kscf.app.android.model.http.HttpSubscriber;
-import com.kscf.app.android.model.http.NetCount;
-import com.kscf.app.android.model.http.RetrofitHelper;
 import com.kscf.app.android.presenter.contract.HomeFundGroupContract;
-import com.framework.util.L;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,8 +21,7 @@ import javax.inject.Inject;
 public class HomeFundGroupPresenter extends RxPresenter<HomeFundGroupContract.View> implements HomeFundGroupContract.Presenter {
 
     @Inject
-    public HomeFundGroupPresenter(RetrofitHelper retrofitHelper) {
-        mRetrofitHelper = retrofitHelper;
+    public HomeFundGroupPresenter() {
     }
 
     @Override
@@ -51,6 +47,6 @@ public class HomeFundGroupPresenter extends RxPresenter<HomeFundGroupContract.Vi
 
         Map<String,Object> paramMap = new HashMap<>();
         paramMap.put("type", "1");
-        addSubscriber(mRetrofitHelper.sendNet(HttpMethod.GET,Apis.api_fund_selected_banner, null, paramMap, httpSubscriber));
+       // addSubscriber(mRetrofitHelper.sendNet(HttpMethod.GET,Apis.api_fund_selected_banner, null, paramMap, httpSubscriber));
     }
 }

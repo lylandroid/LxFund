@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--精选基金-详情页面-重仓持股-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/itemSelectBackground"
+              android:orientation="horizontal">
+
+
+    <TextView
+        style="@style/tv_title_small_style"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_weight="1"
+        android:text="@string/txt_shares_name"/>
+
+    <TextView
+        style="@style/tv_title_small_style"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_weight="1"
+        android:text="@string/txt_code"/>
+
+    <TextView
+        style="@style/tv_title_small_style"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_weight="1"
+        android:text="@string/txt_proportion"/>
+
+    <TextView
+        style="@style/tv_title_small_style"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_weight="1"
+        android:text="@string/txt_position_amount"/>
+</LinearLayout>

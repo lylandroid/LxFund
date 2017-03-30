@@ -4,13 +4,9 @@ import android.view.View;
 
 import com.kscf.app.android.R;
 import com.kscf.app.android.base.BaseFragment;
-import com.kscf.app.android.base.adapter.DataBindingRecyclerAdapter;
-import com.kscf.app.android.databinding.FragmentMessageBinding;
+import com.framework.base.adapter.DataBindingRecyclerAdapter;
 import com.kscf.app.android.databinding.FragmentMyBankCardBinding;
-import com.kscf.app.android.databinding.HomeFragmentFundMyAccountBinding;
-import com.kscf.app.android.presenter.MessageFragmentPresenter;
 import com.kscf.app.android.presenter.MyBankCardFragmentPresenter;
-import com.kscf.app.android.presenter.contract.MessageFragmentContract;
 import com.kscf.app.android.presenter.contract.MyBankCardFragmentContract;
 import com.kscf.app.android.widget.LoadingPage;
 

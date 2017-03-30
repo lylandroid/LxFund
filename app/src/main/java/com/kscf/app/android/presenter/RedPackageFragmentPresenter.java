@@ -1,8 +1,7 @@
 package com.kscf.app.android.presenter;
 
+import com.framework.http.RetrofitHelper;
 import com.kscf.app.android.base.RxPresenter;
-import com.kscf.app.android.model.http.RetrofitHelper;
-import com.kscf.app.android.presenter.contract.MessageFragmentContract;
 import com.kscf.app.android.presenter.contract.RedPackageFragmentContract;
 
 import javax.inject.Inject;
@@ -15,8 +14,7 @@ import javax.inject.Inject;
 public class RedPackageFragmentPresenter extends RxPresenter<RedPackageFragmentContract.View> implements RedPackageFragmentContract.Presenter {
 
     @Inject
-    public RedPackageFragmentPresenter(RetrofitHelper retrofitHelper) {
-        mRetrofitHelper = retrofitHelper;
+    public RedPackageFragmentPresenter() {
     }
 
     @Override

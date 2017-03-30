@@ -1,7 +1,7 @@
 package com.kscf.app.android.presenter;
 
+import com.framework.http.RetrofitHelper;
 import com.kscf.app.android.base.RxPresenter;
-import com.kscf.app.android.model.http.RetrofitHelper;
 import com.kscf.app.android.presenter.contract.QuickAccountContract03;
 
 import javax.inject.Inject;
@@ -14,8 +14,7 @@ import javax.inject.Inject;
 public class QuickAccountFragmentPresenter03 extends RxPresenter<QuickAccountContract03.View> implements QuickAccountContract03.Presenter {
 
     @Inject
-    public QuickAccountFragmentPresenter03(RetrofitHelper retrofitHelper) {
-        mRetrofitHelper = retrofitHelper;
+    public QuickAccountFragmentPresenter03() {
     }
 
     @Override

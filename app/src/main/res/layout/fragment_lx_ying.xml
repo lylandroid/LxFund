@@ -24,6 +24,7 @@
 
             <TextView
                 style="@style/tv_subtitle_style"
+                android:layout_gravity="center_horizontal"
                 android:paddingLeft="@dimen/size_0dp"
                 android:paddingTop="@dimen/size_20dp"
                 android:text="@string/txt_current_assets"
@@ -33,6 +34,7 @@
 
             <TextView
                 style="@style/tv_subtitle_style"
+                android:layout_gravity="center_horizontal"
                 android:paddingBottom="@dimen/size_8dp"
                 android:paddingLeft="@dimen/size_0dp"
                 android:paddingTop="@dimen/size_0dp"
@@ -42,7 +44,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/size_18dp"
                 android:gravity="center">
 
@@ -96,12 +98,11 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/font_14"/>
 
-
             </RelativeLayout>
         </LinearLayout>
 
 
-        <android.support.design.widget.TabLayout
+        <com.kscf.app.android.widget.LxTabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -114,15 +115,24 @@
             android:layout_weight="1"
             android:descendantFocusability="blocksDescendants"/>
 
-        <Button
-            android:id="@+id/btn_confirm"
-            style="@style/btn_submit_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:background="@drawable/item_def_yellow_select_shallow_selector"
-            android:text="@string/txt_recharge"
-            android:textColor="@color/white"/>
+
+        <LinearLayout style="@style/match_wrap_h">
+
+            <Button
+                android:id="@+id/btn_recharge"
+                style="@style/btn_submit_style"
+                android:background="@drawable/item_def_white_select_gray_selector"
+                android:text="@string/txt_recharge"
+                android:textColor="@color/colorButtonSubmit"/>
+
+            <Button
+                android:id="@+id/btn_fixed_investment"
+                style="@style/btn_submit_style"
+                android:background="@drawable/item_def_yellow_select_shallow_selector"
+                android:text="@string/txt_fixed_investment"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
 
 
     </LinearLayout>

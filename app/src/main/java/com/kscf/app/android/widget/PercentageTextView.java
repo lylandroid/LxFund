@@ -19,7 +19,7 @@ import com.framework.util.SizeUtils;
  * 百分比TextView
  */
 
-public class PercentageTextView extends TextView {
+public class PercentageTextView extends android.support.v7.widget.AppCompatTextView {
 
     int mEndTextSize = 0;
     int mTextSizeResId = 0;
@@ -37,11 +37,12 @@ public class PercentageTextView extends TextView {
 
     public PercentageTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        final TypedArray a = context.obtainStyledAttributes(
+        TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.LxAttrs, defStyleAttr, 0);
         mTextSizeResId = a.getResourceId(R.styleable.LxAttrs_textSize, 0);
         mEndTextSizeResId = a.getResourceId(R.styleable.LxAttrs_endTextSize, 0);
         a.recycle();
+        a = null;
         init();
     }
 
@@ -72,9 +73,8 @@ public class PercentageTextView extends TextView {
     public void setText(CharSequence text, BufferType type) {
         this.mText = text;
         this.mType = type;
-        if (mEndTextSize != 0 || mTextSizeResId != 0) {
-            super.setText(getPercentageText(text), type);
-        }
+        super.setText(getPercentageText(text), type);
+
     }
 
 

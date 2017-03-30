@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.framework.util.ResUtils;
 import com.kscf.app.android.R;
 import com.framework.util.SizeUtils;
 
@@ -33,6 +34,11 @@ public class ItemLeftTxtRightArrowLayout extends RelativeLayout {
     private int mDistance16dp;
     private int mDistance8dp;
     private int mDistance12dp;
+
+    private boolean mIsShowCenterView;
+    private String mCenterText;
+    private int mCenterTextSizeResId;
+    private int mCenterTextColorResId;
 
     public ItemLeftTxtRightArrowLayout(Context context) {
         this(context, null);
@@ -59,6 +65,14 @@ public class ItemLeftTxtRightArrowLayout extends RelativeLayout {
         mRightTextSizeResId = a.getResourceId(R.styleable.LxAttrs_rightTextSize, 0);
         mTopAndBottomPaddingSize = a.getDimensionPixelSize(R.styleable.LxAttrs_topAndBottomPadding, mDistance16dp);
         mIsShowArrowView = a.getBoolean(R.styleable.LxAttrs_isShowArrowView, true);
+        //start center view
+        mIsShowCenterView = a.getBoolean(R.styleable.LxAttrs_isShowCenterView, false);
+        if (mIsShowCenterView) {
+            mCenterTextSizeResId = a.getResourceId(R.styleable.LxAttrs_centerTextSize, 0);
+            mCenterTextColorResId = a.getResourceId(R.styleable.LxAttrs_centerTextColor, 0);
+            mCenterText = a.getString(R.styleable.LxAttrs_centerTextTxt);
+        }
+        //end center view
 
 
         a.recycle();
@@ -70,6 +84,7 @@ public class ItemLeftTxtRightArrowLayout extends RelativeLayout {
     private void initChildView() {
         //leftTextView
         TextView leftTextView = new TextView(getContext());
+        leftTextView.setId(R.id.item_tv_left);
         LayoutParams leftTextLayoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         leftTextLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
         leftTextLayoutParams.leftMargin = mDistance12dp;
@@ -135,6 +150,28 @@ public class ItemLeftTxtRightArrowLayout extends RelativeLayout {
             setRightText(mRightText);
         }
         addView(mRightTextView);
+
+
+        //center view
+        if (mIsShowCenterView) {
+            TextView centerTextView = new TextView(getContext());
+            LayoutParams centerTextLayoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            centerTextLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
+            centerTextLayoutParams.leftMargin = mDistance8dp;
+            centerTextView.setLayoutParams(leftTextLayoutParams);
+            centerTextLayoutParams.addRule(RelativeLayout.RIGHT_OF, R.id.item_tv_left);
+
+            centerTextView.setTextColor(ResUtils.getColor(mCenterTextColorResId == 0 ? R.color.txt_subtitle_color : mCenterTextColorResId));
+            if (mCenterTextSizeResId != 0) {
+                ResUtils.setTextSizeDip(mCenterTextSizeResId, centerTextView);
+            }else if(mLeftTextSizeResId != 0){
+                ResUtils.setTextSizeDip(mLeftTextSizeResId, centerTextView);
+            }
+            centerTextView.setText(mCenterText);
+
+            addView(centerTextView);
+        }
+
 
     }
 

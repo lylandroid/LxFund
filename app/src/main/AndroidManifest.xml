@@ -3,11 +3,23 @@
           package="com.kscf.app.android">
 
     <!-- 允许网络访问权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <!-- 允许检测网络状态权限 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <!-- 增加对内置sd卡的写入操作 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--拍照权限-->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <!-- GPS定位权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!--获取用户设备的IMEI，通过IMEI和mac来唯一的标识用户-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
 
     <application
         android:name=".app.App"
@@ -20,6 +32,9 @@
 
 
         <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="57fb295fe0f55a124b0019eb"/>
+        <meta-data
             android:name="UMENG_CHANNEL"
             android:value="${UMENG_CHANNEL_VALUE}"/>
 
@@ -31,14 +46,6 @@
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-
-            <intent-filter>
-                <data android:scheme="growing.86dd08cfd5096f38"/>
-                <action android:name="android.intent.action.VIEW"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
             </intent-filter>
         </activity>
 
@@ -65,6 +72,11 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+
+        <activity
+            android:name="com.framework.zxing.activity.CaptureActivity"
+            android:label="@string/actionbar_title_qr_scan"
+            android:screenOrientation="portrait"/>
 
     </application>
 

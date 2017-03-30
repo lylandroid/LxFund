@@ -1,8 +1,8 @@
 package com.kscf.app.android.di.mode;
 
+import com.framework.http.RetrofitHelper;
 import com.kscf.app.android.app.App;
 import com.kscf.app.android.di.scope.ContextLife;
-import com.kscf.app.android.model.http.RetrofitHelper;
 
 import javax.inject.Singleton;
 

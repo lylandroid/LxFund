@@ -1,7 +1,7 @@
 package com.kscf.app.android.presenter;
 
+import com.framework.http.RetrofitHelper;
 import com.kscf.app.android.base.RxPresenter;
-import com.kscf.app.android.model.http.RetrofitHelper;
 import com.kscf.app.android.presenter.contract.MyContactAddressFragmentContract;
 
 import javax.inject.Inject;
@@ -14,8 +14,7 @@ import javax.inject.Inject;
 public class MyContactAddressFragmentPresenter extends RxPresenter<MyContactAddressFragmentContract.View> implements MyContactAddressFragmentContract.Presenter {
 
     @Inject
-    public MyContactAddressFragmentPresenter(RetrofitHelper retrofitHelper) {
-        mRetrofitHelper = retrofitHelper;
+    public MyContactAddressFragmentPresenter() {
     }
 
     @Override

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activityBackgroundColor"
+        android:orientation="vertical">
+
+        <com.kscf.app.android.widget.DefToolBar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:background="@color/blue"
+            app:isShowReturnView="true"
+            app:title="@string/txt_E_mail"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:paddingTop="@dimen/size_8dp">
+
+            <com.kscf.app.android.widget.ItemLeftTxtRightInputLayout
+                android:id="@+id/item_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/size_8dp"
+                app:hintText="@string/txt_please_input_email"
+                app:inputType="textEmailAddress"
+                app:leftText="@string/txt_E_mail"/>
+
+
+            <Button
+                android:id="@+id/btn_confirm"
+                style="@style/match_wrap"
+                android:layout_below="@id/item_email"
+                android:layout_marginLeft="@dimen/size_18dp"
+                android:layout_marginRight="@dimen/size_18dp"
+                android:layout_marginTop="@dimen/size_38dp"
+                android:background="@drawable/item_radius_btn_yellow_selector"
+                android:text="@string/txt_save"
+                android:textColor="@color/white"/>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

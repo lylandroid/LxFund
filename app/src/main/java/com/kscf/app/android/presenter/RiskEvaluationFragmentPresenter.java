@@ -1,15 +1,12 @@
 package com.kscf.app.android.presenter;
 
-import com.kscf.app.android.R;
-import com.kscf.app.android.app.Apis;
-import com.kscf.app.android.base.RxPresenter;
-import com.kscf.app.android.model.bean.BaseBean;
-import com.kscf.app.android.model.bean.LoginOrRegisterBean;
-import com.kscf.app.android.model.http.HttpMethod;
-import com.kscf.app.android.model.http.HttpSubscriber;
-import com.kscf.app.android.model.http.RetrofitHelper;
-import com.kscf.app.android.presenter.contract.RiskEvaluationFragmentContract;
+import com.framework.http.HttpSubscriber;
 import com.framework.util.ToastUtils;
+import com.kscf.app.android.R;
+import com.kscf.app.android.base.RxPresenter;
+import com.kscf.app.android.model.bean.base.BaseBean;
+import com.kscf.app.android.model.bean.SendSmsBean;
+import com.kscf.app.android.presenter.contract.RiskEvaluationFragmentContract;
 
 import java.util.Map;
 
@@ -23,8 +20,7 @@ import javax.inject.Inject;
 public class RiskEvaluationFragmentPresenter extends RxPresenter<RiskEvaluationFragmentContract.View> implements RiskEvaluationFragmentContract.Presenter {
 
     @Inject
-    public RiskEvaluationFragmentPresenter(RetrofitHelper retrofitHelper) {
-        mRetrofitHelper = retrofitHelper;
+    public RiskEvaluationFragmentPresenter() {
     }
 
     @Override
@@ -33,9 +29,9 @@ public class RiskEvaluationFragmentPresenter extends RxPresenter<RiskEvaluationF
 
 
     public void loginOrRegister(Map<String, Object> param) {
-        HttpSubscriber<LoginOrRegisterBean> httpSubscriber = new HttpSubscriber<LoginOrRegisterBean>() {
+        HttpSubscriber<SendSmsBean> httpSubscriber = new HttpSubscriber<SendSmsBean>() {
             @Override
-            public void onSuccess(LoginOrRegisterBean loginOrRegisterBean) {
+            public void onSuccess(SendSmsBean loginOrRegisterBean) {
                 if (mIsDestroy) {
                     return;
                 }
@@ -56,7 +52,7 @@ public class RiskEvaluationFragmentPresenter extends RxPresenter<RiskEvaluationF
                 ToastUtils.show(R.string.txt_phone_number_format_err);
             }
         };
-        addSubscriber(mRetrofitHelper.sendNet(HttpMethod.GET,Apis.testApi, null, param, httpSubscriber));
+        ///addSubscriber(mRetrofitHelper.sendNet(HttpMethod.GET,Apis.testApi, null, param, httpSubscriber));
     }
 
 
@@ -80,6 +76,6 @@ public class RiskEvaluationFragmentPresenter extends RxPresenter<RiskEvaluationF
                 ToastUtils.show(R.string.txt_sms_code_send_err);
             }
         };
-        addSubscriber(mRetrofitHelper.sendNet(HttpMethod.POST,Apis.loginSendSmsCodeApi, null, param, httpSubscriber));
+        //addSubscriber(mRetrofitHelper.sendNet(HttpMethod.POST,Apis.loginSendSmsCodeApi, null, param, httpSubscriber));
     }
 }

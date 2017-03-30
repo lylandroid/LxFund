@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--精选基金-详情页面-业绩排名-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/itemSelectBackground"
+              android:orientation="horizontal">
+
+
+    <TextView
+        style="@style/tv_title_style"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_weight="1"
+        android:paddingLeft="@dimen/size_0dp"
+        android:text="@string/txt_time"
+        android:textSize="@dimen/font_13"/>
+
+    <TextView
+        style="@style/tv_title_style"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_weight="1"
+        android:paddingLeft="@dimen/size_0dp"
+        android:text="@string/txt_profit_repay"
+        android:textSize="@dimen/font_13"/>
+
+    <TextView
+        style="@style/tv_title_style"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_weight="1"
+        android:paddingLeft="@dimen/size_0dp"
+        android:text="@string/txt_similar_ranking"
+        android:textSize="@dimen/font_13"/>
+
+    <TextView
+        style="@style/tv_title_style"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_weight="1"
+        android:paddingLeft="@dimen/size_0dp"
+        android:text="@string/txt_similar_average"
+        android:textSize="@dimen/font_13"/>
+</LinearLayout>

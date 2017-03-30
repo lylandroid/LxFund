@@ -1,6 +1,7 @@
 package com.kscf.app.android.ui.fragment;
 
 import android.content.Intent;
+import android.util.SparseArray;
 import android.view.View;
 
 import com.kscf.app.android.R;
@@ -13,6 +14,7 @@ import com.kscf.app.android.ui.activity.DetailsActivity;
 import com.kscf.app.android.ui.activity.LoginActivity;
 import com.kscf.app.android.ui.activity.MainActivity;
 import com.kscf.app.android.ui.dialog.PayPasswordFragmentDialog;
+import com.kscf.app.android.ui.fragment.setting.AccountSettingsFragment;
 import com.kscf.app.android.widget.LoadingPage;
 
 /**
@@ -56,6 +58,8 @@ public class HomeMyAccountFragment extends BaseFragment<HomeFragmentFundMyAccoun
         mDataBinding.btnConfirm.setOnClickListener(this);
 
         mDataBinding.itemRiskEvaluation.setOnClickListener(this);
+        //邀请好友item_invite_friends
+        mDataBinding.itemInviteFriends.setOnClickListener(this);
 
     }
 
@@ -64,44 +68,44 @@ public class HomeMyAccountFragment extends BaseFragment<HomeFragmentFundMyAccoun
 
     }
 
+    SparseArray<String> mFragmentClassNameArray;
+
+    public String getFragmentClassName(int resId) {
+        if (mFragmentClassNameArray == null) {
+            mFragmentClassNameArray = new SparseArray<>(8);
+            mFragmentClassNameArray.put(R.id.iv_icon_head, AccountSettingsFragment.class.getName());
+            mFragmentClassNameArray.put(R.id.item_news, MessageFragment.class.getName());
+            mFragmentClassNameArray.put(R.id.item_bank_card, MyBankCardFragment.class.getName());
+            mFragmentClassNameArray.put(R.id.item_fund, FundFragment.class.getName());
+            mFragmentClassNameArray.put(R.id.item_lx_ying, LxYingFragment.class.getName());
+            mFragmentClassNameArray.put(R.id.item_welfare, RedPackageFragment.class.getName());
+            mFragmentClassNameArray.put(R.id.item_risk_evaluation, RiskEvaluationFragment.class.getName());
+            mFragmentClassNameArray.put(R.id.item_invite_friends, InviteFriendsFragment.class.getName());
+        }
+        return mFragmentClassNameArray.get(resId);
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.iv_icon_head:
-                //toLoginActivity();
-                toSettingPage();
-                break;
             case R.id.btn_confirm:
                 mPayPasswordDialog.show(getFragmentManager());
                 break;
-            case R.id.item_news:
-                DetailsActivity.addFragmentToDetailsActivity(mActivity, MessageFragment.class.hashCode(), true);
-                break;
-            case R.id.item_bank_card:
-                DetailsActivity.addFragmentToDetailsActivity(mActivity, MyBankCardFragment.class.hashCode(), true);
-                break;
-            case R.id.item_fund:
-                DetailsActivity.addFragmentToDetailsActivity(mActivity, FundFragment.class.hashCode(), true);
-                break;
-            case R.id.item_lx_ying:
-                DetailsActivity.addFragmentToDetailsActivity(mActivity, LxYingFragment.class.hashCode(), true);
-                break;
-            case R.id.item_welfare:
-                DetailsActivity.addFragmentToDetailsActivity(mActivity, RedPackageFragment.class.hashCode(), true);
-                break;
-            case R.id.item_risk_evaluation:
-                DetailsActivity.addFragmentToDetailsActivity(mActivity, RiskEvaluationFragment.class.hashCode(), true);
+            default:
+                mActivity.addFragmentToActivity(mActivity, DetailsActivity.class, getFragmentClassName(v.getId()), true);
                 break;
 
         }
     }
 
-    private void toSettingPage() {
-        DetailsActivity.addFragmentToDetailsActivity(mActivity, AccountSettingsFragment.class.hashCode(), true);
-    }
 
-    public void toLoginActivity() {
-        Intent intent = new Intent(mActivity, LoginActivity.class);
-        App.getInstance().startTargetActivity(mActivity, intent, false);
+    @Override
+    public void free() {
+        if(mFragmentClassNameArray != null){
+            mFragmentClassNameArray.clear();
+            mFragmentClassNameArray = null;
+
+        }
+        super.free();
     }
 }

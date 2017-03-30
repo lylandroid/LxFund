@@ -4,30 +4,34 @@ import android.app.Activity;
 
 import com.kscf.app.android.di.mode.FragmentModule;
 import com.kscf.app.android.di.scope.FragmentScope;
-import com.kscf.app.android.ui.fragment.AccountSettingsFragment;
-import com.kscf.app.android.ui.fragment.ContactAddressFragment;
 import com.kscf.app.android.ui.fragment.DetailsHomeFundGroupFragment;
 import com.kscf.app.android.ui.fragment.DetailsHomeFundSelectedFragment;
 import com.kscf.app.android.ui.fragment.FundFragment;
 import com.kscf.app.android.ui.fragment.HomeFundGroupFragment;
 import com.kscf.app.android.ui.fragment.HomeFundSelectedFragment;
 import com.kscf.app.android.ui.fragment.HomeMyAccountFragment;
+import com.kscf.app.android.ui.fragment.InviteFriendsFragment;
+import com.kscf.app.android.ui.fragment.IWantFixedInvestmentFragment;
 import com.kscf.app.android.ui.fragment.LoginFragment;
 import com.kscf.app.android.ui.fragment.LxYingFragment;
 import com.kscf.app.android.ui.fragment.MessageFragment;
-import com.kscf.app.android.ui.fragment.MoreInformationFragment;
 import com.kscf.app.android.ui.fragment.MyBankCardFragment;
-import com.kscf.app.android.ui.fragment.MyContactAddressFragment;
-import com.kscf.app.android.ui.fragment.MyContactPhoneFragment;
 import com.kscf.app.android.ui.fragment.QuickAccountFragment01;
 import com.kscf.app.android.ui.fragment.QuickAccountFragment02;
 import com.kscf.app.android.ui.fragment.QuickAccountFragment03;
 import com.kscf.app.android.ui.fragment.RedPackageFragment;
+import com.kscf.app.android.ui.fragment.RegisterAgreementFragment;
 import com.kscf.app.android.ui.fragment.ResetTransactionPassFragment;
 import com.kscf.app.android.ui.fragment.RiskEvaluationFragment;
-import com.kscf.app.android.ui.fragment.SettingsTransactionPassFragment;
-import com.kscf.app.android.ui.fragment.UpdateLoginPassFragment;
-import com.kscf.app.android.ui.fragment.UpdateTransactionPassFragment;
+import com.kscf.app.android.ui.fragment.setting.AccountSettingsFragment;
+import com.kscf.app.android.ui.fragment.setting.ContactAddressFragment;
+import com.kscf.app.android.ui.fragment.setting.MoreInformationFragment;
+import com.kscf.app.android.ui.fragment.setting.MyContactAddressFragment;
+import com.kscf.app.android.ui.fragment.setting.MyContactPhoneFragment;
+import com.kscf.app.android.ui.fragment.setting.SaveEmailFragment;
+import com.kscf.app.android.ui.fragment.setting.SettingsTransactionPassFragment;
+import com.kscf.app.android.ui.fragment.setting.UpdateLoginPassFragment;
+import com.kscf.app.android.ui.fragment.setting.UpdateTransactionPassFragment;
 
 import dagger.Component;
 
@@ -98,6 +102,17 @@ public interface FragmentComponent {
     //设置交易密码Fragment
     void inject(SettingsTransactionPassFragment fragment);
 
+    //邀请好友Fragment
+    void inject(InviteFriendsFragment fragment);
+
+    //注册协议Fragment
+    void inject(RegisterAgreementFragment fragment);
+
+    //保存邮箱Fragment
+    void inject(SaveEmailFragment fragment);
+
+    //我要定投Fragment
+    void inject(IWantFixedInvestmentFragment fragment);
 
 
 }

@@ -38,7 +38,7 @@
             android:textSize="@dimen/font_28"/>
 
 
-        <android.support.design.widget.TabLayout
+        <com.kscf.app.android.widget.LxTabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

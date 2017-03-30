@@ -9,6 +9,7 @@
 
     <!--common color-->
     <color name="white">@android:color/white</color>
+    <color name="white40">#40FFFFFF</color>
     <color name="transparent">@android:color/transparent</color>
     <color name="blue">#FF006EF6</color>
     <color name="blue2">#AA006EF6</color>
@@ -28,8 +29,6 @@
     <color name="txt_subtitle_color">#FF8E8E8E</color>
     <color name="txt_item_right_color">#FFD5D5D5</color>
     <color name="txt_loading_color">#60000000</color>
-
-
 
 
     <color name="colorBackgroundRed">#FFFD5B64</color>

@@ -8,70 +8,8 @@
         android:background="@color/activityBackgroundColor">
 
 
+        <include layout="@layout/fragment_item_bottom_buy"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="@dimen/size_52dp"
-            android:layout_gravity="bottom">
-            <RelativeLayout
-                android:background="@color/white"
-                android:layout_width="@dimen/size_0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
-                <include layout="@layout/layout_line_horizontal"/>
-
-                <com.kscf.app.android.widget.PercentageTextView
-                    android:paddingTop="@dimen/size_8dp"
-                    android:paddingLeft="@dimen/size_8dp"
-                    android:id="@+id/ptv_money"
-                    app:textSize="@dimen/font_18"
-                    android:text="0.60%"
-                    app:endTextSize="@dimen/font_12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <LinearLayout
-                    android:paddingTop="@dimen/size_2dp"
-                    android:paddingLeft="@dimen/size_8dp"
-                    android:layout_width="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_below="@id/ptv_money"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:text="申购费"
-                        android:textColor="@color/txt_subtitle_color"
-                        android:textSize="@dimen/font_10"
-                        android:layout_height="wrap_content"/>
-
-                    <com.framework.view.DeleteLineTextView
-                        android:textColor="@color/txt_subtitle_color"
-                        android:id="@+id/tv_money"
-                        android:paddingLeft="@dimen/size_2dp"
-                        android:layout_width="wrap_content"
-                        android:text="1.50%"
-                        android:textSize="@dimen/font_10"
-                        android:layout_height="wrap_content"/>
-
-
-                </LinearLayout>
-
-
-            </RelativeLayout>
-
-            <Button
-                android:id="@+id/btn_confirm"
-                android:layout_width="@dimen/size_0dp"
-                android:layout_weight="3"
-                android:textColor="@color/white"
-                android:text="@string/btn_txt_buy_now"
-                android:background="@drawable/item_def_yellow_select_shallow_selector"
-                android:layout_height="match_parent"/>
-
-
-        </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -112,28 +50,67 @@
                     android:orientation="vertical">
 
 
+                    <RelativeLayout
+                        style="@style/match_wrap_h_background"
+                        android:paddingBottom="@dimen/size_8dp">
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            style="@style/tv_title_style"
+                            android:text="@string/txt_test_details_title"
+                            android:textSize="@dimen/font_16"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/tv_fund_number"
+                            style="@style/tv_subtitle_style"
+                            android:layout_width="wrap_content"
+                            android:layout_toRightOf="@id/tv_title"
+                            android:paddingTop="@dimen/size_14dp"
+                            android:text="(138921)"/>
+
+                        <TextView
+                            android:id="@+id/tv_blend_type"
+                            style="@style/tv_style_yellow_border_color"
+                            android:layout_below="@id/tv_title"
+                            android:text="@string/txt_blend_type"/>
+
+                        <TextView
+                            android:id="@+id/tv_near_3year_profit_double"
+                            style="@style/tv_style_yellow_border_color"
+                            android:layout_alignTop="@id/tv_blend_type"
+                            android:layout_toRightOf="@id/tv_blend_type"
+                            android:text="@string/txt_near_3year_profit_double"/>
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_below="@id/tv_blend_type"
+                            android:layout_marginTop="@dimen/size_12dp"
+                            android:background="@drawable/item_dashed_line_horizontal"
+                            android:layerType="software"/>
+
+                    </RelativeLayout>
+
+
                     <LinearLayout
-                        android:paddingLeft="@dimen/size_8dp"
-                        android:paddingRight="@dimen/size_8dp"
+                        style="@style/match_wrap_v_background"
                         android:paddingBottom="@dimen/size_8dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:orientation="vertical"
                         android:paddingTop="@dimen/size_8dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/size_8dp"
                             android:text="@string/txt_near_year_profit"
                             android:textColor="@color/txt_title_color"
                             android:textSize="@dimen/font_12"/>
 
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            style="@style/match_wrap_h"
+                            android:paddingLeft="@dimen/size_8dp">
 
                             <FrameLayout
                                 android:layout_width="@dimen/size_0dp"
@@ -232,77 +209,15 @@
 
                         <View
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/size_1dp"
-                            android:background="@drawable/step_line_off"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:paddingBottom="@dimen/size_12dp"
-                            android:paddingTop="@dimen/size_8dp">
-
-                            <ImageView
-                                android:background="@drawable/icon_buy_success"
-                                android:layout_width="@dimen/size_12dp"
-                                android:layout_marginRight="@dimen/size_2dp"
-                                android:layout_height="@dimen/size_12dp"/>
-
-                            <TextView
-                                android:id="@+id/tv_fund_type"
-                                android:gravity="center_vertical"
-                                android:layout_width="@dimen/size_0dp"
-                                android:layout_height="@dimen/size_32dp"
-                                android:layout_weight="1"
-                                android:paddingBottom="@dimen/size_6dp"
-                                android:paddingTop="@dimen/size_6dp"
-                                android:text="基建发力 指数型"
-                                android:textColor="@color/txt_subtitle_color"
-                                android:textSize="@dimen/font_12"/>
-
-                            <include layout="@layout/layout_line_vertical"/>
-
-
-                            <LinearLayout
-                                android:layout_width="@dimen/size_0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center">
-
-                                <TextView
-                                    android:id="@+id/tv_risk_grade"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/txt_risk_grade"
-                                    android:textColor="@color/txt_subtitle_color"
-                                    android:textSize="@dimen/font_12"/>
-
-                                <!--style="?android:attr/ratingBarStyleSmall"-->
-                                <!--style="@style/RatingBar_Small"-->
-                                <RatingBar
-                                    android:padding="@dimen/size_0dp"
-                                    android:id="@+id/rating_bar"
-                                    style="@style/RatingBar_Small"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:numStars="5"
-                                    android:rating="3"
-                                    android:layout_marginLeft="5dp" >
-                                </RatingBar>
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <include layout="@layout/layout_line_horizontal"/>
+                            android:layout_height="8dp"
+                            android:background="@color/activityBackgroundColor"/>
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/tv_title_style"
                             android:layout_marginTop="@dimen/size_12dp"
                             android:text="@string/txt_yield_trend"
-                            android:textColor="@color/txt_title_color"
-                            android:textSize="@dimen/font_14"/>
+                            android:textSize="@dimen/font_16"
+                            android:textStyle="bold"/>
 
 
                         <com.github.mikephil.charting.charts.LineChart
@@ -313,67 +228,172 @@
                             android:layout_marginTop="@dimen/size_12dp"/>
 
                         <include
-                            android:id="@+id/include_item"
+                            android:id="@+id/include_radio_group"
                             layout="@layout/item_fragment_fund_details_date"/>
 
 
                     </LinearLayout>
 
-                    <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-                        app:topAndBottomPadding="@dimen/size_12dp"
-                        android:background="@color/white"
+                    <TextView
+                        style="@style/tv_title_style"
+                        android:layout_width="match_parent"
                         android:layout_marginTop="@dimen/size_8dp"
+                        android:background="@color/white"
+                        android:gravity="left"
+                        android:text="@string/txt_performance_ranking"
+                        android:textSize="@dimen/font_16"
+                        android:textStyle="bold"/>
+
+                    <include layout="@layout/layout_line_horizontal"/>
+
+                    <include layout="@layout/item_recycler_details_fund_selected_performance_ranking_title"/>
+
+                    <include layout="@layout/layout_line_horizontal"/>
+
+                    <com.kscf.app.android.widget.LxRecyclerView
+                        android:id="@+id/recycler_view_performance_ranking"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:isShowArrowView="false"
-                        app:leftText="@string/txt_fund_archives"/>
+                        android:background="@color/white"
+                        android:nestedScrollingEnabled="false"/>
+
+                    <RelativeLayout
+                        android:id="@+id/item_open"
+                        style="@style/match_wrap"
+                        android:background="@drawable/item_def_white_select_gray_selector"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_open"
+                            style="@style/tv_subtitle_style"
+                            android:layout_width="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:drawablePadding="@dimen/size_6dp"
+                            android:drawableRight="@drawable/item_select_arrow_bottom_top_selector"
+                            android:text="@string/txt_open"
+                            android:textSize="@dimen/font_13"/>
+
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        style="@style/tv_title_style"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:background="@color/white"
+                        android:gravity="left"
+                        android:text="@string/txt_fund_info"
+                        android:textSize="@dimen/font_16"
+                        android:textStyle="bold"/>
 
                     <include layout="@layout/layout_line_horizontal"/>
 
                     <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-                        app:topAndBottomPadding="@dimen/size_12dp"
-                        android:layout_width="match_parent"
                         android:id="@+id/item_fund_manager"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/white"
                         app:isShowArrowView="false"
-                        app:leftText="@string/txt_fund_manager"/>
+                        app:leftText="@string/txt_fund_manager"
+                        app:topAndBottomPadding="@dimen/size_12dp"/>
 
                     <include layout="@layout/layout_line_horizontal"/>
 
                     <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-                        app:topAndBottomPadding="@dimen/size_12dp"
-                        android:layout_width="match_parent"
-                        android:background="@color/white"
                         android:id="@+id/item_fund_company"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/white"
                         app:isShowArrowView="false"
-                        app:leftText="@string/txt_fund_company"/>
+                        app:leftText="@string/txt_fund_company"
+                        app:topAndBottomPadding="@dimen/size_12dp"/>
 
                     <include layout="@layout/layout_line_horizontal"/>
 
 
                     <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-                        app:topAndBottomPadding="@dimen/size_12dp"
-                        android:layout_width="match_parent"
-                        android:background="@color/white"
                         android:id="@+id/item_fund_scale"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/white"
                         app:isShowArrowView="false"
-                        app:leftText="@string/txt_fund_scale"/>
+                        app:leftText="@string/txt_fund_scale"
+                        app:topAndBottomPadding="@dimen/size_12dp"/>
 
                     <include layout="@layout/layout_line_horizontal"/>
 
                     <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-                        app:topAndBottomPadding="@dimen/size_12dp"
-                        android:layout_width="match_parent"
-                        android:background="@color/white"
                         android:id="@+id/item_establish_time"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        app:isShowArrowView="false"
+                        app:leftText="@string/txt_establish_time"
                         app:rightText="@string/txt_test_date"
                         app:rightTextColor="@color/txt_title_color"
+                        app:topAndBottomPadding="@dimen/size_12dp"/>
+
+                    <include layout="@layout/layout_line_horizontal"/>
+
+                    <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                        android:id="@+id/item_risk_grade"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
                         app:isShowArrowView="false"
-                        app:leftText="@string/txt_establish_time"/>
+                        app:leftText="@string/txt_risk_grade"
+                        app:topAndBottomPadding="@dimen/size_12dp"/>
+
+                    <TextView
+                        style="@style/tv_title_style"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        android:background="@color/white"
+                        android:gravity="left"
+                        android:text="@string/txt_asset_allocation"
+                        android:textSize="@dimen/font_16"
+                        android:textStyle="bold"/>
+
+                    <include layout="@layout/layout_line_horizontal"/>
+
+                    <LinearLayout
+                        style="@style/match_wrap_h"
+                        android:background="@color/white">
+
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/pie_chart"
+                            android:layout_width="@dimen/size_0dp"
+                            android:layout_height="@dimen/size_160dp"
+                            android:layout_weight="5"/>
+
+                        <View
+                            android:layout_width="@dimen/size_0dp"
+                            android:layout_height="@dimen/size_1dp"
+                            android:layout_weight="1"/>
+
+
+                    </LinearLayout>
+
+                    <include
+                        android:id="@+id/include_recycler"
+                        layout="@layout/item_page_details_fund_selected_stock_bond_holding"/>
+
+                    <include layout="@layout/layout_line_horizontal"/>
+
+                    <TextView
+                        android:id="@+id/tv_statement"
+                        style="@style/tv_subtitle_style"
+                        android:background="@color/white"
+                        android:gravity="left"
+                        android:paddingBottom="@dimen/size_12dp"
+                        android:paddingLeft="@dimen/size_12dp"
+                        android:paddingRight="@dimen/size_12dp"
+                        android:paddingTop="@dimen/size_12dp"
+                        android:text="@string/txt_test_content"
+                        android:textSize="@dimen/font_11"/>
+
+
                 </LinearLayout><!--end内容-->
             </RelativeLayout>
         </ScrollView>

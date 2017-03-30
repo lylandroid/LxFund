@@ -1,9 +1,8 @@
 package com.kscf.app.android.presenter;
 
+import com.framework.http.RetrofitHelper;
 import com.kscf.app.android.base.RxPresenter;
-import com.kscf.app.android.model.http.RetrofitHelper;
 import com.kscf.app.android.presenter.contract.ResetTransactionPassFragmentContract;
-import com.kscf.app.android.presenter.contract.UpdateTransactionPassFragmentContract;
 
 import javax.inject.Inject;
 
@@ -15,8 +14,7 @@ import javax.inject.Inject;
 public class ResetTransactionPassFragmentPresenter extends RxPresenter<ResetTransactionPassFragmentContract.View> implements ResetTransactionPassFragmentContract.Presenter {
 
     @Inject
-    public ResetTransactionPassFragmentPresenter(RetrofitHelper retrofitHelper) {
-        mRetrofitHelper = retrofitHelper;
+    public ResetTransactionPassFragmentPresenter() {
     }
 
     @Override

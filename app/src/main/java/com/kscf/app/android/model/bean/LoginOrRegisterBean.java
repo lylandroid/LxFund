@@ -1,14 +1,16 @@
 package com.kscf.app.android.model.bean;
 
 /**
- * Created by luoyl on 2017/1/18.
+ * @author luoyl
+ * @created 2017/3/28
  */
 
-public class LoginOrRegisterBean {
+public class LoginOrRegisterBean extends SendSmsBean {
 
-    public String result;
-    //登录类型(保留字段,后续可能会用)
-    public String type;
+    public String verifyCode;
 
-    public String token;
+    public LoginOrRegisterBean(String cellNo, String verifyCode) {
+        super(cellNo);
+        this.verifyCode = verifyCode;
+    }
 }

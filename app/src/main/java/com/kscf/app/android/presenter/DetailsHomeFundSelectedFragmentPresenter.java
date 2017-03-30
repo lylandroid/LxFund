@@ -1,7 +1,7 @@
 package com.kscf.app.android.presenter;
 
+import com.framework.http.RetrofitHelper;
 import com.kscf.app.android.base.RxPresenter;
-import com.kscf.app.android.model.http.RetrofitHelper;
 import com.kscf.app.android.presenter.contract.MessageFragmentContract;
 
 import javax.inject.Inject;
@@ -14,12 +14,13 @@ import javax.inject.Inject;
 public class DetailsHomeFundSelectedFragmentPresenter extends RxPresenter<MessageFragmentContract.View> implements MessageFragmentContract.Presenter {
 
     @Inject
-    public DetailsHomeFundSelectedFragmentPresenter(RetrofitHelper retrofitHelper) {
-        mRetrofitHelper = retrofitHelper;
+    public DetailsHomeFundSelectedFragmentPresenter() {
     }
 
     @Override
     public void start() {
     }
+
+
 
 }

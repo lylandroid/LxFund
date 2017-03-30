@@ -1,9 +1,8 @@
 package com.kscf.app.android.presenter;
 
+import com.framework.http.RetrofitHelper;
 import com.kscf.app.android.base.RxPresenter;
-import com.kscf.app.android.model.http.RetrofitHelper;
 import com.kscf.app.android.presenter.contract.ContactAddressFragmentContract;
-import com.kscf.app.android.presenter.contract.ResetTransactionPassFragmentContract;
 
 import javax.inject.Inject;
 
@@ -15,8 +14,7 @@ import javax.inject.Inject;
 public class ContactAddressFragmentPresenter extends RxPresenter<ContactAddressFragmentContract.View> implements ContactAddressFragmentContract.Presenter {
 
     @Inject
-    public ContactAddressFragmentPresenter(RetrofitHelper retrofitHelper) {
-        mRetrofitHelper = retrofitHelper;
+    public ContactAddressFragmentPresenter() {
     }
 
     @Override

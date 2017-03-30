@@ -40,7 +40,7 @@
 
             <Button
                 android:id="@id/btn_reloading"
-                style="@style/item_button_submit_style"
+                style="@style/btn_round_line_yellow_style"
                 android:layout_weight="10"
                 android:text="@string/btn_txt_again_loading"/>
 

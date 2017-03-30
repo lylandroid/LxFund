@@ -1,16 +1,13 @@
 package com.kscf.app.android.ui.fragment;
 
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.ViewGroup;
 
+import com.framework.base.adapter.DataBindingRecyclerAdapter;
 import com.framework.base.adapter.DataBindingViewPagerAdapter;
-import com.framework.util.L;
 import com.kscf.app.android.R;
 import com.kscf.app.android.app.App;
 import com.kscf.app.android.base.BaseFragment;
-import com.kscf.app.android.base.adapter.DataBindingRecyclerAdapter;
 import com.kscf.app.android.databinding.FragmentFundBinding;
 import com.kscf.app.android.databinding.ItemPageViewpagerFundPositionBinding;
 import com.kscf.app.android.databinding.ItemViewpagerListviewFundPositionBinding;
@@ -49,9 +46,6 @@ public class FundFragment extends BaseFragment<FragmentFundBinding, FundFragment
         mLoadingPage.showPage(LoadingPage.STATE_SUCCEED);
 
         TabLayout tabLayout = mDataBinding.tabLayout;
-        tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.colorButtonSubmitSelect));
-        tabLayout.setTabTextColors(getResources().getColor(R.color.txt_subtitle_color),
-                getResources().getColor(R.color.colorButtonSubmitSelect));
         //tabLayout.addTab(tabLayout.newTab().setText(R.string.txt_position));
         //tabLayout.addTab(tabLayout.newTab().setText(R.string.txt_on_the_way));
         tabLayout.setupWithViewPager(mDataBinding.viewPager);
@@ -73,7 +67,13 @@ public class FundFragment extends BaseFragment<FragmentFundBinding, FundFragment
             }
             viewPagers.add(datas);
         }
-        mDataBinding.viewPager.setAdapter(new FundPagerAdapter(viewPagers));
+
+        List<Integer> pageResIds = new ArrayList<>(2);
+        pageResIds.add(R.layout.item_page_viewpager_fund_position);
+        pageResIds.add(R.layout.item_page_viewpager_fund_position);
+
+
+        mDataBinding.viewPager.setAdapter(new FundPagerAdapter(pageResIds, viewPagers));
         mDataBinding.tabLayout.setupWithViewPager(mDataBinding.viewPager);
 
 
@@ -97,39 +97,18 @@ public class FundFragment extends BaseFragment<FragmentFundBinding, FundFragment
      */
     class FundPagerAdapter extends DataBindingViewPagerAdapter<ItemPageViewpagerFundPositionBinding, List<String>> {
 
-        public FundPagerAdapter(List<List<String>> strings) {
-            super(null, strings);
+        public FundPagerAdapter(List<Integer> pageResIds, List<List<String>> strings) {
+            super(pageResIds, null, strings);
+            mTitles.add(App.getInstance().getResources().getString(R.string.txt_position));
+            mTitles.add(App.getInstance().getResources().getString(R.string.txt_on_the_way));
+
         }
 
         @Override
-        public ViewGroup getView(int position, ViewPager pager) {
-            return (ViewGroup) mInflater.inflate(R.layout.item_page_viewpager_fund_position, pager, false);
-        }
-
-        @Override
-        public void dataBindingData(int position, View rootView, List<String> strings) {
-            L.i("FundPagerAdapter dataBindingData: " + position);
-
+        public void bindRealData(int position, View rootView, List<String> strings) {
             mDataBinding.recyclerView.setAdapter(new DataBindingRecyclerAdapter<ItemViewpagerListviewFundPositionBinding, String>(
                     mDataBinding.recyclerView, 0, R.layout.item_viewpager_listview_fund_position, strings
             ));
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            String title = null;
-            switch (position) {
-                case 0:
-                    title = App.getInstance().getResources().getString(R.string.txt_position);
-                    break;
-                case 1:
-                    title = App.getInstance().getResources().getString(R.string.txt_on_the_way);
-                    break;
-                default:
-                    title = "";
-                    break;
-            }
-            return title;
         }
     }
 

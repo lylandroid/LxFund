@@ -1,23 +1,18 @@
 package com.kscf.app.android.ui.fragment;
 
+import android.content.Intent;
 import android.view.View;
 
+import com.framework.zxing.activity.CaptureActivity;
 import com.kscf.app.android.R;
 import com.kscf.app.android.base.BaseFragment;
-import com.kscf.app.android.base.adapter.DataBindingRecyclerAdapter;
-import com.kscf.app.android.databinding.FragmentMessageBinding;
 import com.kscf.app.android.databinding.FragmentRedPackageBinding;
-import com.kscf.app.android.presenter.MessageFragmentPresenter;
 import com.kscf.app.android.presenter.RedPackageFragmentPresenter;
-import com.kscf.app.android.presenter.contract.MessageFragmentContract;
 import com.kscf.app.android.presenter.contract.RedPackageFragmentContract;
 import com.kscf.app.android.widget.LoadingPage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * 消息Fragment
+ * 红包Fragment
  * Created by luoyl on 2017/1/12.
  */
 
@@ -45,6 +40,7 @@ public class RedPackageFragment extends BaseFragment<FragmentRedPackageBinding, 
 
     @Override
     public void initListener() {
+        mDataBinding.ivScan.setOnClickListener(this);
 
     }
 
@@ -55,10 +51,11 @@ public class RedPackageFragment extends BaseFragment<FragmentRedPackageBinding, 
 
     @Override
     public void onClick(View v) {
-        /*switch (v.getId()) {
-            case R.id.btn_login:
+        switch (v.getId()) {
+            case R.id.iv_scan:
+                startActivity(new Intent(mActivity, CaptureActivity.class));
                 break;
-        }*/
+        }
     }
 
     /*private void toAccountSettings() {

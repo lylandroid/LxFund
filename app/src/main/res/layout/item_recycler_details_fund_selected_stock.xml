@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--精选基金-详情页面-股票成分-->
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_vertical"
+                  android:orientation="horizontal"
+                  android:paddingLeft="@dimen/size_8dp">
+
+
+        <View
+            android:id="@+id/v_square_1"
+            style="@style/tv_title_small_style"
+            android:layout_width="@dimen/size_10dp"
+            android:layout_height="@dimen/size_4dp"
+            android:background="@color/blue"/>
+
+        <TextView
+            android:id="@+id/tv_name1"
+            style="@style/tv_title_small_singleLine_style"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:padding="@dimen/size_8dp"
+            android:text="制造业"/>
+
+        <TextView
+            android:id="@+id/tv_percentage1"
+            style="@style/tv_title_small_style"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:padding="@dimen/size_8dp"
+            android:text="54.95%"/>
+
+        <View
+            android:id="@+id/v_square_2"
+            style="@style/tv_title_small_style"
+            android:layout_width="@dimen/size_10dp"
+            android:layout_height="@dimen/size_4dp"
+            android:background="@color/blue"/>
+
+        <TextView
+            android:id="@+id/tv_name2"
+            style="@style/tv_title_small_singleLine_style"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:padding="@dimen/size_8dp"
+            android:text="金融业"/>
+
+        <TextView
+            android:id="@+id/tv_percentage2"
+            style="@style/tv_title_small_singleLine_style"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:padding="@dimen/size_8dp"
+            android:text="32.78%"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="match_match">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="wrap_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="match_wrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="match_wrap_v" parent="match_wrap">
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="match_wrap_h" parent="match_wrap_v">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="match_wrap_v_background" parent="match_wrap_v">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="match_wrap_h_background" parent="match_wrap_h">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="tv_style_yellow_border_color" parent="tv_title_style">
+        <item name="android:layout_marginLeft">@dimen/size_8dp</item>
+        <item name="android:paddingTop">@dimen/size_4dp</item>
+        <item name="android:paddingBottom">@dimen/size_4dp</item>
+        <item name="android:paddingLeft">@dimen/size_12dp</item>
+        <item name="android:paddingRight">@dimen/size_12dp</item>
+        <item name="android:background">@drawable/item_radius_line_def_yellow_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorButtonSubmit</item>
+        <item name="android:textSize">@dimen/font_12</item>
+    </style>
+</resources>

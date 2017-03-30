@@ -14,6 +14,7 @@
     <item name="control_loading" type="id"/>
     <item name="control_success" type="id"/>
 
+    <item name="web_view_control" type="id"/>
     <item name="fl_content" type="id"/>
     <item name="layout_controller" type="id"/>
     <item name="recycler_view" type="id"/>
@@ -39,6 +40,7 @@
     <item name="tv_msg" type="id"/>
     <item name="tv_forget_password" type="id"/>
     <item name="tv_left" type="id"/>
+    <item name="item_tv_left" type="id"/>
     <item name="tv_number" type="id"/>
     <item name="tv_des" type="id"/>
     <item name="line" type="id"/>
@@ -64,6 +66,7 @@
 
     <!--item-->
 
+    <item name="root_item" type="id"/>
     <item name="item" type="id"/>
     <item name="item0" type="id"/>
     <item name="item1" type="id"/>
@@ -81,10 +84,19 @@
 
 
     <item name="ll_item" type="id"/>
+    <item name="v_square_1" type="id"/>
+    <item name="v_square_2" type="id"/>
+    <item name="tv_name1" type="id"/>
+    <item name="tv_name2" type="id"/>
+    <!--百分比-->
+    <item name="tv_percentage1" type="id"/>
+    <item name="tv_percentage2" type="id"/>
 
 
     <!--include-->
+    <item name="include" type="id"/>
     <item name="include_top" type="id"/>
+    <item name="include_bottom" type="id"/>
     <item name="include_item" type="id"/>
     <item name="include_page" type="id"/>
     <item name="include_toolbar" type="id"/>
@@ -93,6 +105,14 @@
     <!---->
     <item name="visible" type="id"/>
     <item name="masked" type="id"/>
+
+    <!--二维码相关id-->
+    <item name="restart_preview" type="id"/>
+    <item name="quit" type="id"/>
+    <item name="decode" type="id"/>
+    <item name="decode_failed" type="id"/>
+    <item name="decode_succeeded" type="id"/>
+    <item name="return_scan_result" type="id"/>
 
 
 </resources>

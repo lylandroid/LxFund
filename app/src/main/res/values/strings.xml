@@ -38,6 +38,8 @@
     <string name="txt_dynamic_password">动态密码</string>
     <string name="txt_password">密码</string>
     <string name="txt_login">登录</string>
+    <string name="txt_login_success">登录成功</string>
+    <string name="txt_login_fail">登录失败</string>
     <string name="txt_use_password_login">使用密码登录</string>
     <string name="txt_login_err">登录遇到问题</string>
     <string name="txt_quick_account_1">快速开户(1/3)</string>
@@ -77,10 +79,22 @@
     <string name="txt_contact_address">联系地址</string>
     <string name="txt_E_mail">电子邮箱</string>
     <string name="txt_save">保存</string>
+    <string name="txt_fixed_investment">定投</string>
+    <string name="txt_i_want_fixed_investment">我要定投</string>
+    <string name="txt_fixed_investment_money">定投金额</string>
+    <string name="txt_fixed_investment_cycle">定投周期</string>
+    <string name="txt_min_fixed_investment_money_10">最低定投金额10元</string>
     <string name="txt_total_amount">总金额(元)</string>
     <string name="txt_current_assets">当前资产(元)</string>
     <string name="txt_edit">编辑</string>
     <string name="txt_delete">删除</string>
+    <string name="txt_stock_component">股票成分</string>
+    <string name="txt_shares_name">股票名称</string>
+    <string name="txt_bond_component">债券成分</string>
+    <string name="txt_heavy_warehouse_holding">重仓持股</string>
+    <string name="txt_code">代码</string>
+    <string name="txt_proportion">占比</string>
+    <string name="txt_my_red_package">我的红包</string>
 
 
     <string name="txt_please_input_new_login_pass">请输入新登录密码</string>
@@ -89,9 +103,14 @@
     <string name="txt_please_input_login_pass">请输入登录密码</string>
     <string name="txt_please_input_password">请输入密码</string>
     <string name="txt_please_input_phone_number">请输入手机号</string>
+    <string name="txt_please_input_email">请输入邮箱地址</string>
+    <string name="txt_please_input_correct_email">请输入正确的邮箱地址</string>
     <string name="txt_please_input_sms_code">请输入短信验证码</string>
     <string name="txt_please_send_sms_code">请先发送短信验证码</string>
     <string name="txt_phone_number_format_err">手机号码格式不正确</string>
+    <string name="txt_phone_number_already_register">手机号码已注册</string>
+    <string name="txt_verification_code_overdue_re_get">验证码已过期，请重新获取！</string>
+    <string name="txt_you_input_verification_code_err">您输入的验证码不正确！</string>
     <string name="txt_please_input_verification_code">请输入验证码</string>
     <string name="txt_please_input_transaction_password">请输入交易密码</string>
     <string name="txt_forget_password">忘记密码?</string>
@@ -99,16 +118,22 @@
     <string name="txt_sms_code_send_err">短信验证码发送失败</string>
     <string name="txt_login_register_err">登录或注册失败</string>
     <string name="txt_register_phone_number">注册手机号</string>
+    <string name="txt_register_fail">注册失败</string>
     <string name="txt_other">其它</string>
     <string name="txt_login_or_register">登录或注册</string>
     <string name="txt_ling_xian_ying">领先盈</string>
     <string name="txt_fund">基金</string>
+    <string name="txt_fund_info">基金信息</string>
     <string name="txt_fund_name">基金名称</string>
     <string name="txt_risk_evaluation">风险测评</string>
     <string name="txt_reset_repeat">重新测评</string>
     <string name="txt_type_radical">激进型</string>
     <string name="txt_welfare">福利</string>
     <string name="txt_invite_friends">邀请好友</string>
+    <string name="txt_no_invite_friends">亲，您还没有邀请好友哟~\n 快去邀请吧，么么哒~</string>
+    <string name="txt_no_buy_lx_ying_to_buy">亲，您还没有买过领先盈，\n买点吧！</string>
+    <string name="txt_invite_friends_scan_2_code">邀请好友扫描二维码</string>
+    <string name="txt_my_invite">我的邀请</string>
     <string name="txt_news">消息</string>
     <string name="txt_temp_no_news">暂无消息</string>
     <string name="txtCurrentPageAndTotalPage">%1$d/%2$d</string>
@@ -121,11 +146,12 @@
     <string name="txt_detailed_address">详细地址</string>
     <string name="txt_please_input_detailed_address">请输入详细地址</string>
     <string name="txt_view_details">查看详情</string>
-    <string name="txt_read_protocol_and_agree"><!--\u3000\u3000-->
-        我已阅读并同样《凯石财富注册协议》,《投资者权益须知》</string>
+    <string name="txt_read_protocol_and_agree">我已阅读并同意《凯石财富注册协议》,《投资者权益须知》</string>
+    <string name="txt_read_protocol_book">我已阅读并同意《定期定投投资业务协议》,《银行自动转账授权书》</string>
     <string name="txt_selector_user_protocol">请选择用户协议</string>
 
     <string name="txt_position">持仓</string>
+    <string name="txt_position_amount">持仓量(万元)</string>
     <string name="txt_on_the_way">在途</string>
     <string name="txt_my_bank_card">我的银行卡</string>
     <string name="txt_my_contact_phone">我的联系电话</string>
@@ -135,12 +161,14 @@
     <string name="txt_near_year_profit">近一年收益</string>
     <string name="txt_since_establishment_profit">成立以来收益</string>
     <string name="txt_net_worth_growth_rate">净值增长率</string>
+    <string name="txt_rate">费率</string>
     <string name="txt_net_asset_value">单位净值</string>
     <string name="txt_group_asset_value">组合净值</string>
     <string name="txt_excellent_shares_mix_fund">优选股混基金</string>
     <!--String.format(getResources().getString(R.string.warning_message
         ), "xxxxxxxxxx");-->
     <string name="txt_data_sources">数据来源:%s</string>
+    <string name="txt_estimate_money_save_money">估算费用%%s元，已省%%s元</string>
     <string name="txt_update_date">更新日期:%s</string>
     <string name="txt_risk_grade">风险等级</string>
     <string name="txt_yield_trend">收益率走势</string>
@@ -156,6 +184,7 @@
     <string name="txt_fund_company">基金公司</string>
     <string name="txt_fund_scale">基金规模</string>
     <string name="txt_establish_time">成立时间</string>
+    <string name="txt_time">时间</string>
     <string name="txt_day_rise_drop">日涨跌</string>
     <string name="txt_invest_strategy">投资策略</string>
     <string name="txt_asset_allocation">资产配置</string>
@@ -178,6 +207,30 @@
     <string name="txt_setting_def">设置为默认</string>
     <string name="txt_i_think_modify_transaction_pass">我想修改交易密码</string>
     <string name="txt_i_forget_transaction_pass">我忘记交易密码了</string>
+    <string name="txt_blend_type">混合型</string>
+    <string name="txt_near_3year_profit_double">近3年收益翻倍</string>
+    <string name="txt_performance_ranking">业绩排名</string>
+    <string name="txt_profit_repay">收益回报</string>
+    <string name="txt_similar_ranking">同类排名</string>
+    <string name="txt_similar_average">同类平均</string>
+    <string name="txt_open">展开</string>
+    <string name="txt_un_open">收起</string>
+    <string name="txt_next_buckle_money_date">下次扣款日期：%s</string>
+
+
+    <string name="txt_unknown_err">未知错误</string>
+    <string name="txt_success">成功</string>
+    <string name="txt_autograph_error">签名错误</string>
+    <string name="txt_invalid_token">无效token</string>
+    <string name="txt_overdue_token">过期token</string>
+    <string name="txt_inner_err">内部错误</string>
+    <string name="txt_no_support">不支持</string>
+    <string name="txt_entity_no_exist">实体不存在</string>
+    <string name="txt_register_success">注册成功</string>
+    <string name="txt_login_invalid_re_login">登录实现请重新登录</string>
+    <string name="txt_invalid_id_card_number">无效的身份证号码</string>
+    <string name="txt_account_age_scope">年龄未满18岁或大于70岁无法开户</string>
+    <string name="txt_you_input_info_bank_reserve_mismatch">您输入的银行卡号、身份信息、手机号码与银行预留不匹配</string>
 
 
     <!--dialog pay password number-->
@@ -202,12 +255,19 @@
     <string name="dialogPayPasswordDes8">TUV</string>
     <string name="dialogPayPasswordDes9">WXYZ</string>
 
+    <!--二维码相关-->
+    <string name="qr_scan_tips">将二维码/条码放入框内，即可自动扫描</string>
+    <string name="permissions_camera_error">相机无法完成初始化,请正确授权。</string>
+    <string name="str_request_camera_message">请求获取相机权限</string>
+    <string name="actionbar_title_qr_scan">二维码/条码</string>
 
-    <string name="amount_0.00">0.00</string>
+
+    <string name="amount_0.00">0.00%</string>
     <string name="text_test_phone">136****9999</string>
 
 
     <string name="txt_test_title">开年首周股债基金齐涨，结构性行情中增配主题基金</string>
+    <string name="txt_test_details_title">金鹰红利价值混合</string>
     <string name="txt_test_date">2017-01-09 10:30</string>
     <string name="txt_test_content">\u3000\u3000开年首周股债基金齐涨，结构性行情中增配主题基金。开年首周股债基金齐涨，结构性行情中增配主题基金。</string>
 

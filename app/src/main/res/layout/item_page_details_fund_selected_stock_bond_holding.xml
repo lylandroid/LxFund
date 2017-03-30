@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--精选基金-详情页面-[股份成分,国家债券,持股]-->
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@color/white"
+                  android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_4dp"
+            android:background="@color/blue2"/>
+
+        <TextView
+            style="@style/tv_title_style"
+            android:text="@string/txt_stock_component"/>
+
+        <include layout="@layout/layout_line_horizontal"/>
+
+        <com.kscf.app.android.widget.LxRecyclerView
+            android:id="@+id/recycler_view_stock"
+            style="@style/match_wrap"
+            android:nestedScrollingEnabled="false"/>
+
+        <View
+            android:layout_marginTop="@dimen/size_8dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_4dp"
+            android:background="@color/colorBackgroundViolet"/>
+
+        <TextView
+            style="@style/tv_title_style"
+            android:layout_marginTop="@dimen/size_6dp"
+            android:text="@string/txt_bond_component"/>
+
+        <include layout="@layout/layout_line_horizontal"/>
+
+        <com.kscf.app.android.widget.LxRecyclerView
+            android:id="@+id/recycler_view_bond"
+            style="@style/match_wrap"
+            android:nestedScrollingEnabled="false"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_4dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:background="@color/colorTextButtonSubmitBlue"/>
+
+        <TextView
+            style="@style/tv_title_style"
+            android:layout_marginTop="@dimen/size_6dp"
+            android:text="@string/txt_heavy_warehouse_holding"/>
+
+        <include layout="@layout/layout_line_horizontal"/>
+
+        <include layout="@layout/item_recycler_details_fund_selected_heavy_holding_title"/>
+
+        <com.kscf.app.android.widget.LxRecyclerView
+            android:id="@+id/recycler_view_holding"
+            style="@style/match_wrap"
+            android:nestedScrollingEnabled="false"/>
+
+    </LinearLayout>
+</layout>

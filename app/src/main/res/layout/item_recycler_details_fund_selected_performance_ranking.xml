@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--精选基金-详情页面-业绩排名-->
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@drawable/item_line_bottom_selector"
+                  android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_time"
+            style="@style/tv_title_style"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/size_0dp"
+            android:text="近7天"
+            android:textSize="@dimen/font_13"/>
+
+        <TextView
+            android:id="@+id/tv_profit_repay"
+            style="@style/tv_title_style"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/size_0dp"
+            android:text="0.45%"
+            android:textColor="@color/colorButtonSubmit"
+            android:textSize="@dimen/font_13"/>
+
+        <TextView
+            android:id="@+id/tv_similar_ranking"
+            style="@style/tv_title_style"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/size_0dp"
+            android:text="791/2347"
+            android:textSize="@dimen/font_13"/>
+
+        <TextView
+            android:id="@+id/tv_similar_average"
+            style="@style/tv_title_style"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/size_0dp"
+            android:text="0.39%"
+            android:textColor="@color/colorButtonSubmit"
+            android:textSize="@dimen/font_13"/>
+    </LinearLayout>
+</layout>

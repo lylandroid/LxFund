@@ -9,7 +9,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.framework.util.SizeUtils;
-import com.framework.util.ToastUtils;
 import com.hwangjr.rxbus.annotation.Subscribe;
 import com.hwangjr.rxbus.annotation.Tag;
 import com.kscf.app.android.R;
@@ -20,6 +19,7 @@ import com.kscf.app.android.model.bean.MainBean;
 import com.kscf.app.android.presenter.MainPresenter;
 import com.kscf.app.android.presenter.contract.MainContract;
 import com.kscf.app.android.ui.HomeTabs;
+import com.kscf.app.android.util.LxSPUtils;
 import com.kscf.app.android.widget.LoadingPage;
 
 import me.shaohui.bottomdialog.BottomDialog;
@@ -77,7 +77,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
 //        });
         //mBottomDialog.show();
 
+
     }
+
 
     @Override
     public void initListener() {

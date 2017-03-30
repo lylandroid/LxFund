@@ -4,7 +4,7 @@ import android.view.View;
 
 import com.kscf.app.android.R;
 import com.kscf.app.android.base.BaseFragment;
-import com.kscf.app.android.base.adapter.DataBindingRecyclerAdapter;
+import com.framework.base.adapter.DataBindingRecyclerAdapter;
 import com.kscf.app.android.databinding.FragmentMessageBinding;
 import com.kscf.app.android.presenter.MessageFragmentPresenter;
 import com.kscf.app.android.presenter.contract.MessageFragmentContract;

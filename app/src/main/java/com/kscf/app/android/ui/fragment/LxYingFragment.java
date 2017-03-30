@@ -1,21 +1,19 @@
 package com.kscf.app.android.ui.fragment;
 
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.ViewGroup;
 
+import com.framework.base.adapter.DataBindingRecyclerAdapter;
 import com.framework.base.adapter.DataBindingViewPagerAdapter;
-import com.framework.util.L;
 import com.kscf.app.android.R;
 import com.kscf.app.android.app.App;
 import com.kscf.app.android.base.BaseFragment;
-import com.kscf.app.android.base.adapter.DataBindingRecyclerAdapter;
 import com.kscf.app.android.databinding.FragmentLxYingBinding;
 import com.kscf.app.android.databinding.ItemPageViewpagerFundPositionBinding;
 import com.kscf.app.android.databinding.ItemViewpagerListviewFundPositionBinding;
 import com.kscf.app.android.presenter.LxYingFragmentPresenter;
 import com.kscf.app.android.presenter.contract.LxYingFragmentContract;
+import com.kscf.app.android.ui.activity.DetailsActivity;
 import com.kscf.app.android.widget.LoadingPage;
 
 import java.util.ArrayList;
@@ -49,9 +47,6 @@ public class LxYingFragment extends BaseFragment<FragmentLxYingBinding, LxYingFr
         mLoadingPage.showPage(LoadingPage.STATE_SUCCEED);
 
         TabLayout tabLayout = mDataBinding.tabLayout;
-        tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.colorButtonSubmitSelect));
-        tabLayout.setTabTextColors(getResources().getColor(R.color.txt_subtitle_color),
-                getResources().getColor(R.color.colorButtonSubmitSelect));
         //tabLayout.addTab(tabLayout.newTab().setText(R.string.txt_position));
         //tabLayout.addTab(tabLayout.newTab().setText(R.string.txt_on_the_way));
         tabLayout.setupWithViewPager(mDataBinding.viewPager);
@@ -59,6 +54,8 @@ public class LxYingFragment extends BaseFragment<FragmentLxYingBinding, LxYingFr
 
     @Override
     public void initListener() {
+        mDataBinding.btnRecharge.setOnClickListener(this);
+        mDataBinding.btnFixedInvestment.setOnClickListener(this);
 
     }
 
@@ -73,7 +70,13 @@ public class LxYingFragment extends BaseFragment<FragmentLxYingBinding, LxYingFr
             }
             viewPagers.add(datas);
         }
-        mDataBinding.viewPager.setAdapter(new LxYingPagerAdapter(viewPagers));
+
+        List<Integer> pageResIds = new ArrayList<>();
+        pageResIds.add(R.layout.item_page_viewpager_lx_ying_0);
+        pageResIds.add(R.layout.item_page_viewpager_lx_ying_0);
+
+
+        mDataBinding.viewPager.setAdapter(new LxYingPagerAdapter(pageResIds, viewPagers));
         mDataBinding.tabLayout.setupWithViewPager(mDataBinding.viewPager);
 
 
@@ -81,10 +84,14 @@ public class LxYingFragment extends BaseFragment<FragmentLxYingBinding, LxYingFr
 
     @Override
     public void onClick(View v) {
-        /*switch (v.getId()) {
-            case R.id.btn_login:
+        switch (v.getId()) {
+            case R.id.btn_recharge:
+
                 break;
-        }*/
+            case R.id.btn_fixed_investment:
+                mActivity.addFragmentToActivity(mActivity,DetailsActivity.class, IWantFixedInvestmentFragment.class.getName(), true);
+                break;
+        }
     }
 
     /*private void toAccountSettings() {
@@ -97,39 +104,18 @@ public class LxYingFragment extends BaseFragment<FragmentLxYingBinding, LxYingFr
      */
     class LxYingPagerAdapter extends DataBindingViewPagerAdapter<ItemPageViewpagerFundPositionBinding, List<String>> {
 
-        public LxYingPagerAdapter(List<List<String>> strings) {
-            super(null, strings);
+        public LxYingPagerAdapter(List<Integer> pageResIds, List<List<String>> strings) {
+            super(pageResIds, null, strings);
+            mTitles.add(App.getInstance().getResources().getString(R.string.txt_position));
+            mTitles.add(App.getInstance().getResources().getString(R.string.txt_on_the_way));
         }
 
         @Override
-        public ViewGroup getView(int position, ViewPager pager) {
-            return (ViewGroup) mInflater.inflate(R.layout.item_page_viewpager_fund_position, pager, false);
-        }
+        public void bindRealData(int position, View rootView, List<String> strings) {
 
-        @Override
-        public void dataBindingData(int position, View rootView, List<String> strings) {
-            L.i("FundPagerAdapter dataBindingData: " + position);
-
-            mDataBinding.recyclerView.setAdapter(new DataBindingRecyclerAdapter<ItemViewpagerListviewFundPositionBinding, String>(
+           /* mDataBinding.recyclerView.setAdapter(new DataBindingRecyclerAdapter<ItemViewpagerListviewFundPositionBinding, String>(
                     mDataBinding.recyclerView, 0, R.layout.item_viewpager_listview_fund_position, strings
-            ));
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            String title = null;
-            switch (position) {
-                case 0:
-                    title = App.getInstance().getResources().getString(R.string.txt_position);
-                    break;
-                case 1:
-                    title = App.getInstance().getResources().getString(R.string.txt_on_the_way);
-                    break;
-                default:
-                    title = "";
-                    break;
-            }
-            return title;
+            ));*/
         }
     }
 

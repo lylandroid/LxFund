@@ -3,6 +3,8 @@ package com.framework.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.framework.app.CommApp;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -25,8 +27,8 @@ public class SPUtils {
     /**
      * 保存数据的方法，我们需要拿到保存数据的具体类型，然后根据类型调用不同的保存方法
      */
-    public static void putAndApply(Context context, String key, Object object) {
-        SharedPreferences sp = context.getSharedPreferences(getSpName(context), Context.MODE_PRIVATE);
+    public static void putAndApply(String key, Object object) {
+        SharedPreferences sp = CommApp.getApp().getSharedPreferences(getSpName(CommApp.getApp()), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
 
         if (object instanceof String) {
@@ -49,8 +51,8 @@ public class SPUtils {
     /**
      * 得到保存数据的方法，我们根据默认值得到保存的数据的具体类型，然后调用相对于的方法获取值
      */
-    public static Object get(Context context, String key, Object defaultObject) {
-        SharedPreferences sp = context.getSharedPreferences(getSpName(context), Context.MODE_PRIVATE);
+    public static Object get(String key, Object defaultObject) {
+        SharedPreferences sp = CommApp.getApp().getSharedPreferences(getSpName(CommApp.getApp()), Context.MODE_PRIVATE);
 
         if (defaultObject instanceof String) {
             return sp.getString(key, (String) defaultObject);

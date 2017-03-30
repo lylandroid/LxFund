@@ -2,7 +2,7 @@ package com.framework.listener;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 
-import com.kscf.app.android.base.adapter.LoadingMoreRecyclerAdapter;
+import com.framework.base.adapter.LoadingMoreRecyclerAdapter;
 
 /**
  * Created by lyl on 2016/10/7.

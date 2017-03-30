@@ -7,12 +7,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!--<com.kscf.app.android.widget.DefToolBar
+        <com.kscf.app.android.widget.DefToolBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:background="@color/blue"
             app:isShowReturnView="true"
-            app:title="@string/txt_login_register_err"/>-->
+            app:title="@string/txt_login_or_register"/>
 
         <View
             android:layout_width="@dimen/size_1dp"
@@ -123,11 +123,11 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_marginTop="@dimen/size_2dp"
                         android:id="@+id/iv_check_agreement"
                         android:layout_width="@dimen/size_16dp"
                         android:layout_height="@dimen/size_16dp"
                         android:layout_marginRight="@dimen/size_10dp"
+                        android:layout_marginTop="@dimen/size_2dp"
                         android:background="@drawable/item_checkbox_square"/>
 
                     <com.framework.view.SpannableColorSizeTextView
@@ -153,7 +153,7 @@
 
         <Button
             android:id="@+id/btn_login"
-            style="@style/item_btn_style"
+            style="@style/btn_round_back_yellow_style"
             android:layout_marginTop="@dimen/size_0dp"
             android:background="@drawable/item_radius_btn_login_selector"
             android:text="@string/txt_next_step"/>
@@ -195,6 +195,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:text="to main"/>-->
+
 
 
     </LinearLayout>

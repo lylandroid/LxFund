@@ -235,7 +235,7 @@
 }
 
 #-----------start-------------------------------------
--keep class com.framework.** { *; }
+#-keep class com.framework.** { *; }
 
 #-----------end-------------------------------------
 
@@ -243,6 +243,13 @@
 # 友盟统计分析
 -keepclassmembers class * { public <init>(org.json.JSONObject); }
 -keepclassmembers enum com.umeng.analytics.** {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+-keep public class com.kscf.app.android.R$*{
+public static final int *;
+}
+-keepclassmembers enum * {
     public static **[] values();
     public static ** valueOf(java.lang.String);
 }
@@ -271,31 +278,14 @@
     java.lang.Object readResolve();
 }
 
-#----------growingio start-------------------------------------------------
--keep class com.growingio.android.sdk.** {
-    *;
+#----------app start-------------------------------------------------
+-keepclassmembers class com.kscf.app.android.web.inter.jumpToApp {
+   public *;
 }
--dontwarn com.growingio.android.sdk.**
--keepnames class * extends android.view.View
--keep class * extends android.app.Fragment {
-    public void setUserVisibleHint(boolean);
-    public void onHiddenChanged(boolean);
-    public void onResume();
-    public void onPause();
-}
--keep class android.support.v4.app.Fragment {
-    public void setUserVisibleHint(boolean);
-    public void onHiddenChanged(boolean);
-    public void onResume();
-    public void onPause();
-}
--keep class * extends android.support.v4.app.Fragment {
-    public void setUserVisibleHint(boolean);
-    public void onHiddenChanged(boolean);
-    public void onResume();
-    public void onPause();
-}
-#----------growingio end-------------------------------------------------
+#-keepclassmembers class * extends com.kscf.app.android.base.BaseFragment {
+#   public static ** newInstance();
+#}
+#----------app end-------------------------------------------------
 
 
 

@@ -8,16 +8,28 @@
         android:background="@color/activityBackgroundColor"
         android:orientation="vertical">
 
-        <ImageView
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/red_pack_head_bg"/>
+            android:layout_height="wrap_content">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_pack_head_bg"/>
+
+            <com.kscf.app.android.widget.DefToolBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:background="@color/transparent"
+                app:isShowReturnView="true"
+                app:title="@string/txt_my_red_package"/>
+
+        </FrameLayout>
 
         <RelativeLayout
-            android:layout_marginTop="@dimen/size_12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_12dp"
             android:gravity="center"
             android:padding="@dimen/size_8dp">
 

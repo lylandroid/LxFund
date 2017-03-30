@@ -1,5 +1,8 @@
 package com.kscf.app.android.model.http;
 
+import com.kscf.app.android.app.Apis;
+import com.kscf.app.android.app.LxConstants;
+
 import java.util.Map;
 
 import okhttp3.RequestBody;
@@ -18,6 +21,8 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.PartMap;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 import retrofit2.http.Url;
 import rx.Observable;
@@ -27,45 +32,21 @@ import rx.Observable;
  * Created by luoyl on 2016/12/4.
  */
 public interface HttpService {
-    @GET
-    Observable<ResponseBody> get(@Url String url, @HeaderMap Map<String, Object> headers, @QueryMap Map<String, Object> param);
+    /**
+     * http网络请求接口
+     *
+     * @param param
+     * @return
+     */
+    @POST(Apis.BASE_API/* + "?code=auth-sendLoginSmsVerifyCode&ver=1"*/)
+    Observable<ResponseBody> sendPostHttp(@Query("code") String code, @Query("ver") String version, @HeaderMap Map<String, String> headers, @QueryMap Map<String, String> param);
 
-    @HEAD
-    Observable<ResponseBody> head(@Url String url, @HeaderMap Map<String, Object> headers, @QueryMap Map<String, Object> param);
-
-    @FormUrlEncoded
-    @POST
-    Observable<ResponseBody> post(@Url String url, @HeaderMap Map<String, Object> headers, @FieldMap Map<String, Object> param);
-
-    @PUT
-    Observable<ResponseBody> put(@Url String url, @HeaderMap Map<String, Object> headers, @QueryMap Map<String, Object> param);
-
-    @DELETE
-    Observable<ResponseBody> delete(@Url String url, @HeaderMap Map<String, Object> headers, @QueryMap Map<String, Object> param);
-
-    /*
-    @CONNECT
-    Observable<ResponseBody> connect(@Url String url, @HeaderMap Map<String, Object> headers, @QueryMap Map<String, Object> param);
-    */
-
-    @OPTIONS
-    Observable<ResponseBody> options(@Url String url, @HeaderMap Map<String, Object> headers, @QueryMap Map<String, Object> param);
-
-
-    /*@TRACE
-    Observable<ResponseBody> TRACE(@Url String url, @HeaderMap Map<String, Object> headers, @QueryMap Map<String, Object> param);
-    */
-
-    @PATCH
-    Observable<ResponseBody> patch(@Url String url, @HeaderMap Map<String, Object> headers, @QueryMap Map<String, Object> param);
-
-
-
-    @Multipart
-    @POST
-    Call<String> postUpload(@Url String url, @Part("filedes") String des, @PartMap Map<String, RequestBody> params);
-
-    @Multipart
-    @GET
-    Call<String> getUpload(@Url String url, @Part("filedes") String des, @PartMap Map<String, RequestBody> params);
+    interface Code {
+        //发送验证码code
+        String sendSmsVerifyCode = "auth-sendLoginSmsVerifyCode";
+        //登录 & 注册code
+        String loginAndRegisterCode = "auth-loginByVerifyCode";
+        //获取开户状态
+        String getOpenAccountStateCode = "account-getOpanAccountState";
+    }
 }

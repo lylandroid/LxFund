@@ -14,22 +14,22 @@ import java.util.List;
 /**
  * Created by lyl on 2016/10/3.
  */
-public abstract class ViewPagerAdapter<V extends View, Data> extends PagerAdapter {
+public abstract class ViewPagerAdapter<Data> extends PagerAdapter {
 
-    protected List<V> mViews;
-    protected List<Data> mDatas;
+    protected List<Integer> mPageResIds;
+    protected List<Data> mPageDatas;
     protected List<String> mTitles;
     protected LayoutInflater mInflater;
 
 
-    public ViewPagerAdapter(List<V> views, List<Data> datas) {
-        this(null, views, datas);
+    public ViewPagerAdapter(List<Integer> views, List<Data> pageDatas) {
+        this(views, null, pageDatas);
     }
 
-    public ViewPagerAdapter(List<String> titles, List<V> views, List<Data> datas) {
-        this.mTitles = titles;
-        this.mViews = (views == null ? new ArrayList<V>() : views);
-        this.mDatas = (datas == null ? new ArrayList<Data>() : datas);
+    public ViewPagerAdapter(List<Integer> views, List<String> titles, List<Data> pageDatas) {
+        this.mTitles = titles == null ? new ArrayList<String>() : titles;
+        this.mPageResIds = (views == null ? new ArrayList<Integer>() : views);
+        this.mPageDatas = (pageDatas == null ? new ArrayList<Data>() : pageDatas);
         mInflater = LayoutInflater.from(App.getInstance());
     }
 
@@ -40,7 +40,9 @@ public abstract class ViewPagerAdapter<V extends View, Data> extends PagerAdapte
      * @param pager    The ViewPager that this view will eventually be attached to.
      * @return A View corresponding to the data at the specified position.
      */
-    public abstract V getView(int position, ViewPager pager);
+    public ViewGroup getView(int position, int pageResId, ViewPager pager) {
+        return (ViewGroup) mInflater.inflate(pageResId, pager, false);
+    }
 
     /**
      * Determines whether a page View is associated with a specific key object as
@@ -65,22 +67,18 @@ public abstract class ViewPagerAdapter<V extends View, Data> extends PagerAdapte
      */
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        ViewPager pager = (ViewPager) container;
-        V view;
-        if (position < mViews.size()) {
-            view = mViews.get(position);
-        } else {
-            view = getView(position, pager);
-            mViews.add(view);
+        Integer resViewId = 0;
+        View view;
+        if (position < mPageResIds.size()) {
+            resViewId = mPageResIds.get(position);
         }
-        bindData(position, view, mDatas.get(position));
-
-        pager.addView(view);
-
+        view = getView(position, resViewId, (ViewPager) container);
+        bindData(position, view, mPageDatas.get(position));
+        container.addView(view);
         return view;
     }
 
-    public abstract void bindData(int position, V view, Data data);
+    public abstract void bindData(int position, View view, Data data);
 
     /**
      * Remove a page for the given position.
@@ -95,19 +93,26 @@ public abstract class ViewPagerAdapter<V extends View, Data> extends PagerAdapte
     }
 
     @Override
+    public CharSequence getPageTitle(int position) {
+        return (mTitles != null && mTitles.size() > 0)
+                ? mTitles.get(position)
+                : super.getPageTitle(position);
+    }
+
+    @Override
     public int getCount() {
-        return mDatas != null ? mDatas.size() : 0;
+        return mPageResIds != null ? mPageResIds.size() : 0;
     }
 
     public void clear() {
-        if (mDatas != null) {
-            mDatas.clear();
-            mDatas = null;
+        if (mPageDatas != null) {
+            mPageDatas.clear();
+            mPageDatas = null;
         }
 
-        if (mViews != null) {
-            mViews.clear();
-            mViews = null;
+        if (mPageResIds != null) {
+            mPageResIds.clear();
+            mPageResIds = null;
         }
 
         if (mInflater != null) {

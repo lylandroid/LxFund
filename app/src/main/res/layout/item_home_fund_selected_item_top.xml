@@ -62,7 +62,7 @@
 
         <Button
             android:id="@+id/btn_confirm"
-            style="@style/item_btn_style"
+            style="@style/btn_round_back_yellow_style"
             android:layout_marginBottom="@dimen/size_12dp"
             android:layout_marginLeft="@dimen/size_28dp"
             android:layout_marginRight="@dimen/size_28dp"

@@ -1,25 +1,24 @@
 package com.kscf.app.android.ui.fragment;
 
-import android.content.Intent;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 
 import com.framework.util.L;
 import com.framework.util.ToastUtils;
-import com.hwangjr.rxbus.annotation.Produce;
 import com.kscf.app.android.R;
 import com.kscf.app.android.app.App;
-import com.kscf.app.android.app.LxConstants;
 import com.kscf.app.android.base.BaseFragment;
 import com.kscf.app.android.databinding.FragmentLoginBinding;
-import com.kscf.app.android.model.bean.BaseBean;
+import com.kscf.app.android.model.bean.GetOpenAccountStepBean;
 import com.kscf.app.android.model.bean.LoginOrRegisterBean;
-import com.kscf.app.android.model.bean.OpenAccountStepBean;
-import com.kscf.app.android.model.http.RetrofitHelper;
+import com.kscf.app.android.model.bean.SendSmsBean;
+import com.kscf.app.android.model.bean.base.BaseResponseBean;
+import com.kscf.app.android.model.bean.base.ResponseStateCode;
+import com.kscf.app.android.model.bean.response.GetOpenAccountStepResponseBean;
+import com.kscf.app.android.model.bean.response.LoginOrRegisterResponseBean;
 import com.kscf.app.android.presenter.LoginFragmentPresenter;
 import com.kscf.app.android.presenter.contract.LoginFragmentContract;
-import com.kscf.app.android.ui.activity.DetailsActivity;
 import com.kscf.app.android.ui.activity.LoginActivity;
 import com.kscf.app.android.ui.activity.MainActivity;
 import com.kscf.app.android.ui.activity.QuickAccountActivity;
@@ -27,8 +26,6 @@ import com.kscf.app.android.util.CheckUtils;
 import com.kscf.app.android.util.LxSPUtils;
 import com.kscf.app.android.util.framing.LxRxBus;
 import com.kscf.app.android.widget.LoadingPage;
-
-import java.util.Map;
 
 /**
  * Created by luoyl on 2017/1/12.
@@ -46,6 +43,8 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
      * 倒计时Runnable对象
      */
     ReversTimeRun mReversTimeRun;
+
+    int[] mSendSmsButtonColors;
 
     @Override
     public int getLayoutResId() {
@@ -65,8 +64,8 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
     @Override
     public void initView() {
         mLoadingPage.showPage(LoadingPage.STATE_SUCCEED);
-        /*mDataBinding.itemPhone.getTextInputLayout().setCounterEnabled(true);
-        mDataBinding.itemPhone.getTextInputLayout().setCounterMaxLength(11);*/
+        mSendSmsButtonColors = new int[]{getResources().getColor(R.color.txt_btn_verification_code_selector)
+                , getResources().getColor(R.color.txt_subtitle_color)};
 
     }
 
@@ -115,14 +114,14 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
         L.i("passwordLogin");
     }
 
-    private void toAccountSettings() {
+    /*private void toAccountSettings() {
         ((LoginActivity) mActivity).showHideFragment(AccountSettingsFragment.newInstance(), null);
     }
 
     //测试方法,跳转到风险测评页面，后面会被删除
     private void testToRiskEvaluation() {
         ((LoginActivity) mActivity).showHideFragment(RiskEvaluationFragment.newInstance(), LoginFragment.class);
-    }
+    }*/
 
     /*验证码登录和密码登录切换*/
     public void updateLoginModeUI() {
@@ -132,7 +131,7 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
             mDataBinding.llIsShowCode.setVisibility(View.GONE);
             mDataBinding.itemCode.setLeftTxt(R.string.txt_password);
             mDataBinding.itemCode.setInputHintText(R.string.txt_please_input_password);
-            mDataBinding.itemCode.setTextInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            mDataBinding.itemCode.setTextInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
             mDataBinding.itemCode.setEditTextMaxLength(20);
         } else {//验证码登录
             mDataBinding.llIsShowCode.setVisibility(View.VISIBLE);
@@ -153,9 +152,8 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
         String phone = mDataBinding.itemPhone.getInputEditText();
         //如果手机号码合法
         if (checkPhoneNumber(phone)) {
-            Map<String, Object> param = RetrofitHelper.getHttpParam();
-            param.put(LxConstants.mobile, phone);
-            mPresenter.sendSmsCode(param);
+            SendSmsBean sendSmsBean = new SendSmsBean(phone);
+            mPresenter.sendSmsCode(sendSmsBean);
             mIsSendSmsCode = true;
         }
     }
@@ -169,38 +167,40 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
         //验证码
         String code = mDataBinding.itemCode.getInputEditText();
 
-
         if (checkPhoneNumber(phone) && isSendSmsCode() && checkSmsCode(code)) {
             if (!mDataBinding.ivCheckAgreement.isSelected()) {
                 mDataBinding.tilSpannableReadProtocol.setError("请阅读并勾选用户协议");
                 return;
             }
-            Map<String, Object> httpParam = RetrofitHelper.getHttpParam();
-            httpParam.put(LxConstants.mobile, phone);
-            httpParam.put(LxConstants.authcode, code);
-            mPresenter.loginOrRegister(httpParam);
+            LoginOrRegisterBean loginOrRegisterBean = new LoginOrRegisterBean(phone, code);
+            mPresenter.loginOrRegister(loginOrRegisterBean);
         }
     }
 
 
     @Override
-    public void onLoginSuccess(BaseBean<LoginOrRegisterBean> baseBean) {
-        if (baseBean.success) {
-            L.i("onLoginSuccess 登录成功");
-            ToastUtils.show(baseBean.message);
-            LxSPUtils.putToken(baseBean.body.token);
-            openAccountStepPage();
+    public void onLoginSuccess(BaseResponseBean<LoginOrRegisterResponseBean> baseBean) {
+        if (baseBean.isDataNotNull()) {
+            ToastUtils.show(R.string.txt_login_success);
+            String token = baseBean.data.get(0).token;
+            String userId = baseBean.data.get(0).userId;
+            LxSPUtils.putToken(token);
+            LxSPUtils.putUserId(userId);
+            openAccountStepPage(token);
             LxRxBus.getInstance().get().post(MainActivity.sRxBusLoginToHomeMyAccountTag, String.valueOf(2));
-            mActivity.onBackPressed();
+            if (L.isDebug) {
+                ToastUtils.show("token: " + token + "\n userId:" + userId);
+            }
+            //mActivity.onBackPressed();
         } else {
-            ToastUtils.show(baseBean.message);
+            ToastUtils.show(R.string.txt_login_fail);
         }
 
     }
 
     @Override
-    public void onGetCodeSuccess(BaseBean baseBean) {
-        if (baseBean != null && baseBean.success) {
+    public void onSmsCodeSuccess(BaseResponseBean responseBean) {
+        if (responseBean.getMsg().isSuccess) {
             //短信验证码发送成功后开始倒计时
             sendSmsCodeReverseTime();
             ToastUtils.show(R.string.txt_sms_code_send_success);
@@ -214,16 +214,18 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
      * 打开开户步骤页面第几步
      */
     @Override
-    public void onOpenAccountStepSuccess(BaseBean<OpenAccountStepBean> baseBean) {
-        switch (baseBean.body.status) {
-            case 0:
-
+    public void onOpenAccountStepSuccess(BaseResponseBean<GetOpenAccountStepResponseBean> baseResponseBean) {
+        //保存开户步骤
+        LxSPUtils.putOpenAccountStep(baseResponseBean.data.get(0).code);
+        switch (baseResponseBean.data.get(0).code) {
+            case 1://还没开始开户
+                mActivity.addFragmentToActivity(mActivity, QuickAccountActivity.class, QuickAccountFragment01.class.getName(), true);
                 break;
-            case 1:
+            case 2://"已开户还未设置交易密码!
+                mActivity.addFragmentToActivity(mActivity, QuickAccountActivity.class, QuickAccountFragment02.class.getName(), true);
                 break;
-            case 2:
-                break;
-            case 3:
+            case 3://开过户但风险测评还没完成
+                mActivity.addFragmentToActivity(mActivity, QuickAccountActivity.class, QuickAccountFragment03.class.getName(), true);
                 break;
         }
     }
@@ -231,10 +233,16 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
     /**
      * 打开开户步骤页面（登录成功后，调用开户步骤接口,查看当前在步骤几）
      */
-    public void openAccountStepPage() {
-        Intent intent = new Intent(mActivity, QuickAccountActivity.class);
-        intent.putExtra(LxConstants.fragmentHashCodeKey, QuickAccountFragment01.class.hashCode());
-        App.getInstance().startTargetActivity(mActivity, intent, true);
+    public void openAccountStepPage(String token) {
+        //获取开户步骤值，
+        // 0：开过户也测评过！
+        // 1：还没开始开户!"
+        // 2：已开户还未设置交易密码!
+        // 3：开过户但风险测评还没完成
+        int openAccountStep = LxSPUtils.getOpenAccountStep();
+        if (openAccountStep != 0) {
+            mPresenter.getOpenAccountStep(mActivity, new GetOpenAccountStepBean(token));
+        }
     }
 
 
@@ -312,9 +320,11 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginFragm
      */
     public void updateCodeUi(int time) {
         if (time > 0) {
-            mDataBinding.tvGetCode.setText(String.valueOf(time));
+            mDataBinding.tvGetCode.setText(time + "s");
+            mDataBinding.tvGetCode.setTextColor(mSendSmsButtonColors[1]);
         } else {
             mDataBinding.tvGetCode.setText(R.string.txt_get_verification_code);
+            mDataBinding.tvGetCode.setTextColor(mSendSmsButtonColors[0]);
             mDataBinding.tvGetCode.setEnabled(true);
             App.getInstance().removeCallbacks(mReversTimeRun);
         }

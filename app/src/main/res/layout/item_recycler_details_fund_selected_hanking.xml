@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--精选基金-详情页面-重仓持股-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/layout_dashed_line_horizontal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_2dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                style="@style/tv_title_small_singleLine_style"
+                android:layout_width="@dimen/size_0dp"
+                android:layout_weight="1"
+                android:text="川投能源"/>
+
+            <TextView
+                style="@style/tv_title_small_singleLine_style"
+                android:layout_width="@dimen/size_0dp"
+                android:layout_weight="1"
+                android:text="600674"/>
+
+            <TextView
+                style="@style/tv_title_small_singleLine_style"
+                android:layout_width="@dimen/size_0dp"
+                android:layout_weight="1"
+                android:text="6.01%"/>
+
+            <TextView
+                style="@style/tv_title_small_singleLine_style"
+                android:layout_width="@dimen/size_0dp"
+                android:layout_weight="1"
+                android:text="861.99"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

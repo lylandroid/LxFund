@@ -25,7 +25,7 @@
 
         <Button
             android:id="@+id/btn_confirm"
-            style="@style/item_btn_style"
+            style="@style/btn_round_back_yellow_style"
             android:layout_margin="@dimen/size_0dp"
             android:background="@drawable/item_def_yellow_select_shallow_selector"
             android:text="@string/txt_add_contact_address"/>

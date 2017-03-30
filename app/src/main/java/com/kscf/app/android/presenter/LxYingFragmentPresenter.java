@@ -1,8 +1,6 @@
 package com.kscf.app.android.presenter;
 
 import com.kscf.app.android.base.RxPresenter;
-import com.kscf.app.android.model.http.RetrofitHelper;
-import com.kscf.app.android.presenter.contract.FundFragmentContract;
 import com.kscf.app.android.presenter.contract.LxYingFragmentContract;
 
 import javax.inject.Inject;
@@ -15,8 +13,7 @@ import javax.inject.Inject;
 public class LxYingFragmentPresenter extends RxPresenter<LxYingFragmentContract.View> implements LxYingFragmentContract.Presenter {
 
     @Inject
-    public LxYingFragmentPresenter(RetrofitHelper retrofitHelper) {
-        mRetrofitHelper = retrofitHelper;
+    public LxYingFragmentPresenter() {
     }
 
     @Override

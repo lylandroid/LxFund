@@ -96,7 +96,7 @@
 
             <Button
                 android:id="@+id/btn_confirm"
-                style="@style/item_btn_style"
+                style="@style/btn_round_back_yellow_style"
                 android:layout_marginTop="@dimen/size_18dp"
                 android:layout_marginBottom="@dimen/size_18dp"
                 android:layout_marginLeft="@dimen/size_28dp"
@@ -162,6 +162,7 @@
                 <include layout="@layout/layout_line_horizontal"/>
 
                 <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                    android:layout_marginBottom="@dimen/size_8dp"
                     android:id="@+id/item_invite_friends"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -176,6 +177,7 @@
                     android:layout_marginTop="@dimen/size_12dp"
                     android:background="@drawable/item_def_white_select_gray_selector"
                     app:leftText="@string/txt_news"
+                    android:visibility="gone"
                     app:rightText="0"/>
 
             </LinearLayout>

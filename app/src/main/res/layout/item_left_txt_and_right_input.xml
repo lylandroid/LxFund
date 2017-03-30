@@ -11,12 +11,12 @@
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/tv_item_left_txt_and_right_input"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@null"
                 android:clickable="false"
                 android:enabled="false"
@@ -29,14 +29,13 @@
             android:id="@+id/text_input_layout"
 
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/et_item_left_txt_and_right_input"
                 style="@style/editTextDefStyle"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:maxLength="20"/>
+                android:maxLength="28"/>
 
         </android.support.design.widget.TextInputLayout>
 

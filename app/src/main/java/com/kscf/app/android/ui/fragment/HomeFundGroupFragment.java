@@ -6,7 +6,7 @@ import android.view.View;
 import com.android.databinding.library.baseAdapters.BR;
 import com.kscf.app.android.R;
 import com.kscf.app.android.base.BaseFragment;
-import com.kscf.app.android.base.adapter.DataBindingRecyclerAdapter;
+import com.framework.base.adapter.DataBindingRecyclerAdapter;
 import com.kscf.app.android.databinding.HomeFragmentFundGroupBinding;
 import com.kscf.app.android.model.bean.HomeFundSelectedBannerBean;
 import com.kscf.app.android.model.bean.HomeFundSelectedRecyclerBean;
@@ -61,7 +61,7 @@ public class HomeFundGroupFragment extends BaseFragment<HomeFragmentFundGroupBin
                 , lists, true) {
             @Override
             public void onItemClick(int position, View v, ViewDataBinding dataBinding) {
-                DetailsActivity.addFragmentToDetailsActivity(mActivity, DetailsHomeFundGroupFragment.class.hashCode(), true);
+                mActivity.addFragmentToActivity(mActivity,DetailsActivity.class, DetailsHomeFundGroupFragment.class.getName(), true);
             }
         };
         /*mDataBinding.includeTop.btnConfirm.setOnClickListener(new View.OnClickListener() {

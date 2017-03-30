@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_52dp"
+    android:layout_gravity="bottom"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <include layout="@layout/layout_line_horizontal"/>
+
+        <com.kscf.app.android.widget.PercentageTextView
+            android:id="@+id/ptv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/size_8dp"
+            android:paddingTop="@dimen/size_8dp"
+            android:text="0.60%"
+            app:endTextSize="@dimen/font_12"
+            app:textSize="@dimen/font_18"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ptv_money"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/size_8dp"
+            android:paddingTop="@dimen/size_2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="申购费"
+                android:textColor="@color/txt_subtitle_color"
+                android:textSize="@dimen/font_10"/>
+
+            <com.framework.view.DeleteLineTextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/size_2dp"
+                android:text="1.50%"
+                android:textColor="@color/txt_subtitle_color"
+                android:textSize="@dimen/font_10"/>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="@drawable/item_def_yellow_select_shallow_selector"
+        android:text="@string/btn_txt_buy_now"
+        android:textColor="@color/white"/>
+
+
+</LinearLayout>

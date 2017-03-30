@@ -65,9 +65,12 @@ ext {
     MPAndroidChartVersion = 'v3.0.1'
 
     //第三方集成版本
-    growingioVersion = '0.9.101'
     //底部dialog
     bottomDialogVersion = '1.1.9'
     //轮播图版本号
     bannerVersion = '2.0.5'
+    //动态权限框架
+    easypermissionsVersion = '0.3.0'
+    /*二维码框架*/
+    zxingVersion = '3.3.0'
 }

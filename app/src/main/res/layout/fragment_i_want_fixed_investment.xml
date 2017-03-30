@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--定投页面-->
+    <ScrollView
+        style="@style/match_match"
+        android:background="@color/activityBackgroundColor"
+        android:clickable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.kscf.app.android.widget.DefToolBar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:background="@color/blue"
+                app:isShowReturnView="true"
+                app:title="@string/txt_i_want_fixed_investment"/>
+
+
+            <com.kscf.app.android.widget.LxRecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.kscf.app.android.widget.ItemLeftTxtRightInputLayout
+                android:id="@+id/item_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_6dp"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/size_8dp"
+                app:hintText="@string/txt_min_fixed_investment_money_10"
+                app:inputType="text"
+                app:leftText="@string/txt_fixed_investment_money"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/size_8dp">
+
+                <TextView
+                    style="@style/tv_title_small_style"
+                    android:text="@string/txt_rate"/>
+
+                <com.framework.view.DeleteLineTextView
+                    style="@style/tv_title_small_style"
+                    android:layout_marginLeft="@dimen/size_6dp"
+                    android:text="@string/amount_0.00"/>
+
+                <com.kscf.app.android.widget.PercentageTextView
+                    style="@style/tv_title_small_style"
+                    android:layout_marginLeft="@dimen/size_6dp"
+                    android:text="@string/amount_0.00"
+                    app:endTextSize="@dimen/font_12"
+                    app:textSize="@dimen/font_12"/>
+
+                <TextView
+                    style="@style/tv_title_small_style"
+                    android:layout_marginLeft="@dimen/size_18dp"
+                    android:text="@string/txt_estimate_money_save_money"/>
+            </LinearLayout>
+
+            <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
+                style="@style/match_wrap"
+                android:background="@drawable/item_def_white_select_gray_selector"
+                app:leftText="@string/txt_fixed_investment_cycle"
+                app:rightText="每月1日"
+                app:rightTextColor="@color/txt_title_color"/>
+
+
+            <RelativeLayout
+                style="@style/match_wrap"
+                android:background="@color/white">
+
+                <include layout="@layout/layout_dashed_line_horizontal"/>
+
+                <TextView
+                    style="@style/tv_subtitle_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/size_8dp"
+                    android:paddingBottom="@dimen/size_6dp"
+                    android:paddingTop="@dimen/size_6dp"
+                    android:text="@string/txt_next_buckle_money_date"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/size_12dp">
+
+                <ImageView
+                    android:id="@+id/iv_check_protocol"
+                    android:layout_width="@dimen/size_16dp"
+                    android:layout_height="@dimen/size_16dp"
+                    android:layout_marginRight="@dimen/size_10dp"
+                    android:layout_marginTop="@dimen/size_2dp"
+                    android:background="@drawable/item_checkbox_square"/>
+
+                <com.framework.view.SpannableColorSizeTextView
+                    android:id="@+id/tv_spannable_read_protocol"
+                    style="@style/tv_subtitle_style"
+                    android:gravity="left"
+                    android:lineSpacingExtra="@dimen/size_6dp"
+                    android:padding="@dimen/size_0dp"
+                    android:text="@string/txt_read_protocol_book"
+                    android:textSize="@dimen/font_12"
+                    app:rightIndex="7"
+                    app:rightTextColor="@color/blue"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_confirm"
+                style="@style/match_wrap"
+                android:layout_marginLeft="@dimen/size_18dp"
+                android:layout_marginRight="@dimen/size_18dp"
+                android:layout_marginTop="@dimen/size_38dp"
+                android:background="@drawable/item_radius_btn_yellow_selector"
+                android:text="@string/txt_i_want_fixed_investment"
+                android:textColor="@color/white"/>
+
+
+            <TextView
+                style="@style/tv_title_style"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/txt_customer_service_hotline"
+                android:textSize="@dimen/font_12"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/size_8dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/banner_invite_friends"/>
+
+
+            <ImageView
+                android:layout_marginTop="@dimen/size_8dp"
+                android:layout_width="@dimen/size_120dp"
+                android:layout_height="@dimen/size_120dp"
+                android:background="@drawable/img_zxing"/>
+
+
+            <TextView
+                style="@style/tv_title_small_style"
+                android:text="@string/txt_invite_friends_scan_2_code"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

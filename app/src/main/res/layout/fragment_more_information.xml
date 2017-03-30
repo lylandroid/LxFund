@@ -37,7 +37,7 @@
             app:rightText="583*****534085"/>
 
         <com.kscf.app.android.widget.ItemLeftTxtRightArrowLayout
-            android:id="@+id/item_e_mail"
+            android:id="@+id/item_mail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_8dp"

@@ -7,6 +7,7 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
 import android.telephony.TelephonyManager;
 
+import com.framework.app.CommApp;
 import com.kscf.app.android.util.ShellUtils;
 
 import java.lang.reflect.Method;
@@ -94,10 +95,10 @@ public class NetworkUtils {
         ShellUtils.CommandResult result = ShellUtils.execCmd("ping -c 1 -w 1 123.125.114.144", false);
         boolean ret = result.result == 0;
         if (result.errorMsg != null) {
-            L.d("isAvailableByPing errorMsg: "+result.errorMsg);
+            L.d("isAvailableByPing errorMsg: " + result.errorMsg);
         }
         if (result.successMsg != null) {
-            L.d("isAvailableByPing successMsg: "+ result.successMsg);
+            L.d("isAvailableByPing successMsg: " + result.successMsg);
         }
         return ret;
     }
@@ -222,15 +223,14 @@ public class NetworkUtils {
         return tm != null ? tm.getNetworkOperatorName() : null;
     }
 
-    private static final int NETWORK_TYPE_GSM      = 16;
+    private static final int NETWORK_TYPE_GSM = 16;
     private static final int NETWORK_TYPE_TD_SCDMA = 17;
-    private static final int NETWORK_TYPE_IWLAN    = 18;
+    private static final int NETWORK_TYPE_IWLAN = 18;
 
     /**
      * 获取当前网络类型
      * <p>需添加权限 {@code <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>}</p>
      *
-     * @param context 上下文
      * @return 网络类型
      * <ul>
      * <li>{@link NetworkUtils.NetworkType#NETWORK_WIFI   } </li>
@@ -241,9 +241,9 @@ public class NetworkUtils {
      * <li>{@link NetworkUtils.NetworkType#NETWORK_NO     } </li>
      * </ul>
      */
-    public static NetworkType getNetworkType(Context context) {
+    public static NetworkType getNetworkType() {
         NetworkType netType = NetworkType.NETWORK_NO;
-        NetworkInfo info = getActiveNetworkInfo(context);
+        NetworkInfo info = getActiveNetworkInfo(CommApp.getApp());
         if (info != null && info.isAvailable()) {
 
             if (info.getType() == ConnectivityManager.TYPE_WIFI) {

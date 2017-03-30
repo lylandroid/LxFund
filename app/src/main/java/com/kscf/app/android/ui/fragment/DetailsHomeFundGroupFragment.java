@@ -1,6 +1,5 @@
 package com.kscf.app.android.ui.fragment;
 
-import android.graphics.Paint;
 import android.view.View;
 import android.widget.RadioGroup;
 
@@ -10,12 +9,10 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.kscf.app.android.R;
 import com.kscf.app.android.base.BaseFragment;
-import com.kscf.app.android.base.adapter.DataBindingRecyclerAdapter;
+import com.framework.base.adapter.DataBindingRecyclerAdapter;
 import com.kscf.app.android.databinding.FragmentDetailsHomeFundGroupBinding;
-import com.kscf.app.android.databinding.FragmentDetailsHomeFundSelectedBinding;
 import com.kscf.app.android.presenter.DetailsHomeFundSelectedFragmentPresenter;
 import com.kscf.app.android.presenter.contract.DetailsHomeFundSelectedFragmentContract;
 import com.kscf.app.android.util.LineChartHelper;
@@ -25,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 消息Fragment
+ * 基金组合详情Fragment
  * Created by luoyl on 2017/1/12.
  */
 

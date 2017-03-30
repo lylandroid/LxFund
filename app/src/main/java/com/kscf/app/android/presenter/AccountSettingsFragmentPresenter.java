@@ -1,7 +1,6 @@
 package com.kscf.app.android.presenter;
 
 import com.kscf.app.android.base.RxPresenter;
-import com.kscf.app.android.model.http.RetrofitHelper;
 import com.kscf.app.android.presenter.contract.AccountSettingsFragmentContract;
 
 import javax.inject.Inject;
@@ -14,8 +13,7 @@ import javax.inject.Inject;
 public class AccountSettingsFragmentPresenter extends RxPresenter<AccountSettingsFragmentContract.View> implements AccountSettingsFragmentContract.Presenter {
 
     @Inject
-    public AccountSettingsFragmentPresenter(RetrofitHelper retrofitHelper) {
-        mRetrofitHelper = retrofitHelper;
+    public AccountSettingsFragmentPresenter() {
     }
 
     @Override

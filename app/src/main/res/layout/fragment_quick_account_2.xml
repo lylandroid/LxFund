@@ -16,7 +16,7 @@
             app:title="@string/txt_quick_account_2"/>
 
 
-        <include layout="@layout/item_fragment_quick_account_step"/>
+        <include android:id="@+id/include_item" layout="@layout/item_fragment_quick_account_step"/>
 
 
         <LinearLayout

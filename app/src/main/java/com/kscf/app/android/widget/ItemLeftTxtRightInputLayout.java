@@ -56,7 +56,6 @@ public class ItemLeftTxtRightInputLayout extends FrameLayout {
         mEditTextColorResId = a.getInt(R.styleable.LxAttrs_editText_Color, 0);
         mEditTextEnabled = a.getBoolean(R.styleable.LxAttrs_editTextEnabled, true);
         mEditTextTxt = a.getString(R.styleable.LxAttrs_editTextTxt);
-        //mInputType = a.getInt(R.styleable.LxAttrs_inputType, -1);
         a.recycle();
         a = null;
 

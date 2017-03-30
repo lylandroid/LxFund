@@ -1,9 +1,9 @@
 package com.kscf.app.android.presenter;
 
+import com.framework.http.RetrofitHelper;
 import com.kscf.app.android.R;
 import com.kscf.app.android.base.RxPresenter;
 import com.kscf.app.android.model.bean.HomeFundSelectedBannerBean;
-import com.kscf.app.android.model.http.RetrofitHelper;
 import com.kscf.app.android.presenter.contract.HomeFundSelectedContract;
 
 import java.util.ArrayList;
@@ -19,8 +19,7 @@ import javax.inject.Inject;
 public class HomeFundSelectedPresenter extends RxPresenter<HomeFundSelectedContract.View> implements HomeFundSelectedContract.Presenter {
 
     @Inject
-    public HomeFundSelectedPresenter(RetrofitHelper retrofitHelper) {
-        mRetrofitHelper = retrofitHelper;
+    public HomeFundSelectedPresenter() {
     }
 
     @Override

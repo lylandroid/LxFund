@@ -1,13 +1,11 @@
 package com.kscf.app.android.presenter;
 
-import com.kscf.app.android.app.Apis;
+import com.framework.http.HttpSubscriber;
+import com.framework.http.RetrofitHelper;
+import com.framework.util.L;
 import com.kscf.app.android.base.RxPresenter;
 import com.kscf.app.android.model.bean.MainBean;
-import com.kscf.app.android.model.http.HttpMethod;
-import com.kscf.app.android.model.http.HttpSubscriber;
-import com.kscf.app.android.model.http.RetrofitHelper;
 import com.kscf.app.android.presenter.contract.MainContract;
-import com.framework.util.L;
 
 import javax.inject.Inject;
 
@@ -18,8 +16,7 @@ import javax.inject.Inject;
 public class MainPresenter extends RxPresenter<MainContract.View> implements MainContract.Presenter {
 
     @Inject
-    public MainPresenter(RetrofitHelper retrofitHelper) {
-        mRetrofitHelper = retrofitHelper;
+    public MainPresenter() {
     }
 
     @Override
@@ -37,6 +34,6 @@ public class MainPresenter extends RxPresenter<MainContract.View> implements Mai
             }
         };
 
-        addSubscriber(mRetrofitHelper.sendNet(HttpMethod.GET,Apis.testApi, null, null, httpSubscriber));
+       // addSubscriber(mRetrofitHelper.sendNet(HttpMethod.GET,Apis.testApi, null, null, httpSubscriber));
     }
 }

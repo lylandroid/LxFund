@@ -1,15 +1,13 @@
 package com.kscf.app.android.ui.fragment;
 
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.framework.util.L;
+import com.framework.base.adapter.DataBindingRecyclerAdapter;
+import com.framework.base.adapter.DataBindingViewPagerAdapter;
 import com.kscf.app.android.BR;
 import com.kscf.app.android.R;
 import com.kscf.app.android.base.BaseFragment;
-import com.kscf.app.android.base.adapter.DataBindingRecyclerAdapter;
-import com.framework.base.adapter.ViewPagerAdapter;
 import com.kscf.app.android.databinding.FragmentRiskEvaluationBinding;
 import com.kscf.app.android.databinding.ItemCheckboxRightTxtGroupBinding;
 import com.kscf.app.android.databinding.ItemViewpagerRiskEvaluationBinding;
@@ -90,37 +88,33 @@ public class RiskEvaluationFragment extends BaseFragment<FragmentRiskEvaluationB
             riskEvaluationBean.pageItems.add(item);
         }
 
-        mRiskEvaluationAdapter = new RiskEvaluationAdapter(riskEvaluationBean.pageItems);
+        List<Integer> pageResIds = new ArrayList<>();
+        for (int i = 0; i < 15; i++) {
+            pageResIds.add(R.layout.item_viewpager_risk_evaluation);
+        }
+
+        mRiskEvaluationAdapter = new RiskEvaluationAdapter(pageResIds, riskEvaluationBean.pageItems);
         mDataBinding.viewPager.setAdapter(mRiskEvaluationAdapter);
 
     }
 
-    class RiskEvaluationAdapter extends ViewPagerAdapter<View, RiskEvaluationBean.PageItem> {
+    class RiskEvaluationAdapter extends DataBindingViewPagerAdapter<ItemViewpagerRiskEvaluationBinding, RiskEvaluationBean.PageItem> {
 
-        private ItemViewpagerRiskEvaluationBinding mBind;
-
-        public RiskEvaluationAdapter(List<RiskEvaluationBean.PageItem> beans) {
-            super(null, beans);
+        public RiskEvaluationAdapter(List<Integer> pageResIds, List<RiskEvaluationBean.PageItem> beans) {
+            super(pageResIds, null, beans);
         }
 
         @Override
-        public View getView(int position, ViewPager pager) {
-            View view = mInflater.inflate(R.layout.item_viewpager_risk_evaluation, pager, false);
-            mBind = ItemViewpagerRiskEvaluationBinding.bind(view);
-            return view;
-        }
-
-        @Override
-        public void bindData(int position, View view, RiskEvaluationBean.PageItem bean) {
-            mBind.tvTitle.setText(bean.title);
-            mBind.recyclerView.setAdapter(new RecyclerDataBindingRecyclerAdapter(mBind.recyclerView
+        public void bindRealData(int position, View view, RiskEvaluationBean.PageItem bean) {
+            mDataBinding.tvTitle.setText(bean.title);
+            mDataBinding.recyclerView.setAdapter(new RecyclerDataBindingRecyclerAdapter(mDataBinding.recyclerView
                     , BR.itemData
                     , R.layout.item_checkbox_right_txt_group
                     , bean.recyclerItems, true));
             //设置当前页码
-            mBind.includeItem.tvIndexCount.setText(String.format(getResources().getString(R.string.txtCurrentPageAndTotalPage), position + 1, getCount()));
+            mDataBinding.includeItem.tvIndexCount.setText(String.format(getResources().getString(R.string.txtCurrentPageAndTotalPage), position + 1, getCount()));
             //给上一页按钮点击事件
-            mBind.includeItem.tvUpTopic.setOnClickListener(RiskEvaluationFragment.this);
+            mDataBinding.includeItem.tvUpTopic.setOnClickListener(RiskEvaluationFragment.this);
 
         }
 
@@ -131,7 +125,7 @@ public class RiskEvaluationFragment extends BaseFragment<FragmentRiskEvaluationB
          */
         public void setAllCheckBoxState(boolean allCheckBoxState) {
             if (getCount() > 0) {
-                for (RiskEvaluationBean.PageItem item : mDatas) {
+                for (RiskEvaluationBean.PageItem item : mPageDatas) {
                     int len = item.recyclerItems != null ? item.recyclerItems.size() : 0;
                     if (len > 0) {
                         for (RiskEvaluationBean.PageItem.RecyclerItem recyclerItem : item.recyclerItems) {
@@ -159,9 +153,9 @@ public class RiskEvaluationFragment extends BaseFragment<FragmentRiskEvaluationB
                 for (int i = 0; i < len; i++) {
                     mDatas.get(i).setIsCheck((i == position));
                 }
-                int currentItemIndex = mDataBinding.viewPager.getCurrentItem();
+                int currentItemIndex = RiskEvaluationFragment.this.mDataBinding.viewPager.getCurrentItem();
                 int pageCount = mRiskEvaluationAdapter.getCount();
-                mDataBinding.viewPager.setCurrentItem(Math.min(pageCount - 1, currentItemIndex + 1));
+                RiskEvaluationFragment.this.mDataBinding.viewPager.setCurrentItem(Math.min(pageCount - 1, currentItemIndex + 1));
                 if (currentItemIndex + 1 == pageCount) {
                     toFinishPage();
                 }
